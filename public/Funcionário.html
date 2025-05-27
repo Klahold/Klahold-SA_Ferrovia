@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Funcionários</title>
+
+    <link rel="stylesheet" href="../style/styles.css">
+</head>
+
+<body>
+    <header class="header">
+        <h1>Funcionários</h1>
+        <img class="logoMenu" src="../assets/icons/funcionario.png" alt="Rotas">
+    </header>
+
+    <div class="branco-funcionario">
+        <div class="flex">
+        <div class="cinza_funcionario">🔍 Buscar Funcionários</div>
+        <form id="minicinzaalign" action="/upload" method="POST" enctype="multipart/form-data">
+            <button id="minicinza" type="button" onclick="document.getElementById('profilePic').click()">Cadastrar</button>
+        </form>
+        </div>
+
+        <br>
+        <br>
+        <table class="table">
+            <tr>
+            <div>
+              <td>Foto</td>
+              <td>Nome</td>
+              <td>Código</td>
+            </div>
+            </tr>
+            <tr>
+              <td><img class="images" src="../assets/images/Melissa Gusmão.png" alt=""></td>
+              <td>Melissa Gusmão</td>
+                <td>MG743</td>
+            </tr>
+            <tr>
+              <td><img class="images" src="../assets/images/Nádia Cíntia.png" alt=""></td>
+              <td>Nádia Cíntia</td>
+              <td>NC372</td>
+            </tr>
+            <tr>
+                <td><img class="images" src="../assets/images/Luciano Everaldo.png" alt=""></td>
+                <td>Luciano Everaldo</td>
+                <td>LE612</td>
+              </tr>
+              <tr>
+                <td><img class="images" src="../assets/images/Irene Paula.png" alt=""></td>
+                <td>Irene Paula</td>
+                    <td>IP802</td>
+              </tr>
+              <tr>
+                <td><img class="images" src="../assets/images/Rodolfo Ferraz.png" alt=""></td>
+                <td>Rodolfo Ferraz</td>
+                <td>RF002</td>
+              </tr>
+              <tr>
+                <td class="boris"><img class="images" src="../assets/images/Bóris Medina.png" alt=""></td>
+                <td class="boris">Bóris Medina</td>
+                <td class="boris">BM567</td>
+              </tr>
+          </table>
+    </div>
+
+
+</body>
+
+</html>

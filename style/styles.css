@@ -1,0 +1,290 @@
+body {
+    background-image: url('..//assets/icons/Blue\ background.jpg');
+    background-size: 600px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.loGin {
+    text-align: left;
+}
+
+.logoImg {
+    width: 200px;
+}
+
+.images{
+    width: 50px;
+}
+
+.boris{
+
+}
+
+.flex{
+    display: flex;
+}
+
+.logo {
+    text-align: center;
+    color: white;
+}
+
+.campo {
+    background-color: white;
+    border-radius: 50px;
+}
+
+.radious {
+    border: 0px;
+    width: 240px;
+}
+
+.entrar {
+    border-radius: 50px;
+    border: 0px;
+    text-align: center;
+}
+
+.esqueci {
+    color: white;
+    background-color: initial;
+    border: 0px;
+}
+
+#menu_linha {
+    display: flex;
+    justify-content: space-between;
+    margin: 40px;
+}
+
+.quadrado-branco {
+    background-color: white;
+    border-radius: 20px;
+    width: 120px;
+    height: 120px;
+    text-align: center;
+}
+
+.Tamanho_img {
+    width: 80px;
+    margin: 5px;
+}
+
+.texto {
+    margin: 1px;
+}
+
+.texto-carga{
+text-align: center;
+text-decoration: underline;
+font-size: xx-large;
+}
+
+.table, th, td{
+    text-align: center;
+    margin: 10px;
+    font-size: x-large;
+    border-collapse: collapse;
+    border: 1px solid black;
+}
+
+.branco-carga{
+    text-align: center;
+    background-color: white;
+    border-radius: 30px;
+    padding: 15px;
+}
+
+.branco-funcionario{
+    text-align: center;
+    background-color: white;
+    border-radius: 30px;
+    padding: 15px;
+    margin: 15px;
+}
+
+.Rotas {
+    background-color: white;
+    border-radius: 20px;
+    margin-left: 20px;
+}
+
+.RotasImg {
+    width: 150px;
+}
+
+.header {
+    color: white;
+    justify-content: space-between;
+    display: flex;
+    padding: 10px;
+}
+
+.logoMenu {
+    width: 79px;
+}
+
+.mapa {
+    width: 370px;
+}
+
+.grafico-pizza {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    background: conic-gradient(#4caf50 0% 30%,
+            /* Preventiva feito no chatgpt */
+            #f44336 30% 55%,
+            /* Corretiva */
+            #2196f3 55% 75%,
+            /* Inspeção */
+            #ff9800 75% 100%
+            /* Emergencial */
+        );
+    position: relative;
+    transition: transform 0.3s ease;
+}
+
+.grafico-pizza:hover {
+    transform: scale(1.05);
+}
+
+.legenda {
+    margin-top: 20px;
+}
+
+.legenda div {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.cor {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+    border-radius: 4px;
+}
+
+.preventiva {
+    background-color: #4caf50;
+}
+
+.corretiva {
+    background-color: #f44336;
+}
+
+.inspecao {
+    background-color: #2196f3;
+}
+
+.emergencial {
+    background-color: #ff9800;
+}
+
+.branco {
+    background-color: white;
+    border-radius: 20px;
+    border: 0px;
+    padding: 15px;
+ 
+}
+
+.branco3 {
+    background-color: white;
+    border-radius: 20px;
+    border: 0px;
+    padding: 15px;
+ margin-left: 85px;
+}
+
+.branco2 {
+    background-color: white;
+    border-radius: 20px;
+    border: 0px;
+    padding: 15px;
+    margin-right: 85px;
+}
+
+.branco_cadastro_1{
+    background-color: white;
+    border-radius: 30px;
+    border: 0px;
+    padding: 15px;
+    margin: 15px;
+}
+
+.branco_cadastro_2{
+    background-color: white;
+    border-radius: 30px;
+    border: 0px;
+    padding: 30px;
+    padding-top: 50px;
+    margin: 15px;
+}
+
+.img_cadastro {
+    width: 200px;
+    padding-left: 9px;
+}
+
+.cinza{
+    background-color: rgb(223, 219, 219);
+    border-radius: 30px;
+    border: 0px;
+    padding: 5px;
+    text-align: center;
+}
+
+.cinza_funcionario{
+    background-color: rgb(223, 219, 219);
+    border-radius: 30px;
+    border: 0px;
+    padding: 10px;
+    padding-top: 15px;
+    text-align: center;
+}
+
+.text_left{
+    text-align: left;
+    margin: 5px;
+}
+
+.Velocimetro {
+    width: 300px;
+    padding-left: 9px;
+}
+
+.flex {
+    display: flex;
+    padding: 5px;
+    justify-content: space-between;
+}
+
+#minicinza {
+    border-radius: 50px;
+    background-color: rgb(223, 219, 219);
+    font-size: 15px;
+}
+
+#minicinzaalign {
+    text-align: center;
+    margin: 15px;
+}
+
+#logofuncionario {
+    text-align: center;
+}
+
+#logofuncionario {
+    text-align: center;
+}
+
+.brancoAlertas {
+    background-color: white;
+    border-radius: 50px;
+    border: 0px;
+    padding: 15px;
+    text-align: center;
+    height: 650px;
+}
