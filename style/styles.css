@@ -16,6 +16,10 @@ body {
     width: 50px;
 }
 
+.imagesFuncionario{
+    width: 60px;
+}
+
 .boris{
 
 }
@@ -143,22 +147,6 @@ font-size: xx-large;
     height: 20px;
     margin-right: 10px;
     border-radius: 4px;
-}
-
-.preventiva {
-    background-color: #4caf50;
-}
-
-.corretiva {
-    background-color: #f44336;
-}
-
-.inspecao {
-    background-color: #2196f3;
-}
-
-.emergencial {
-    background-color: #ff9800;
 }
 
 .branco {
@@ -311,4 +299,10 @@ font-size: xx-large;
     background-color: grey;
     border-radius: 100%;
     padding: 6px;
+}
+
+.arrastar{
+    overflow: scroll;
+    height: 420px;
+    scrollbar-width: none;
 }
