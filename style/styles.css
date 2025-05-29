@@ -128,27 +128,6 @@ font-size: xx-large;
     width: 370px;
 }
 
-.grafico-pizza {
-    width: 300px;
-    height: 300px;
-    border-radius: 50%;
-    background: conic-gradient(#4caf50 0% 30%,
-            /* Preventiva feito no chatgpt */
-            #f44336 30% 55%,
-            /* Corretiva */
-            #2196f3 55% 75%,
-            /* Inspeção */
-            #ff9800 75% 100%
-            /* Emergencial */
-        );
-    position: relative;
-    transition: transform 0.3s ease;
-}
-
-.grafico-pizza:hover {
-    transform: scale(1.05);
-}
-
 .legenda {
     margin-top: 20px;
 }
@@ -287,4 +266,49 @@ font-size: xx-large;
     padding: 15px;
     text-align: center;
     height: 650px;
+}
+
+.squarewhite{
+    background-color: white;
+    padding: 20px;
+    border-radius: 20px;
+    height: 650px;
+    overflow: scroll;
+    scrollbar-width: none;
+}
+
+.trems{
+    display: flex;
+}
+
+.selection{
+    background-color: rgb(226, 226, 226);
+    padding: 20px;
+    border-radius: 20px;
+    border: solid 1px;
+    border-color: rgb(201, 201, 201);
+}
+
+.trem{
+    border-radius: 20%;
+    width:40%;
+    height:40%;
+}
+
+.treminfo{
+    justify-content: center;
+    text-align: center;
+    margin: 10px;
+}
+
+.pontos{
+    display: flex;
+    justify-content: end;
+}
+
+.ponto{
+    margin: 2px;
+    background-color: grey;
+    border-radius: 100%;
+    padding: 6px;
 }
