@@ -1,36 +1,123 @@
+/*Geral*/
 body {
     background-image: url('..//assets/icons/Blue\ background.jpg');
     background-size: 600px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-.loGin {
-    text-align: left;
-}
-
 .logoImg {
     width: 200px;
-}
-
-.images{
-    width: 50px;
-}
-
-.imagesFuncionario{
-    width: 60px;
-}
-
-.boris{
-
-}
-
-.flex{
-    display: flex;
 }
 
 .logo {
     text-align: center;
     color: white;
+}
+
+.flex {
+    display: flex;
+}
+
+.header {
+    color: white;
+    justify-content: space-between;
+    display: flex;
+    padding: 10px;
+}
+
+.logoMenu {
+    width: 79px;
+}
+/*------------------------------------------------------------------*/
+/**/
+/*Alertas Avisos*/
+.brancoAlertas {
+    background-color: white;
+    border-radius: 50px;
+    border: 0px;
+    padding: 15px;
+    text-align: center;
+    height: 650px;
+}
+
+/*------------------------------------------------------------------*/
+/*Cadastro*/
+.branco_cadastro_1 {
+    background-color: white;
+    border-radius: 30px;
+    border: 0px;
+    padding: 15px;
+    margin: 15px;
+}
+
+.branco_cadastro_2 {
+    background-color: white;
+    border-radius: 30px;
+    border: 0px;
+    padding: 30px;
+    padding-top: 50px;
+    margin: 15px;
+}
+
+.img_cadastro {
+    width: 200px;
+    padding-left: 9px;
+}
+
+#minicinza {
+    border-radius: 50px;
+    background-color: rgb(223, 219, 219);
+    font-size: 15px;
+}
+
+#minicinzaalign {
+    text-align: center;
+    margin: 15px;
+}
+
+#logofuncionario {
+    text-align: center;
+}
+
+.text_left {
+    text-align: left;
+    margin: 5px;
+}
+
+/*------------------------------------------------------------------*/
+/*Cargas*/
+.texto-carga {
+    text-align: center;
+    text-decoration: underline;
+    font-size: xx-large;
+}
+
+.table,
+th,
+td {
+    text-align: center;
+    margin: 10px;
+    font-size: x-large;
+    border-collapse: collapse;
+    border: 1px solid black;
+}
+
+.branco-carga {
+    text-align: center;
+    background-color: white;
+    border-radius: 30px;
+    padding: 15px;
+}
+/*------------------------------------------------------------------*/
+/*Dashboard*/
+.Velocimetro {
+    width: 300px;
+    padding-left: 9px;
+}
+/*------------------------------------------------------------------*/
+/*Esqueci Login*/
+.loGin {
+    text-align: left;
 }
 
 .campo {
@@ -54,7 +141,120 @@ body {
     background-color: initial;
     border: 0px;
 }
+/*------------------------------------------------------------------*/
+/*Funcionario*/
+.branco-funcionario {
+    text-align: center;
+    background-color: white;
+    border-radius: 30px;
+    padding: 15px;
+    margin: 15px;
+}
 
+.cinza_funcionario {
+    background-color: rgb(223, 219, 219);
+    border-radius: 30px;
+    border: 0px;
+    padding: 10px;
+    padding-top: 15px;
+    text-align: center;
+}
+
+.arrastar {
+    overflow: scroll;
+    height: 420px;
+    scrollbar-width: none;
+}
+.imagesFuncionario {
+    width: 60px;
+}
+/*------------------------------------------------------------------*/
+/*Manutenção*/
+.squarewhite {
+    background-color: white;
+    padding: 20px;
+    border-radius: 20px;
+    height: 650px;
+    overflow: scroll;
+    scrollbar-width: none;
+}
+
+.trems {
+    display: flex;
+}
+
+.selection {
+    background-color: rgb(226, 226, 226);
+    padding: 20px;
+    border-radius: 20px;
+    border: solid 1px;
+    border-color: rgb(201, 201, 201);
+}
+
+.trem {
+    border-radius: 20%;
+    width: 40%;
+    height: 40%;
+}
+
+.treminfo {
+    justify-content: center;
+    text-align: center;
+    margin: 10px;
+}
+
+.pontos {
+    display: flex;
+    justify-content: end;
+}
+
+.ponto {
+    margin: 2px;
+    background-color: grey;
+    border-radius: 100%;
+    padding: 6px;
+}
+
+.status {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: space-around;
+}
+
+.pontoverde {
+    margin: 2px;
+    background-color: rgb(0, 199, 0);
+    border-radius: 100%;
+    padding: 10px;
+}
+
+.pontoamarelo {
+    margin: 2px;
+    background-color: yellow;
+    border-radius: 100%;
+    padding: 10px;
+}
+
+.pontovermelho {
+    margin: 2px;
+    background-color: rgb(255, 14, 14);
+    border-radius: 100%;
+    padding: 10px;
+}
+
+.reporter {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: large;
+    background-color: rgb(182, 182, 182);
+    border-radius: 20px;
+    border: none;
+    width: 300px;
+    padding: 15px;
+    font-weight: bold;
+}
+/*------------------------------------------------------------------*/
+/*Menu*/
 #menu_linha {
     display: flex;
     justify-content: space-between;
@@ -78,68 +278,38 @@ body {
     margin: 1px;
 }
 
-.texto-carga{
-text-align: center;
-text-decoration: underline;
-font-size: xx-large;
-}
-
-.table, th, td{
-    text-align: center;
-    margin: 10px;
-    font-size: x-large;
-    border-collapse: collapse;
-    border: 1px solid black;
-}
-
-.branco-carga{
-    text-align: center;
-    background-color: white;
-    border-radius: 30px;
-    padding: 15px;
-}
-
-.branco-funcionario{
-    text-align: center;
-    background-color: white;
-    border-radius: 30px;
-    padding: 15px;
-    margin: 15px;
-}
-
-.Rotas {
+/*------------------------------------------------------------------*/
+/*Relatorio*/
+.branco {
     background-color: white;
     border-radius: 20px;
-    margin-left: 20px;
+    border: 0px;
+    padding: 15px;
+
 }
 
-.RotasImg {
-    width: 150px;
+.branco3 {
+    background-color: white;
+    border-radius: 20px;
+    border: 0px;
+    padding: 15px;
+    margin-left: 85px;
 }
 
-.header {
-    color: white;
-    justify-content: space-between;
-    display: flex;
-    padding: 10px;
+.branco2 {
+    background-color: white;
+    border-radius: 20px;
+    border: 0px;
+    padding: 15px;
+    margin-right: 85px;
 }
+/*------------------------------------------------------------------*/
+/*Rotas*/
 
-.logoMenu {
-    width: 79px;
-}
+/*------------------------------------------------------------------*/
 
 .mapa {
     width: 370px;
-}
-
-.legenda {
-    margin-top: 20px;
-}
-
-.legenda div {
-    display: flex;
-    align-items: center;
-    margin-bottom: 8px;
 }
 
 .cor {
@@ -154,7 +324,7 @@ font-size: xx-large;
     border-radius: 20px;
     border: 0px;
     padding: 15px;
- 
+
 }
 
 .branco3 {
@@ -162,7 +332,7 @@ font-size: xx-large;
     border-radius: 20px;
     border: 0px;
     padding: 15px;
- margin-left: 85px;
+    margin-left: 85px;
 }
 
 .branco2 {
@@ -173,48 +343,12 @@ font-size: xx-large;
     margin-right: 85px;
 }
 
-.branco_cadastro_1{
-    background-color: white;
-    border-radius: 30px;
-    border: 0px;
-    padding: 15px;
-    margin: 15px;
-}
-
-.branco_cadastro_2{
-    background-color: white;
-    border-radius: 30px;
-    border: 0px;
-    padding: 30px;
-    padding-top: 50px;
-    margin: 15px;
-}
-
-.img_cadastro {
-    width: 200px;
-    padding-left: 9px;
-}
-
-.cinza{
+.cinza {
     background-color: rgb(223, 219, 219);
     border-radius: 30px;
     border: 0px;
     padding: 5px;
     text-align: center;
-}
-
-.cinza_funcionario{
-    background-color: rgb(223, 219, 219);
-    border-radius: 30px;
-    border: 0px;
-    padding: 10px;
-    padding-top: 15px;
-    text-align: center;
-}
-
-.text_left{
-    text-align: left;
-    margin: 5px;
 }
 
 .Velocimetro {
@@ -226,122 +360,4 @@ font-size: xx-large;
     display: flex;
     padding: 5px;
     justify-content: space-between;
-}
-
-#minicinza {
-    border-radius: 50px;
-    background-color: rgb(223, 219, 219);
-    font-size: 15px;
-}
-
-#minicinzaalign {
-    text-align: center;
-    margin: 15px;
-}
-
-#logofuncionario {
-    text-align: center;
-}
-
-#logofuncionario {
-    text-align: center;
-}
-
-.brancoAlertas {
-    background-color: white;
-    border-radius: 50px;
-    border: 0px;
-    padding: 15px;
-    text-align: center;
-    height: 650px;
-}
-
-.squarewhite{
-    background-color: white;
-    padding: 20px;
-    border-radius: 20px;
-    height: 650px;
-    overflow: scroll;
-    scrollbar-width: none;
-}
-
-.trems{
-    display: flex;
-}
-
-.selection{
-    background-color: rgb(226, 226, 226);
-    padding: 20px;
-    border-radius: 20px;
-    border: solid 1px;
-    border-color: rgb(201, 201, 201);
-}
-
-.trem{
-    border-radius: 20%;
-    width:40%;
-    height:40%;
-}
-
-.treminfo{
-    justify-content: center;
-    text-align: center;
-    margin: 10px;
-}
-
-.pontos{
-    display: flex;
-    justify-content: end;
-}
-
-.ponto{
-    margin: 2px;
-    background-color: grey;
-    border-radius: 100%;
-    padding: 6px;
-}
-
-.arrastar{
-    overflow: scroll;
-    height: 420px;
-    scrollbar-width: none;
-}
-
-.status{
-    display: flex;
-    align-items: center;
-    text-align: center;
-    justify-content: space-around;
-}
-
-.pontoverde{
-    margin: 2px;
-    background-color: rgb(0, 199, 0);
-    border-radius: 100%;
-    padding: 10px;
-}
-
-.pontoamarelo{
-    margin: 2px;
-    background-color: yellow;
-    border-radius: 100%;
-    padding: 10px;
-}
-
-.pontovermelho{
-    margin: 2px;
-    background-color: rgb(255, 14, 14);
-    border-radius: 100%;
-    padding: 10px;
-}
-
-.reporter{
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-size: large;
-    background-color: rgb(182, 182, 182);
-    border-radius: 20px;
-    border: none;
-    width: 300px;
-    padding: 15px;
-    font-weight: bold;
 }
