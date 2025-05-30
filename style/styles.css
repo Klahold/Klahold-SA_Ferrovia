@@ -306,3 +306,42 @@ font-size: xx-large;
     height: 420px;
     scrollbar-width: none;
 }
+
+.status{
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: space-around;
+}
+
+.pontoverde{
+    margin: 2px;
+    background-color: rgb(0, 199, 0);
+    border-radius: 100%;
+    padding: 10px;
+}
+
+.pontoamarelo{
+    margin: 2px;
+    background-color: yellow;
+    border-radius: 100%;
+    padding: 10px;
+}
+
+.pontovermelho{
+    margin: 2px;
+    background-color: rgb(255, 14, 14);
+    border-radius: 100%;
+    padding: 10px;
+}
+
+.reporter{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: large;
+    background-color: rgb(182, 182, 182);
+    border-radius: 20px;
+    border: none;
+    width: 300px;
+    padding: 15px;
+    font-weight: bold;
+}
