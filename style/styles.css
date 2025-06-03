@@ -3,6 +3,7 @@ body {
     background-image: url('..//assets/icons/Blue\ background.jpg');
     background-size: 600px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
 }
 
 .logoImg {
@@ -299,7 +300,6 @@ td {
     border-radius: 20px;
     border: 0px;
     padding: 15px;
-
 }
 
 .branco3 {
@@ -320,6 +320,25 @@ td {
 /*------------------------------------------------------------------*/
 /*Rotas*/
 .mapa {
-    width: 370px;
+    width: 375px;
+}
+
+.brancoRotas{
+    background-color: white;
+    border-radius: 20px;
+    border: 0px;
+    padding: 15px;
+    text-align: center;
+}
+
+.cinzaRotas{
+    background-color: rgb(223, 219, 219);
+    border-radius: 30px;
+    border: 0px;
+    padding: 5px;
+    text-align: center;
+    height: 62px;
+    width: 110px;
+    margin: 0 auto;
 }
 /*------------------------------------------------------------------*/
