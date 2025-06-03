@@ -43,6 +43,7 @@ body {
     padding: 5px;
     text-align: center;
 }
+
 /*------------------------------------------------------------------*/
 /**/
 /*Alertas Avisos*/
@@ -101,34 +102,37 @@ body {
 
 /*------------------------------------------------------------------*/
 /*Cargas*/
-.texto-carga {
-    text-align: center;
-    text-decoration: underline;
-    font-size: xx-large;
-}
-
-.table,
-th,
-td {
-    text-align: center;
-    margin: 10px;
-    font-size: x-large;
-    border-collapse: collapse;
-    border: 1px solid black;
-}
-
-.branco-carga {
-    text-align: center;
-    background-color: white;
+.cinzaCargas {
+    background-color: rgb(223, 219, 219);
     border-radius: 30px;
-    padding: 15px;
+    border: 0px;
+    padding: 2px;
+    height: 100px;
+    width: 340px;
 }
+
+.arrumadores{
+    margin: 5px;
+}
+
+.texto {
+    margin: 0px;
+}
+
+.arrastarCargas {
+    height: 593px;
+    overflow: scroll;
+    scrollbar-width: none;
+    border-radius: 25px;
+}
+
 /*------------------------------------------------------------------*/
 /*Dashboard*/
 .Velocimetro {
     width: 300px;
     padding-left: 9px;
 }
+
 /*------------------------------------------------------------------*/
 /*Esqueci Login*/
 .loGin {
@@ -156,6 +160,7 @@ td {
     background-color: initial;
     border: 0px;
 }
+
 /*------------------------------------------------------------------*/
 /*Funcionario*/
 .branco-funcionario {
@@ -180,15 +185,17 @@ td {
     height: 420px;
     scrollbar-width: none;
 }
+
 .imagesFuncionario {
     width: 60px;
 }
+
 /*------------------------------------------------------------------*/
 /*Manutenção*/
 .squarewhite {
     background-color: white;
     padding: 20px;
-    border-radius: 20px;
+    border-radius: 50px;
     height: 650px;
     overflow: scroll;
     scrollbar-width: none;
@@ -268,6 +275,7 @@ td {
     padding: 15px;
     font-weight: bold;
 }
+
 /*------------------------------------------------------------------*/
 /*Menu*/
 #menu_linha {
@@ -317,13 +325,14 @@ td {
     padding: 15px;
     margin-right: 85px;
 }
+
 /*------------------------------------------------------------------*/
 /*Rotas*/
 .mapa {
     width: 375px;
 }
 
-.brancoRotas{
+.brancoRotas {
     background-color: white;
     border-radius: 20px;
     border: 0px;
@@ -331,14 +340,15 @@ td {
     text-align: center;
 }
 
-.cinzaRotas{
+.cinzaRotas {
     background-color: rgb(223, 219, 219);
     border-radius: 30px;
     border: 0px;
     padding: 5px;
     text-align: center;
     height: 62px;
-    width: 110px;
+    width: 130px;
     margin: 0 auto;
 }
+
 /*------------------------------------------------------------------*/
