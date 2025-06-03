@@ -18,6 +18,12 @@ body {
     display: flex;
 }
 
+.espaco {
+    display: flex;
+    padding: 5px;
+    justify-content: space-between;
+}
+
 .header {
     color: white;
     justify-content: space-between;
@@ -27,6 +33,14 @@ body {
 
 .logoMenu {
     width: 79px;
+}
+
+.cinza {
+    background-color: rgb(223, 219, 219);
+    border-radius: 30px;
+    border: 0px;
+    padding: 5px;
+    text-align: center;
 }
 /*------------------------------------------------------------------*/
 /**/
@@ -305,59 +319,7 @@ td {
 }
 /*------------------------------------------------------------------*/
 /*Rotas*/
-
-/*------------------------------------------------------------------*/
-
 .mapa {
     width: 370px;
 }
-
-.cor {
-    width: 20px;
-    height: 20px;
-    margin-right: 10px;
-    border-radius: 4px;
-}
-
-.branco {
-    background-color: white;
-    border-radius: 20px;
-    border: 0px;
-    padding: 15px;
-
-}
-
-.branco3 {
-    background-color: white;
-    border-radius: 20px;
-    border: 0px;
-    padding: 15px;
-    margin-left: 85px;
-}
-
-.branco2 {
-    background-color: white;
-    border-radius: 20px;
-    border: 0px;
-    padding: 15px;
-    margin-right: 85px;
-}
-
-.cinza {
-    background-color: rgb(223, 219, 219);
-    border-radius: 30px;
-    border: 0px;
-    padding: 5px;
-    text-align: center;
-}
-
-.Velocimetro {
-    width: 300px;
-    padding-left: 9px;
-}
-
-.flex {
-    display: flex;
-    padding: 5px;
-    justify-content: space-between;
-}
+/*------------------------------------------------------------------*/
