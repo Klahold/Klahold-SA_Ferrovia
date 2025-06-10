@@ -11,6 +11,11 @@ a{
     color: black;
 }
 
+.logoInicial {
+    display: flex;
+    justify-content: center;
+}
+
 .logoImg {
     width: 200px;
 }
@@ -48,6 +53,11 @@ a{
     padding: 5px;
     text-align: center;
 }
+
+/*------------------------------------------------------------------*/
+/*Loading*/
+
+
 
 /*------------------------------------------------------------------*/
 /**/
