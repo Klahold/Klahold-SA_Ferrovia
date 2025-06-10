@@ -6,6 +6,11 @@ body {
 
 }
 
+a{
+    text-decoration: none;
+    color: black;
+}
+
 .logoImg {
     width: 200px;
 }
