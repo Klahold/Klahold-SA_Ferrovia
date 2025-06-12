@@ -261,9 +261,10 @@ a{
     margin: 10px;
 }
 
-.pontos {
+.pontosmanutencão {
     display: flex;
     justify-content: end;
+    
 }
 
 .ponto {
