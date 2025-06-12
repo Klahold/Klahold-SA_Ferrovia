@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <script src="script.js"></script>
+    <script src="../scripts/Login_Script.js"></script>
     <link rel="stylesheet" href="../style/styles.css">
     <link rel="icon" href="../assets/icons/Logo.png" type="image/png">
     <title>login</title>
@@ -18,16 +18,18 @@
     </header>
 
     <div class="LoGin">
+        <form id="Formularios">
         <div class="campo">
             <input class="radious" type="text" name="Codigo" id="Codigo_maquinista" placeholder="Email ou Codigo"
                 required>
         </div>
-
+        <div class="erro" id="erroEmail"></div>
         <br>
 
         <div class="campo">
             <input class="radious" type="password" name="Senha" id="senha_maquinista" placeholder="Senha" required>
         </div>
+        <div class="erro" id="erroSenha"></div>
 
         <br>
 
@@ -36,8 +38,9 @@
         <br>
 
         <div class="entrar">
-            <button class="entrar" type="button" onclick="validarFormulario()">Entrar</button>
+            <button type="submit">Entrar</button>
         </div>
+        </form>
 
 </body>
 

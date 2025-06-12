@@ -176,6 +176,7 @@ a{
 }
 
 .radious {
+    border-radius:50px ;
     border: 0px;
     width: 240px;
 }
@@ -190,6 +191,10 @@ a{
     color: white;
     background-color: initial;
     border: 0px;
+}
+
+.erro{
+    color: red;
 }
 
 /*------------------------------------------------------------------*/
