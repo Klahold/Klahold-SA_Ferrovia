@@ -57,7 +57,23 @@ a{
 /*------------------------------------------------------------------*/
 /*Loading*/
 
+.loadingTela{
+    display: flex;
+    justify-content: center;
+}
 
+#rotacao{
+    width:200px;
+    animation:girar 5s linear infinite
+}
+@keyframes girar {
+  from {
+    transform: rotate(0deg); 
+  }
+  to {
+    transform: rotate(360deg); 
+  }
+}
 
 /*------------------------------------------------------------------*/
 /**/
