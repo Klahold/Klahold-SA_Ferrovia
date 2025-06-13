@@ -10,16 +10,17 @@ document.addEventListener("DOMContentLoaded", function(){
 
     const emailcodigo = document.getElementById("Codigo_maquinista").value.trim();
     const senha = document.getElementById("senha_maquinista").value.trim();
-    
+    let admin = false;
+
     if (senha.length < 6){
         document.getElementById("erroSenha").textContent = "Senha";
         valido = false;
     }
     function validadorEmailCodigo(){
 
-        let validocodigo = true
-        let validoemail = true
-        let validoconjunto = true
+        let validocodigo = true;
+        let validoemail = true;
+        let validoconjunto = true;
 
         const codigoRegex = /^[a-zA-Z0-9]{6}$/;
 
@@ -39,14 +40,22 @@ document.addEventListener("DOMContentLoaded", function(){
             document.getElementById("erroEmail").textContent = "E-mail ou codigo Inválido";
             valido = false;
         }
+        if(emailcodigo === "124354"){
+            admin=true;
+        }
+    
     }
 
     validadorEmailCodigo();
 
-
+    
     if(valido){
-        window.location.href=("Menu.html");
-    } 
+        window.location.href=("menu.html");
+    }
+    
+     if(admin){
+        window.location.href=("../private/menuadm.html");
+    }
 
     });
 });

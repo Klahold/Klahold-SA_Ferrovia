@@ -321,6 +321,12 @@ a{
     margin: 40px;
 }
 
+.menu_centro{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .quadrado-branco {
     background-color: white;
     border-radius: 20px;

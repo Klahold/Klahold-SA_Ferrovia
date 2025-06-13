@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Cadastro</title>
+    <link rel="stylesheet" href="../style/styles.css">
+    <link rel="icon" href="../assets/icons/Logo.png" type="image/png">
+    <script src="script.js"></script>
+
+</head>
+
+<body>
+    <header class="header">
+        <h1>Cadastrar</h1>
+        <img class="logoMenu" src="../assets/icons/funcionario.png" alt="Rotas">
+    </header>
+
+    <div class="branco_cadastro_1">
+        <div id="logofuncionario">
+            <img class="img_cadastro" src="..//assets/images/fotoCadastro.png" alt="">
+
+        </div>
+
+        <br>
+
+        <form id="minicinzaalign" action="/upload" method="POST" enctype="multipart/form-data">
+
+            <input type="file" id="profilePic" name="profilePic" accept="image/*" style="display: none;"
+                onchange="this.form.submit()">
+
+            <button id="minicinza" type="button" onclick="document.getElementById('profilePic').click()">+ Foto</button>
+
+        </form>
+
+        <br>
+        <br>
+        <br>
+
+        <div class="cinza">
+            <p class="text_left">Nome Completo: Luis Everaldo Lutero</p>
+
+
+        </div>
+
+        <br>
+
+        <div class="cinza">
+            <p class="text_left">Data De Nascimento: 21/02/1998</p>
+
+        </div>
+
+        <br>
+
+        <div class="cinza">
+            <p class="text_left">Naturalidade: Joinville</p>
+
+        </div>
+
+        <br>
+
+        <div class="cinza">
+            <p class="text_left">Nacionalidade: Brasil</p>
+
+        </div>
+
+        <br>
+
+
+
+    </div>
+
+</body>
+
+</html>
