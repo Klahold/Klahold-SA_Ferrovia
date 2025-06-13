@@ -54,6 +54,22 @@ a{
     text-align: center;
 }
 
+.brancoGeral{
+    background-color: white;
+    border-radius: 30px;
+    border: 0px;
+    padding: 15px;
+    margin: 15px;
+    height: 630px ;
+}
+
+.arrastarGeral{
+    overflow: scroll;
+    scrollbar-width: none;
+    height: 629px;
+    border-radius: 30px;
+}
+
 /*------------------------------------------------------------------*/
 /*Loading*/
 
@@ -66,6 +82,7 @@ a{
     width:200px;
     animation:girar 5s linear infinite
 }
+
 @keyframes girar {
   from {
     transform: rotate(0deg); 
@@ -76,7 +93,6 @@ a{
 }
 
 /*------------------------------------------------------------------*/
-/**/
 /*Alertas Avisos*/
 .brancoAlertas {
     background-color: white;
@@ -89,48 +105,41 @@ a{
 
 /*------------------------------------------------------------------*/
 /*Cadastro*/
-.branco_cadastro_1 {
-    background-color: white;
-    border-radius: 30px;
-    border: 0px;
-    padding: 15px;
+
+.minicinza {
+    border-radius: 50px;
+    background-color: rgb(223, 219, 219);
+    font-size: 15px;
+}
+
+.minicinzaalign {
+    text-align: center;
     margin: 15px;
 }
 
-.branco_cadastro_2 {
-    background-color: white;
+.logofuncionario {
+    text-align: center;
+}
+
+.input{
+    border: 0px;
+    border-radius: 30px;
+    background-color: rgb(223, 219, 219);
+    width: 300px;
+}
+
+.cinzaCadastro {
+    background-color: rgb(223, 219, 219);
     border-radius: 30px;
     border: 0px;
-    padding: 30px;
-    padding-top: 50px;
-    margin: 15px;
+    padding: 5px;
+    text-align: left;
 }
 
 .img_cadastro {
     width: 200px;
     padding-left: 9px;
 }
-
-#minicinza {
-    border-radius: 50px;
-    background-color: rgb(223, 219, 219);
-    font-size: 15px;
-}
-
-#minicinzaalign {
-    text-align: center;
-    margin: 15px;
-}
-
-#logofuncionario {
-    text-align: center;
-}
-
-.text_left {
-    text-align: left;
-    margin: 5px;
-}
-
 /*------------------------------------------------------------------*/
 /*Cargas*/
 .cinzaCargas {
