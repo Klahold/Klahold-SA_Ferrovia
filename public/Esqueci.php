@@ -1,0 +1,43 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script src="script.js"></script>
+
+    <link rel="stylesheet" href="../style/styles.css">
+    <link rel="icon" href="../assets/icons/Logo.png" type="image/png">
+
+    <title>Esqueci minha senha</title>
+</head>
+
+<body>
+    <header class="logo">
+        <img class="logoImg" src="../assets/icons/Logo.png" alt="Logo">
+        <H2><u> Esqueci minha senha </u></H2>
+    </header>
+
+    <div class="LoGin">
+        <div class="campo">
+            <input class="radious" type="text" name="Codigo" id="Codigo_maquinista" placeholder="Email" required>
+        </div>
+
+        <br>
+
+        <div class="campo">
+            <input class="radious" type="password" name="Senha" id="senha_maquinista" placeholder="Nova Senha" required>
+        </div>
+
+        <br>
+
+
+    </div>
+    <div class="entrar">
+        <br>
+        <button class="entrar" type="button" onclick="validarFormulario()">Entrar</button>
+    </div>
+
+</body>
+
+</html>
