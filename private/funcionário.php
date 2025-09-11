@@ -8,7 +8,7 @@
   <title>Funcionários</title>
 
   <link rel="stylesheet" href="../style/styles.css">
-  <link rel="icon" href="../assets/icons/Logo.png" type="image/png">
+  <link rel="icon" href="../assets/icons/logo.png" type="image/png">
 </head>
 
 <body>
@@ -20,7 +20,7 @@
   <div class="branco-funcionario">
     <div class="flex">
       <div class="cinza_funcionario">🔍 Buscar Funcionários</div>
-      <a href="cadastro_1.html">
+      <a href="cadastro_1.php">
         <button id="minicinza" type="button">Cadastrar</button>
       </a>
 
@@ -33,7 +33,7 @@
 
       <div class="cinza">
         <div class="flex">
-          <img class="imagesFuncionario" src="../assets/images/Melissa Gusmão.png" alt="Melissa">
+          <img class="imagesFuncionario" src="../assets/images/melissaGusmão.png" alt="Melissa">
 
           <p>Melissa Gusmão</p>
           <p>MG743</p>
@@ -44,7 +44,7 @@
 
       <div class="cinza">
         <div class="flex">
-          <img class="imagesFuncionario" src="../assets/images/Nádia Cíntia.png" alt="Nadia">
+          <img class="imagesFuncionario" src="../assets/images/nádiaCíntia.png" alt="Nadia">
 
           <p>Nádia Cíntia</p>
           <p>NC372</p>
@@ -55,7 +55,7 @@
 
       <div class="cinza">
         <div class="flex">
-          <img class="imagesFuncionario" src="../assets/images/Luciano Everaldo.png" alt="Luciano">
+          <img class="imagesFuncionario" src="../assets/images/lucianoEveraldo.png" alt="Luciano">
 
           <p>Luciano Everaldo</p>
           <p>LE612</p>
@@ -66,7 +66,7 @@
 
       <div class="cinza">
         <div class="flex">
-          <img class="imagesFuncionario" src="../assets/images/Irene Paula.png" alt="Irene">
+          <img class="imagesFuncionario" src="../assets/images/irenePaula.png" alt="Irene">
 
           <p>Irene Paula</p>
           <p>IP532</p>
@@ -77,7 +77,7 @@
 
       <div class="cinza">
         <div class="flex">
-          <img class="imagesFuncionario" src="../assets/images/Melissa Gusmão.png" alt="Melissa">
+          <img class="imagesFuncionario" src="../assets/images/melissaGusmão.png" alt="Melissa">
 
           <p>Melissa Gusmão</p>
           <p>MG743</p>
@@ -88,7 +88,7 @@
 
       <div class="cinza">
         <div class="flex">
-          <img class="imagesFuncionario" src="../assets/images/Nádia Cíntia.png" alt="Nadia">
+          <img class="imagesFuncionario" src="../assets/images/nádiaCíntia.png" alt="Nadia">
 
           <p>Nádia Cíntia</p>
           <p>NC372</p>
@@ -99,7 +99,7 @@
 
       <div class="cinza">
         <div class="flex">
-          <img class="imagesFuncionario" src="../assets/images/Luciano Everaldo.png" alt="Luciano">
+          <img class="imagesFuncionario" src="../assets/images/lucianoEveraldo.png" alt="Luciano">
 
           <p>Luciano Everaldo</p>
           <p>LE612</p>
@@ -110,7 +110,7 @@
 
       <div class="cinza">
         <div class="flex">
-          <img class="imagesFuncionario" src="../assets/images/Irene Paula.png" alt="Irene">
+          <img class="imagesFuncionario" src="../assets/images/irenePaula.png" alt="Irene">
 
           <p>Irene Paula</p>
           <p>IP532</p>
