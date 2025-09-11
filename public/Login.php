@@ -1,3 +1,34 @@
+<?php
+
+include '../config/db.php';
+
+session_start();
+
+$msg = "";
+if ($_SERVER["REQUEST_METHOD"] === "POST") {
+    $email = $_POST["email"] ?? "";
+    $pass = $_POST["password"] ?? "";
+
+    $stmt = $conn->prepare("SELECT id, email, senha FROM usuarios WHERE email=? AND senha=?");
+    $stmt->bind_param("ss", $email, $pass);
+    $stmt->execute();
+    $result = $stmt->get_result();
+    $dados = $result->fetch_assoc();
+    $stmt->close();
+
+    if ($dados) {
+        $_SESSION["user_id"] = $dados["id"];
+        $_SESSION["username"] = $dados["nome"];
+        header("Location: login.php");
+        exit;
+    } else {
+        $msg = "Usuário ou senha incorretos!";
+    }
+}
+
+
+?>
+
 <html lang="en">
 
 <head>
@@ -17,30 +48,26 @@
         <H2><u> Login </u></H2>
     </header>
 
+    <?php if (!empty($_SESSION["user_id"])): 
+        
+        header("Location: menu.php");
+
+        ?>
+
+    <?php else: ?>
+
     <div class="LoGin">
-        <form id="Formularios">
-        <div class="campo">
-            <input class="radious" type="text" name="Codigo" id="Codigo_maquinista" placeholder="Email ou Codigo"
-                required>
-        </div>
-        <div class="erro" id="erroEmail"></div>
-        <br>
-
-        <div class="campo">
-            <input class="radious" type="password" name="Senha" id="senha_maquinista" placeholder="Senha" required>
-        </div>
-        <div class="erro" id="erroSenha"></div>
-
-        <br>
-
-        <button class="esqueci" type="button" onclick=""> <u> Esqueci minha senha </u></button>
-
-        <br>
-
-        <div class="entrar">
-            <button type="submit">Entrar</button>
-        </div>
+        <form id="Formularios" method="POST">
+            <div class="campo"><input class="radious" type="text" name="email" id="Codigo_maquinista" placeholder="Email ou Codigo"required></div>
+            <br>
+            <div class="campo"> <input class="radious" type="password" name="password" id="senha_maquinista" placeholder="Senha" required> </div>
+            <br>
+            <button class="esqueci" type="button" onclick=""> <u> Esqueci minha senha </u></button>
+            <br>
+            <div class="entrar"><button type="submit">Entrar</button></div>
         </form>
+
+    <?php endif; ?>
 
 </body>
 
