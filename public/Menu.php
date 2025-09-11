@@ -1,0 +1,81 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script src="../scripts/script.js"></script>
+
+    <link rel="stylesheet" href="../style/styles.css">
+    <link rel="icon" href="../assets/icons/Logo.png" type="image/png">
+
+    <title>Menu</title>
+
+</head>
+
+<body>
+
+    <header class="logo">
+        <img class="logoImg" src="../assets/icons/Logo.png" alt="Logo">
+    </header>
+
+    <div id="menu_linha">
+
+        <a href="rotas.html">
+            <div class="quadrado-branco">
+                <img class="Tamanho_img" src="../assets/icons/Rotas.png" alt="Botão de rotas">
+                <strong>
+                    <p class="texto">Rotas</p>
+                </strong>
+            </div>
+        </a>
+
+        <a href="avisos.html">
+            <div class="quadrado-branco">
+                <img class="Tamanho_img" src="../assets/icons/Avisos.png" alt="Botão de avisos">
+                <strong>
+                    <p class="texto">Avisos</p>
+                </strong>
+            </div>
+        </a>
+
+    </div>
+
+    <div id="menu_linha">
+
+        <a href="manutenção_1.html">
+            <div class="quadrado-branco">
+                <img class="Tamanho_img" src="../assets/icons/manutenção.png" alt="Botão de manutencão">
+                <strong>
+                    <p class="texto">Manutencão</p>
+                </strong>
+            </div>
+        </a>
+
+        <a href="dashbord.html">
+            <div class="quadrado-branco">
+                <img class="Tamanho_img" src="..//assets/icons/dashbord.png" alt="Botão de dashboard">
+                <strong>
+                    <p class="texto">Dashboard</p>
+                </strong>
+            </div>
+        </a>
+
+    </div>
+
+    <div class="menu_centro">
+        <a href="relatórios.html">
+            <div class="quadrado-branco">
+                <img class="Tamanho_img" src="..//assets/icons/relatorio.png" alt="Botão de relatório">
+                <strong>
+                    <p class="texto">Relatório</p>
+                </strong>
+            </div>
+        </a>
+
+    </div>
+
+
+</body>
+
+</html>

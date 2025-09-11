@@ -1,0 +1,47 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script src="../scripts/login_Script.js"></script>
+    <link rel="stylesheet" href="../style/styles.css">
+    <link rel="icon" href="../assets/icons/Logo.png" type="image/png">
+    <title>login</title>
+
+</head>
+
+<body>
+    <header class="logo">
+        <img class="logoImg" src="../assets/icons/Logo.png" alt="Logo">
+        <H2><u> Login </u></H2>
+    </header>
+
+    <div class="LoGin">
+        <form id="Formularios">
+        <div class="campo">
+            <input class="radious" type="text" name="Codigo" id="Codigo_maquinista" placeholder="Email ou Codigo"
+                required>
+        </div>
+        <div class="erro" id="erroEmail"></div>
+        <br>
+
+        <div class="campo">
+            <input class="radious" type="password" name="Senha" id="senha_maquinista" placeholder="Senha" required>
+        </div>
+        <div class="erro" id="erroSenha"></div>
+
+        <br>
+
+        <button class="esqueci" type="button" onclick=""> <u> Esqueci minha senha </u></button>
+
+        <br>
+
+        <div class="entrar">
+            <button type="submit">Entrar</button>
+        </div>
+        </form>
+
+</body>
+
+</html>
