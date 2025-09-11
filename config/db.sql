@@ -4,21 +4,22 @@ USE hermes_enterprise;
 
 
 CREATE TABLE menu(
-	id int primary key not null
+	id int auto increment primary key
 );
 
 CREATE TABLE usuarios(
-	id int primary key not null,
-    codigo char(6) not null,
-    CPF char(11) not null,
+	id int auto increment primary key,
+    codigo char(6) not null unique,
+    CPF char(11) not null unique,
     nome varchar(45) not null,
     tipo varchar(45) not null,
-    senha varchar(45) not null
+    senha varchar(45) not null,
+    email varchar(45) not null unique
 );
 
     
 CREATE TABLE trens(
-	id int primary key not null,
+	id int auto increment primary key,
     velocidade varchar(45) not null,
     localizacao varchar(45),
     direcao varchar(45),
@@ -26,24 +27,24 @@ CREATE TABLE trens(
     );
     
 CREATE TABLE rotas(
-	id int primary key not null,
+	id int auto increment primary key,
     distancia int not null
     );
     
 CREATE TABLE alerta(
-	id int primary key not null,
+	id int auto increment primary key,
     destinatario varchar(45) not null,
     tipos varchar(45)
 	);
     
 CREATE TABLE relatorio(
-	id int primary key not null,
+	id int auto increment primary key,
     tipo varchar(45) not null,
     destinatario varchar(45) not null
     );
     
 CREATE TABLE manutencao(
-	id int primary key not null,
+	id int auto increment primary key,
     destinatario varchar(45) not null,
     local varchar(45) not null
     );
