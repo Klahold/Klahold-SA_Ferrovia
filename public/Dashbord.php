@@ -1,3 +1,7 @@
+<?php
+    include '../config/db.php'
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -19,31 +23,38 @@
 
     <div class="branco">
         <div class="cinza">
-            <img class="Velocimetro" src="..//assets/icons/velocimetro.png" alt="">
-            <h2><u>Velocidade:</u></h2>
-            <h3>159 KM\H:</h3>
-        </div>
-        <br>
-        <div class="cinza">
-            <h2><u>Horario partida\chegada:</u></h2>
-            <h3>9:17 AM \ 10:12 AM</h3>
+        <?php
+        $sql = "SELECT * FROM trens";
+        $result = $conn->query($sql);
 
-        </div>
-        <br>
-        <div class="espaco">
+        if ($result->num_rows > 0){
+            
+            echo "<table>
+                        <thead>
+                                <tr>
+                                    <th>velocidade</th>
+                                    <th>horarios</th>
+                                    <th>direcao</th>
+                                    <th>localizacao</th>
+                                <tr>
+                        <thead>
+                <tbody>";
+        while ($row = $result->fetch_assoc()){
+            echo "<tr>
+                    <td>{$row['velocidade']}</td>
+                    <td>{$row['horarios']}</td>
+                    <td>{$row['direcao']}</td>
+                    <td>{$row['localizacao']}</td>
+                    <tr>";
+        }
+        echo"<t/body></table>";
+        }else{
+            echo "<p>Nenhum trem em movimento.</p>";
+        }
 
-            <div class="cinza">
-                <h2><u>Distancia:</u></h2>
-                <h3>5.500M</h3>
-            </div>
-
-            <div class="cinza">
-                <h2><u>Combustivel:</u></h2>
-                <h3>19.000 L</h3>
-            </div>
-        </div>
-
-
+        
+        ?>
+    </div>
     </div>
 
 </body>
