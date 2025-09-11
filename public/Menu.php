@@ -1,3 +1,15 @@
+<?php
+
+include '../config/db.php';
+
+if (isset($_GET['logout'])) {
+    session_destroy();
+    header("Location: login.php");
+    exit;
+}
+
+?>
+
 <html lang="en">
 
 <head>
@@ -69,6 +81,18 @@
                 <img class="Tamanho_img" src="..//assets/icons/relatorio.png" alt="Botão de relatório">
                 <strong>
                     <p class="texto">Relatório</p>
+                </strong>
+            </div>
+        </a>
+
+    </div>
+
+
+     <div class="menu_centro">
+        <a href="?logout=1">
+            <div class="quadrado-branco">
+                <strong>
+                    <p>Sair</p>
                 </strong>
             </div>
         </a>
