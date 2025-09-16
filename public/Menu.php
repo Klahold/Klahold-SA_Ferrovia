@@ -2,12 +2,6 @@
 
 include '../config/db.php';
 
-if (isset($_GET['logout'])) {
-    session_destroy();
-    header("Location: login.php");
-    exit;
-}
-
 ?>
 
 <html lang="en">
@@ -89,7 +83,8 @@ if (isset($_GET['logout'])) {
 
 
      <div class="menu_centro">
-        <a href="?logout=1">
+        
+     <a href="login.php?logout=2">
             <div class="quadrado-branco">
                 <strong>
                     <p>Sair</p>
