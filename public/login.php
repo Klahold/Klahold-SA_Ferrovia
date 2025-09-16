@@ -4,12 +4,27 @@ include '../config/db.php';
 
 session_start();
 
+if (isset($_GET['logout'])) {
+    session_destroy();
+    header("Location: login.php");
+    exit;
+}
+
 $msg = "";
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
-    $email = $_POST["email"] ?? "";
+    $email = $_POST["emailoucodigo"] ?? "";
     $pass = $_POST["password"] ?? "";
 
-    $stmt = $conn->prepare("SELECT id, email, senha FROM usuarios WHERE email=? AND senha=?");
+    $pattern = "/\W/";
+
+    if((preg_match_all($pattern,$email))>= 1){
+        $stmt = $conn->prepare("SELECT id, email, senha FROM usuarios WHERE email = ?  AND senha=?");
+
+    }else{
+        $stmt = $conn->prepare("SELECT id, email, senha FROM usuarios WHERE codigo = ? AND senha=?");
+
+    }
+
     $stmt->bind_param("ss", $email, $pass);
     $stmt->execute();
     $result = $stmt->get_result();
@@ -37,14 +52,14 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
     <script src="../scripts/login_Script.js"></script>
     <link rel="stylesheet" href="../style/styles.css">
-    <link rel="icon" href="../assets/icons/logo.png" type="image/png">
+    <link rel="icon" href="../assets/icons/Logo.png" type="image/png">
     <title>login</title>
 
 </head>
 
 <body>
     <header class="logo">
-        <img class="logoImg" src="../assets/icons/logo.png" alt="Logo">
+        <img class="logoImg" src="../assets/icons/Logo.png" alt="Logo">
         <H2><u> Login </u></H2>
     </header>
 
@@ -58,7 +73,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
     <div class="LoGin">
         <form id="Formularios" method="POST">
-            <div class="campo"><input class="radious" type="text" name="email" id="Codigo_maquinista" placeholder="Email ou Codigo"required></div>
+            <div class="campo"><input class="radious" type="text" name="emailoucodigo" id="Codigo_maquinista" placeholder="Email ou Codigo"required></div>
             <br>
             <div class="campo"> <input class="radious" type="password" name="password" id="senha_maquinista" placeholder="Senha" required> </div>
             <br>
