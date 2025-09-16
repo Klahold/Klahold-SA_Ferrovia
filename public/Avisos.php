@@ -7,14 +7,14 @@
     <title>Avisos</title>
 
     <link rel="stylesheet" href="../style/styles.css">
-    <link rel="icon" href="../assets/icons/Logo.png" type="image/png">
+    <link rel="icon" href="../assets/icons/logo.png" type="image/png">
 
 </head>
 
 <body>
     <header class="header">
         <h1>Avisos</h1>
-        <img class="logoMenu" src="../assets/icons/Avisos.png" alt="">
+        <img class="logoMenu" src="../assets/icons/avisos.png" alt="">
     </header>
 
     <div class="brancoAlertas">

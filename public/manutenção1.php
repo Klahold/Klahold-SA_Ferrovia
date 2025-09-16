@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../style/styles.css">
-  <link rel="icon" href="../assets/icons/Logo.png" type="image/png">
+  <link rel="icon" href="../assets/icons/logo.png" type="image/png">
   <title>Manutenção</title>
 
 </head>
@@ -18,10 +18,10 @@
 
     <section class="squarewhite">
 
-        <a href="manutenção_2.html">
+        <a href="manutenção2.php">
         <div class="selection"> 
         <div class="trems">
-          <img src="../assets/images/TremVermelho.png" alt="Trem KM2D" class="trem">
+          <img src="../assets/images/tremVermelho.png" alt="Trem KM2D" class="trem">
           <div class="treminfo">
             <h2>Trem KM2D</h2>
             <h3> - sem adversidades -</h3>
@@ -37,10 +37,10 @@
 
         <br>
 
-        <a href="manutenção_2.html">
+        <a href="manutenção_2.php">
         <div class="selection">
           <div class="trems">
-            <img src="../assets/images/TremAzul.png" alt="Trem N2VF" class="trem">
+            <img src="../assets/images/tremAzul.png" alt="Trem N2VF" class="trem">
             <div class="treminfo">
               <h2>Trem N2VF</h2>
               <h3> - sem adversidades -</h3>
@@ -56,10 +56,10 @@
 
           <br>
 
-          <a href="manutenção_2.html">
+          <a href="manutenção_2.php">
           <div class="selection">
             <div class="trems">
-              <img src="../assets/images/TremVermelho.png" alt="Trem N3VF" class="trem">
+              <img src="../assets/images/tremVermelho.png" alt="Trem N3VF" class="trem">
               <div class="treminfo">
                 <h2>Trem N3VF</h2>
                 <h3> - sem adversidades -</h3>
@@ -75,10 +75,10 @@
 
             <br>
 
-            <a href="manutenção_2.html">
+            <a href="manutenção_2.php">
             <div class="selection">
               <div class="trems">
-                <img src="../assets/images/TremAzul.png" alt="Trem N9NM" class="trem">
+                <img src="../assets/images/tremAzul.png" alt="Trem N9NM" class="trem">
                 <div class="treminfo">
                   <h2 id="">Trem N9NM</h2>
                   <h3> - sem adversidades -</h3>

@@ -8,7 +8,7 @@
   <title>Dashboard</title>
 
   <link rel="stylesheet" href="../style/styles.css">
-  <link rel="icon" href="../assets/icons/Logo.png" type="image/png">
+  <link rel="icon" href="../assets/icons/logo.png" type="image/png">
 </head>
 
 <body>

@@ -20,7 +20,7 @@
   <div class="branco-funcionario">
     <div class="flex">
       <div class="cinza_funcionario">🔍 Buscar Funcionários</div>
-      <a href="cadastro_1.php">
+      <a href="cadastro.php">
         <button id="minicinza" type="button">Cadastrar</button>
       </a>
 

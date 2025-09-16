@@ -7,14 +7,14 @@
     <script src="script.js"></script>
 
     <link rel="stylesheet" href="../style/styles.css">
-    <link rel="icon" href="../assets/icons/Logo.png" type="image/png">
+    <link rel="icon" href="../assets/icons/logo.png" type="image/png">
 
     <title>Esqueci minha senha</title>
 </head>
 
 <body>
     <header class="logo">
-        <img class="logoImg" src="../assets/icons/Logo.png" alt="Logo">
+        <img class="logoImg" src="../assets/icons/logo.png" alt="Logo">
         <H2><u> Esqueci minha senha </u></H2>
     </header>
 
