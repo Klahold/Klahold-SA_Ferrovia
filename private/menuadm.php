@@ -7,7 +7,7 @@
     <script src="script.js"></script>
 
     <link rel="stylesheet" href="../style/styles.css">
-    <link rel="icon" href="../assets/icons/Logo.png" type="image/png">
+    <link rel="icon" href="../assets/icons/logo.png" type="image/png">
 
     <title>Menu</title>
 
@@ -16,23 +16,23 @@
 <body>
 
     <header class="logo">
-        <img class="logoImg" src="../assets/icons/Logo.png" alt="Logo">
+        <img class="logoImg" src="../assets/icons/logo.png" alt="Logo">
     </header>
 
     <div id="menu_linha">
 
-        <a href="../public/rotas.html">
+        <a href="../public/rotas.php">
             <div class="quadrado-branco">
-                <img class="Tamanho_img" src="../assets/icons/Rotas.png" alt="Botão de rotas">
+                <img class="Tamanho_img" src="../assets/icons/rotas.png" alt="Botão de rotas">
                 <strong>
                     <p class="texto">Rotas</p>
                 </strong>
             </div>
         </a>
 
-        <a href="../public/avisos.html">
+        <a href="../public/avisos.php">
             <div class="quadrado-branco">
-                <img class="Tamanho_img" src="../assets/icons/Avisos.png" alt="Botão de avisos">
+                <img class="Tamanho_img" src="../assets/icons/avisos.png" alt="Botão de avisos">
                 <strong>
                     <p class="texto">Avisos</p>
                 </strong>
@@ -43,7 +43,7 @@
 
     <div id="menu_linha">
 
-        <a href="../public/manutenção_1.html">
+        <a href="../public/manutenção1.php">
             <div class="quadrado-branco">
                 <img class="Tamanho_img" src="../assets/icons/manutenção.png" alt="Botão de manutencão">
                 <strong>
@@ -52,7 +52,7 @@
             </div>
         </a>
 
-        <a href="../public/dashbord.html">
+        <a href="../public/dashbord.php">
             <div class="quadrado-branco">
                 <img class="Tamanho_img" src="..//assets/icons/dashbord.png" alt="Botão de dashboard">
                 <strong>
@@ -64,7 +64,7 @@
     </div>
 
     <div id="menu_linha">
-        <a href="../public/relatórios.html">
+        <a href="../public/relatórios.php">
             <div class="quadrado-branco">
                 <img class="Tamanho_img" src="..//assets/icons/relatorio.png" alt="Botão de relatório">
                 <strong>
@@ -73,7 +73,7 @@
             </div>
         </a>
 
-        <a href="funcionário.html">
+        <a href="funcionário.php">
             <div class="quadrado-branco">
                 <img class="Tamanho_img" src="..//assets/icons/funcionario.png" alt="Botão de funcionários">
                 <strong>

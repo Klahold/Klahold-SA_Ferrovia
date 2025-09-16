@@ -37,14 +37,14 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
     <script src="../scripts/login_Script.js"></script>
     <link rel="stylesheet" href="../style/styles.css">
-    <link rel="icon" href="../assets/icons/Logo.png" type="image/png">
+    <link rel="icon" href="../assets/icons/logo.png" type="image/png">
     <title>login</title>
 
 </head>
 
 <body>
     <header class="logo">
-        <img class="logoImg" src="../assets/icons/Logo.png" alt="Logo">
+        <img class="logoImg" src="../assets/icons/logo.png" alt="Logo">
         <H2><u> Login </u></H2>
     </header>
 

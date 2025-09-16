@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../style/styles.css">
-  <link rel="icon" href="../assets/icons/Logo.png" type="image/png">
+  <link rel="icon" href="../assets/icons/logo.png" type="image/png">
   <title>Manutenção</title>
 
 </head>

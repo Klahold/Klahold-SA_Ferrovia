@@ -19,7 +19,7 @@ if (isset($_GET['logout'])) {
     <script src="../scripts/script.js"></script>
 
     <link rel="stylesheet" href="../style/styles.css">
-    <link rel="icon" href="../assets/icons/Logo.png" type="image/png">
+    <link rel="icon" href="../assets/icons/logo.png" type="image/png">
 
     <title>Menu</title>
 
@@ -28,23 +28,23 @@ if (isset($_GET['logout'])) {
 <body>
 
     <header class="logo">
-        <img class="logoImg" src="../assets/icons/Logo.png" alt="Logo">
+        <img class="logoImg" src="../assets/icons/logo.png" alt="Logo">
     </header>
 
     <div id="menu_linha">
 
-        <a href="rotas.html">
+        <a href="rotas.php">
             <div class="quadrado-branco">
-                <img class="Tamanho_img" src="../assets/icons/Rotas.png" alt="Botão de rotas">
+                <img class="Tamanho_img" src="../assets/icons/rotas.png" alt="Botão de rotas">
                 <strong>
                     <p class="texto">Rotas</p>
                 </strong>
             </div>
         </a>
 
-        <a href="avisos.html">
+        <a href="avisos.php">
             <div class="quadrado-branco">
-                <img class="Tamanho_img" src="../assets/icons/Avisos.png" alt="Botão de avisos">
+                <img class="Tamanho_img" src="../assets/icons/avisos.png" alt="Botão de avisos">
                 <strong>
                     <p class="texto">Avisos</p>
                 </strong>
@@ -55,7 +55,7 @@ if (isset($_GET['logout'])) {
 
     <div id="menu_linha">
 
-        <a href="manutenção_1.html">
+        <a href="manutenção_1.php">
             <div class="quadrado-branco">
                 <img class="Tamanho_img" src="../assets/icons/manutenção.png" alt="Botão de manutencão">
                 <strong>
@@ -64,7 +64,7 @@ if (isset($_GET['logout'])) {
             </div>
         </a>
 
-        <a href="dashbord.html">
+        <a href="dashbord.php">
             <div class="quadrado-branco">
                 <img class="Tamanho_img" src="..//assets/icons/dashbord.png" alt="Botão de dashboard">
                 <strong>
@@ -76,7 +76,7 @@ if (isset($_GET['logout'])) {
     </div>
 
     <div class="menu_centro">
-        <a href="relatórios.html">
+        <a href="relatórios.php">
             <div class="quadrado-branco">
                 <img class="Tamanho_img" src="..//assets/icons/relatorio.png" alt="Botão de relatório">
                 <strong>

@@ -7,16 +7,16 @@
     <title>Rotas</title>
 
     <link rel="stylesheet" href="../style/styles.css">
-    <link rel="icon" href="../assets/icons/Logo.png" type="image/png">
+    <link rel="icon" href="../assets/icons/logo.png" type="image/png">
 </head>
 
 <body>
     <header class="header">
         <h1>Rotas</h1>
-        <img class="logoMenu" src="..//assets/icons/Rotas.png" alt="Rotas">
+        <img class="logoMenu" src="..//assets/icons/rotas.png" alt="Rotas">
     </header>
 
-    <img class="mapa" src="..//assets/icons/Mapa.png" alt="mapa">
+    <img class="mapa" src="..//assets/icons/mapa.png" alt="mapa">
 
     <div class="brancoRotas">
 
