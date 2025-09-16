@@ -173,6 +173,16 @@ a{
     padding-left: 9px;
 }
 
+.cinzaDashboard {
+    width: 200px;
+    height: auto;
+    background-color: rgb(223, 219, 219);
+    border-radius: 30px;
+    border: 0px;
+    padding: 5px;
+    text-align: center;
+}
+
 /*------------------------------------------------------------------*/
 /*Esqueci Login*/
 .loGin {
