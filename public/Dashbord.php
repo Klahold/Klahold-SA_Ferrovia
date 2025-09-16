@@ -32,19 +32,13 @@
             echo "<table>
                         <thead>
                                 <tr>
-                                    <th>velocidade</th>
-                                    <th>horarios</th>
-                                    <th>direcao</th>
-                                    <th>localizacao</th>
+                                    <strong><p>velocidade</p></strong>
                                 <tr>
                         <thead>
                 <tbody>";
         while ($row = $result->fetch_assoc()){
             echo "<tr>
-                    <td>{$row['velocidade']}</td>
-                    <td>{$row['horarios']}</td>
-                    <td>{$row['direcao']}</td>
-                    <td>{$row['localizacao']}</td>
+                    <p>{$row['velocidade']}</p>
                     <tr>";
         }
         echo"<t/body></table>";
@@ -55,6 +49,65 @@
         
         ?>
     </div>
+
+    <br>
+
+    <div class="cinza">
+        <?php
+        $sql = "SELECT * FROM trens";
+        $result = $conn->query($sql);
+
+        if ($result->num_rows > 0){
+            
+            echo "<table>
+                        <thead>
+                                <tr>
+                                    <strong><p>horarios</p></strong>
+                                <tr>
+                        <thead>
+                <tbody>";
+        while ($row = $result->fetch_assoc()){
+            echo "<tr>
+                    <p>{$row['horarios']}</p>
+                    <tr>";
+        }
+        echo"<t/body></table>";
+        }
+
+        
+        ?>
+    </div>
+
+    <br>
+
+    <div class="cinza">
+        <?php
+        $sql = "SELECT * FROM trens";
+        $result = $conn->query($sql);
+
+        if ($result->num_rows > 0){
+            
+            echo "<table>
+                        <thead>
+                                <tr>
+                                    <strong><p>direcao</p>
+                                    <p>localizacao</p></strong>
+                                <tr>
+                        <thead>
+                <tbody>";
+        while ($row = $result->fetch_assoc()){
+            echo "<tr>
+                    <p>{$row['direcao']}</p>
+                    <p>{$row['localizacao']}</p>
+                    <tr>";
+        }
+        echo"<t/body></table>";
+        }
+
+        
+        ?>
+    </div>
+
     </div>
 
 </body>
