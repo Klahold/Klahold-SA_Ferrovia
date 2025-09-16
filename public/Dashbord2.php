@@ -80,6 +80,31 @@
 
     <br>
 
+    <div class="flex">
+        <div class="cinza">
+        <?php
+        $sql = "SELECT * FROM trens";
+        $result = $conn->query($sql);
+
+        if ($result->num_rows > 0){
+            
+            echo "<table>
+                        <thead>
+                                <tr>
+                                <strong><p>direcao</p></strong>
+                                <tr>
+                        <thead>
+                <tbody>";
+        while ($row = $result->fetch_assoc()){
+            echo "<tr>
+                    <p>{$row['direcao']}</p>
+                    <tr>";
+        }
+        echo"<t/body></table>";
+        }
+        ?>
+    </div>
+
     <div class="cinza">
         <?php
         $sql = "SELECT * FROM trens";
@@ -90,14 +115,12 @@
             echo "<table>
                         <thead>
                                 <tr>
-                                    <strong><p>direcao</p>
-                                    <p>localizacao</p></strong>
+                                <strong><p>localizacao</p></strong>
                                 <tr>
                         <thead>
                 <tbody>";
         while ($row = $result->fetch_assoc()){
             echo "<tr>
-                    <p>{$row['direcao']}</p>
                     <p>{$row['localizacao']}</p>
                     <tr>";
         }
@@ -107,6 +130,8 @@
         
         ?>
     </div>
+    </div>
+    
 
     </div>
 
