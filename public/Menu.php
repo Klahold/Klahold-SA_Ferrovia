@@ -2,7 +2,13 @@
 
 include '../config/db.php';
 
+if (empty($_SESSION["user_id"])):
+
+    header("Location: login.php");
+
+endif
 ?>
+
 
 <html lang="en">
 
@@ -82,15 +88,14 @@ include '../config/db.php';
     </div>
 
 
-     <div class="menu_centro">
-        
-     <a href="login.php?logout=2">
-            <div class="quadrado-branco">
-                <strong>
-                    <p>Sair</p>
-                </strong>
-            </div>
-        </a>
+    <div class="menu_centro">
+
+
+        <div class="quadrado-branco">
+            <strong>
+                <p><a href="?logout=1">Sair</a></p>
+            </strong>
+        </div>
 
     </div>
 
