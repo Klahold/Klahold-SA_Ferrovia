@@ -72,6 +72,8 @@
                     <tr>";
         }
         echo"<t/body></table>";
+        }else{
+            echo "<p>Nenhum horario encontrado.</p>";
         }
 
         
@@ -79,7 +81,7 @@
     </div>
 
     <br>
-
+<div class="espaco">
     <div class="flex">
         <div class="cinza">
         <?php
@@ -101,10 +103,12 @@
                     <tr>";
         }
         echo"<t/body></table>";
+        }else{
+            echo "<p>Nenhuma direção encontrada.</p>";
         }
         ?>
     </div>
-
+</div>
     <div class="cinza">
         <?php
         $sql = "SELECT * FROM trens";
@@ -125,6 +129,8 @@
                     <tr>";
         }
         echo"<t/body></table>";
+        }else{
+            echo "<p>Nenhum trem em localizado.</p>";
         }
 
         
