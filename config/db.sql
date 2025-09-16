@@ -48,3 +48,9 @@ CREATE TABLE manutencao(
     destinatario varchar(45) not null,
     local varchar(45) not null
     );
+    
+insert into usuarios(codigo, CPF, nome, tipo, senha, email) values
+('MAG', '12345678901', 'Mago', 'Administrador', 'MAG123', 'MAGO@email.com'),
+('GUS', '10987654321', 'Gustavo', 'Administrador', 'GUS123', 'GUS@email.com'),
+('KAU', '11223344556', 'Kaus', 'Administrador', 'KAU123', 'KAU@email.com'),
+('USER', '99887766554', 'User', 'Usuario', 'USER123', 'USER@email.com');
