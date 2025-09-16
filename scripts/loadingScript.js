@@ -1,4 +1,4 @@
 intervalLoading = setInterval(movedor,1500)
 function movedor(){
-window.location.href ="public/login.php";
+window.location.href ="../public/login.php";
 }
