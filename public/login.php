@@ -2,6 +2,17 @@
 
 include '../config/db.php';
 
+if (empty($_SESSION["user_id"])):
+
+    header("Location: login.php");
+
+endif
+?>
+
+<?php
+
+include '../config/db.php';
+
 session_start();
 
 if (isset($_GET['logout'])) {
