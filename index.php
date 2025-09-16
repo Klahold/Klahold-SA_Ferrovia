@@ -23,7 +23,7 @@
     <main>
         <br><br><br><br><br><br><br><br><br><br><br>
         <div class="loadingTela">
-        <img src="assets/icons/trem girando.png" id="rotacao" alt="loaging">
+        <a href="public/login.php"><img src="assets/icons/tremGirando.png" id="rotacao" alt="loaging"></a>
         </div>
 
     </main>
