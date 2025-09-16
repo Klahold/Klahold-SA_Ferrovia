@@ -109,7 +109,8 @@
         ?>
     </div>
 </div>
-    <div class="cinza">
+    <div class="cinzaDashboard">
+        
         <?php
         $sql = "SELECT * FROM trens";
         $result = $conn->query($sql);
