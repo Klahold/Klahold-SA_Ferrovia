@@ -28,8 +28,11 @@ endif
 
 <body>
 
-    <header class="logo">
-        <img class="logoImg" src="../assets/icons/logo.png" alt="Logo">
+   <header>   
+        <div class="logomenu2">
+            <a href="../public/login.php?logout=1"><img src="../assets/icons/logout.png" alt="logout" width=55px></a>
+            <img class="logoImg" src="../assets/icons/logo.png" alt="Logo">
+        </div> 
     </header>
 
     <div id="menu_linha">
