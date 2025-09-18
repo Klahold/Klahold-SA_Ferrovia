@@ -2,13 +2,18 @@
 
 include '../config/db.php';
 
+$sql = "SELECT * FROM usuarios";
+
+$result = $conn->query($sql);
+
 session_start();
 
 if (empty($_SESSION["user_id"])):
 
-    header("Location: login.php");
+  header("Location: login.php");
 
 endif
+
 ?>
 
 <!DOCTYPE html>
@@ -44,96 +49,30 @@ endif
 
     <div class="arrastar">
 
-      <div class="cinza">
-        <div class="flex">
-          <img class="imagesFuncionario" src="../assets/images/melissaGusmão.png" alt="Melissa">
+      <?php
+      if ($result->num_rows > 0) {
+        while ($row = $result->fetch_assoc()) {
+          $imagem = "../assets/images/default.png";
 
-          <p>Melissa Gusmão</p>
-          <p>MG743</p>
+          echo '
+        <div class="cinza">
+            <div class="flex">
+                <img class="imagesFuncionario" src="" . $imagem . "">
+                <p>' . $row['nome'] . '</p>
+                <br>
+                <p>' . $row['tipo'] . '</p>
+                <br>
+                <p>' . $row['id'] . '</p>
+            </div>
         </div>
-      </div>
-
-      <br>
-
-      <div class="cinza">
-        <div class="flex">
-          <img class="imagesFuncionario" src="../assets/images/nádiaCíntia.png" alt="Nadia">
-
-          <p>Nádia Cíntia</p>
-          <p>NC372</p>
-        </div>
-      </div>
-
-      <br>
-
-      <div class="cinza">
-        <div class="flex">
-          <img class="imagesFuncionario" src="../assets/images/lucianoEveraldo.png" alt="Luciano">
-
-          <p>Luciano Everaldo</p>
-          <p>LE612</p>
-        </div>
-      </div>
-
-      <br>
-
-      <div class="cinza">
-        <div class="flex">
-          <img class="imagesFuncionario" src="../assets/images/irenePaula.png" alt="Irene">
-
-          <p>Irene Paula</p>
-          <p>IP532</p>
-        </div>
-      </div>
-
-      <br>
-
-      <div class="cinza">
-        <div class="flex">
-          <img class="imagesFuncionario" src="../assets/images/melissaGusmão.png" alt="Melissa">
-
-          <p>Melissa Gusmão</p>
-          <p>MG743</p>
-        </div>
-      </div>
-
-      <br>
-
-      <div class="cinza">
-        <div class="flex">
-          <img class="imagesFuncionario" src="../assets/images/nádiaCíntia.png" alt="Nadia">
-
-          <p>Nádia Cíntia</p>
-          <p>NC372</p>
-        </div>
-      </div>
-
-      <br>
-
-      <div class="cinza">
-        <div class="flex">
-          <img class="imagesFuncionario" src="../assets/images/lucianoEveraldo.png" alt="Luciano">
-
-          <p>Luciano Everaldo</p>
-          <p>LE612</p>
-        </div>
-      </div>
-
-      <br>
-
-      <div class="cinza">
-        <div class="flex">
-          <img class="imagesFuncionario" src="../assets/images/irenePaula.png" alt="Irene">
-
-          <p>Irene Paula</p>
-          <p>IP532</p>
-        </div>
-      </div>
-
-
+        <br>
+        ';
+        }
+      } else {
+        echo "Nenhum registro encontrado.";
+      }
+      ?>
     </div>
-
-  </div>
 
 
 </body>

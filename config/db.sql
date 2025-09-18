@@ -12,7 +12,7 @@ CREATE TABLE usuarios(
     codigo char(6) not null unique,
     CPF char(11) not null unique,
     nome varchar(45) not null,
-    tipo varchar(45) not null,
+    tipo ENUM('Administrador','Usuario') not null,
     senha varchar(45) not null,
     email varchar(45) not null unique
 );
