@@ -1,3 +1,16 @@
+<?php
+
+include '../config/db.php';
+
+session_start();
+
+if (empty($_SESSION["user_id"])):
+
+    header("Location: login.php");
+
+endif
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
