@@ -31,7 +31,18 @@ endif
   </header>
 
   <div class="brancoAlertas">
-    <H2><U>Carga</U></H2>
+    
+  <div class="setas">
+    <a href="Dashboard1.php">
+                <img class="setaDashboard" src="../assets/icons/seta.png" alt="Botão de voltar">
+        </a>
+        <H2><U>Carga</U></H2>
+  <a href="Alertas.php">
+                <img class="setaDashboard2" src="../assets/icons/seta2.png" alt="Botão de continuar">
+        </a>
+  </div>
+
+    
 
     <div class="arrastarCargas">
 
