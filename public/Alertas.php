@@ -26,11 +26,17 @@ endif
 
 <body>
     <header class="header">
+        
         <h1>Alertas</h1>
         <img class="logoMenu" src="../assets/icons/dashbord.png" alt="">
     </header>
 
     <div class="brancoAlertas">
+        <div class="setas">
+            <a href="Cargas.php">
+                <img class="setaDashboard" src="../assets/icons/seta.png" alt="Botão de voltar">
+        </a>
+        </div>
         <H2><U>Alertas</U></H2>
 
         <div class="cinza">

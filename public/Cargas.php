@@ -33,7 +33,7 @@ endif
   <div class="brancoAlertas">
     
   <div class="setas">
-    <a href="Dashboard1.php">
+    <a href="Dashbord2.php">
                 <img class="setaDashboard" src="../assets/icons/seta.png" alt="Botão de voltar">
         </a>
         <H2><U>Carga</U></H2>
