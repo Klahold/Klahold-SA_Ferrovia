@@ -18,10 +18,10 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $pattern = "/\W/";
 
     if((preg_match_all($pattern,$email))>= 1){
-        $stmt = $conn->prepare("SELECT id, email, senha FROM usuarios WHERE email = ?  AND senha=?");
+        $stmt = $conn->prepare("SELECT id, email, senha, tipo FROM usuarios WHERE email = ?  AND senha=?");
 
     }else{
-        $stmt = $conn->prepare("SELECT id, email, senha FROM usuarios WHERE codigo = ? AND senha=?");
+        $stmt = $conn->prepare("SELECT id, email, senha, tipo FROM usuarios WHERE codigo = ? AND senha=?");
 
     }
 
@@ -34,6 +34,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     if ($dados) {
         $_SESSION["user_id"] = $dados["id"];
         $_SESSION["username"] = $dados["nome"];
+        $_SESSION["tipo"] = $dados["tipo"];
         header("Location: login.php");
         exit;
     } else {
@@ -64,8 +65,12 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     </header>
 
     <?php if (!empty($_SESSION["user_id"])): 
-        
-        header("Location: menu.php");
+
+        if($_SESSION["tipo"]=="Administrador"){
+            header("location:../private/menuadm.php");
+        }else{
+            header("Location: menu.php");
+        }
 
         ?>
 
