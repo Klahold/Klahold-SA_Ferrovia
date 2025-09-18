@@ -363,6 +363,15 @@ a{
     margin: 1px;
 }
 
+.logomenu2{
+    width: 285px;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    align-items: center;
+}
+
 /*------------------------------------------------------------------*/
 /*Relatorio*/
 .branco {

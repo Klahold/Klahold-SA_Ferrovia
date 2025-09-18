@@ -29,8 +29,11 @@ endif
 
 <body>
 
-    <header class="logo">
-        <img class="logoImg" src="../assets/icons/logo.png" alt="Logo">
+    <header>   
+        <div class="logomenu2">
+            <a href="login.php?"><img src="../assets/icons/logout.png" alt="logout" width=55px></a>
+            <img class="logoImg" src="../assets/icons/logo.png" alt="Logo">
+        </div> 
     </header>
 
     <div id="menu_linha">
@@ -86,18 +89,6 @@ endif
                 </strong>
             </div>
         </a>
-
-    </div>
-
-
-    <div class="menu_centro">
-
-
-        <div class="quadrado-branco">
-            <strong>
-                <p><a href="?logout=1">Sair</a></p>
-            </strong>
-        </div>
 
     </div>
 
