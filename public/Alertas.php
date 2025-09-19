@@ -33,16 +33,39 @@ endif
 
     <div class="brancoAlertas">
         <div class="setas">
-            <a href="Cargas
-            ,.php">
+            <a href="Cargas.php">
                 <img class="setaDashboard" src="../assets/icons/seta.png" alt="Botão de voltar">
         </a>
         </div>
         <H2><U>Alertas</U></H2>
 
         <div class="cinza">
-            <h3>Linha 237 fechada para manutenção</h3>
-        </div>
+        <?php
+        $sql = "SELECT * FROM alerta";
+        $result = $conn->query($sql);
+
+        if ($result->num_rows > 0){
+            
+            echo "<table>
+                        <thead>
+                                <tr>
+                                    <strong><p></p></strong>
+                                <tr>
+                        <thead>
+                <tbody>";
+        while ($row = $result->fetch_assoc()){
+            echo "<tr>
+                    <p>{$row['mensagem']}</p>
+                    <tr>";
+        }
+        echo"<t/body></table>";
+        }else{
+            echo "<p>Nenhum alerta no momento.</p>";
+        }
+
+        
+        ?>
+    </div>
 
 
     </div>

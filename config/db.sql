@@ -33,8 +33,7 @@ CREATE TABLE rotas(
     
 CREATE TABLE alerta(
 	id int auto_increment primary key,
-    destinatario varchar(45) not null,
-    tipos varchar(45)
+    mensagem varchar(220) not null
 	);
     
 CREATE TABLE relatorio(
