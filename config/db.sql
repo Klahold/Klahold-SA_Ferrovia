@@ -40,7 +40,8 @@ CREATE TABLE alerta(
 CREATE TABLE relatorio(
 	id int auto_increment primary key,
     tipo varchar(45) not null,
-    destinatario varchar(45) not null
+    destinatario varchar(45) not null,
+    mensagem varchar (220) not null
     );
     
 CREATE TABLE manutencao(
