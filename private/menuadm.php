@@ -80,7 +80,7 @@ endif
     </div>
 
     <div id="menu_linha">
-        <a href="../public/relatórios.php">
+        <a href="../public/relatorios.php">
             <div class="quadrado-branco">
                 <img class="Tamanho_img" src="..//assets/icons/relatorio.png" alt="Botão de relatório">
                 <strong>

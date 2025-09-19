@@ -81,7 +81,7 @@ endif
     </div>
 
     <div class="menu_centro">
-        <a href="relatórios.php">
+        <a href="relatorios.php">
             <div class="quadrado-branco">
                 <img class="Tamanho_img" src="..//assets/icons/relatorio.png" alt="Botão de relatório">
                 <strong>
