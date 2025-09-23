@@ -7,8 +7,20 @@ session_start();
 if (empty($_SESSION["user_id"])):
 
     header("Location: login.php");
+    exit;
 
-endif
+endif;
+?>
+<?php
+
+$stmt = $conn->prepare("SELECT relatorios.id,relatorios.tipo,mensagem,nome FROM relatorios
+INNER JOIN usuarios
+ON relatorios.remetente=usuarios.id;");
+
+$stmt->execute();
+
+$result = $stmt->get_result();
+
 ?>
 
 <!DOCTYPE html>
@@ -51,6 +63,8 @@ endif
                         <div class="dot"></div>
                     </div>
 
+
+
                     <div class="frame1" id="frame1">
                         <div class="info"><span>Marcar com lida</span></div>
                         <div class="info"><span>Marcar como importante</span></div>
@@ -61,89 +75,38 @@ endif
                     </div>
 
                 </div>
+
+                <div class="criar">
+                
+                <a href="createRelatorios.php"><div class="cinzacriar"></div></a>
+
+                </div>
                 
 
             </div>
 
             <div>
                 <div class="arrastar2">
-                <div class="caixa">
-                    <input class="checkboxRelatorio" type="checkbox">
-                    <h3 class="text">Melissa Guimão Desempenho 08:28</h3>
+
+                <?php 
+
+                    while ($row = $result->fetch_assoc()) {
+
+                    echo "
+                        <div class='caixa'>
+                        <input class='checkboxRelatorio' type='checkbox'>
+                        <h3 class='text'>{$row['tipo']}</h3> 
+                        <h3 class='text'>{$row['mensagem']}</h3>
+                        <h3 class='text'>{$row['nome']}</h3>
+                        </div>
+                    ";
+                    }
+                    
+                    $stmt->close();
+
+                ?>
+
                 </div>
-                <div class="caixa">
-                    <input class="checkboxRelatorio" type="checkbox">
-                    <h3 class="text">Irene Paula Eficiencia Ope... 08:13</h3>
-                </div>
-                <div class="caixa">
-                    <input class="checkboxRelatorio" type="checkbox">
-                    <h3 class="text">Luciano Everal... Desempenho 28/05</h3>
-                </div>
-                <div class="caixa">
-                    <input class="checkboxRelatorio" type="checkbox">
-                    <h3 class="text">Irene Paula Consumo Ener... 28/05</h3>
-                </div>
-                <div class="caixa">
-                    <input class="checkboxRelatorio" type="checkbox">
-                    <h3 class="text">Melissa Guimão Desempenho 28/05</h3>
-                </div>
-                <div class="caixa">
-                    <input class="checkboxRelatorio" type="checkbox">
-                    <h3 class="text">Luciano Everal... Desempenho 28/05</h3>
-                </div>
-                <div class="caixa">
-                    <input class="checkboxRelatorio" type="checkbox">
-                    <h3 class="text">Nádia Cintia Eficiencia Ope... 27/05</h3>
-                </div>
-                <div class="caixa">
-                    <input class="checkboxRelatorio" type="checkbox">
-                    <h3 class="text">Luciano Everal... Desempenho 27/05</h3>
-                </div>
-                <div class="caixa">
-                    <input class="checkboxRelatorio" type="checkbox">
-                    <h3 class="text">Melissa Guimão Desempenho 27/05</h3>
-                </div>
-                <div class="caixa">
-                    <input class="checkboxRelatorio" type="checkbox">
-                    <h3 class="text">Melissa Guimão Desempenho 27/05</h3>
-                </div>
-                <div class="caixa">
-                    <input class="checkboxRelatorio" type="checkbox">
-                    <h3 class="text">Nádia Cintia Desempenho 27/05</h3>
-                </div>
-                <div class="caixa">
-                    <input class="checkboxRelatorio" type="checkbox">
-                    <h3 class="text">Irene Paula Consumo Ener... 27/05</h3>
-                </div>
-                <div class="caixa">
-                    <input class="checkboxRelatorio" type="checkbox">
-                    <h3 class="text">Luís E. Lutero Consumo Ener... 27/05</h3>
-                </div>
-                <div class="caixa">
-                    <input class="checkboxRelatorio" type="checkbox">
-                    <h3 class="text">Irene Paula Consumo Ener... 27/05</h3>
-                </div>
-                <div class="caixa">
-                    <input class="checkboxRelatorio" type="checkbox">
-                    <h3 class="text">Luís E. Lutero Consumo Ener... 27/05</h3>
-                </div>
-                <div class="caixa">
-                    <input class="checkboxRelatorio" type="checkbox">
-                    <h3 class="text">Irene Paula Consumo Ener... 27/05</h3>
-                </div>
-                <div class="caixa">
-                    <input class="checkboxRelatorio" type="checkbox">
-                    <h3 class="text">Luís E. Lutero Consumo Ener... 27/05</h3>
-                </div>
-                <div class="caixa">
-                    <input class="checkboxRelatorio" type="checkbox">
-                    <h3 class="text">Irene Paula Consumo Ener... 27/05</h3>
-                </div>
-                <div class="caixa">
-                    <input class="checkboxRelatorio" type="checkbox">
-                    <h3 class="text">Luís E. Lutero Consumo Ener... 27/05</h3>
-                </div>
-            </div>
             </div>
             
 
