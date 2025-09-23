@@ -36,7 +36,7 @@ endif
   </header>
 
   <div class="branco-funcionario">
-    <div class="flex">
+    <div class="flexFuncionario">
       <div class="cinza_funcionario">🔍 Buscar Funcionários</div>
       <a href="cadastro.php">
         <button id="minicinza" type="button">Cadastrar</button>
@@ -45,7 +45,6 @@ endif
     </div>
 
     <br>
-
 
     <div class="arrastar">
 
@@ -56,13 +55,13 @@ endif
 
           echo '
         <div class="cinza">
-            <div class="flex">
+            <div class="flexFuncionario">
                 <img class="imagesFuncionario" src="" . $imagem . "">
-                <p>' . $row['nome'] . '</p>
+                <div class="espaco"><p>' . $row['nome'] . '</p></div>
                 <br>
-                <p>' . $row['tipo'] . '</p>
+                <div class="espaco"><p>' . $row['tipo'] . '</p></div>
                 <br>
-                <p>' . $row['id'] . '</p>
+                <div class="espaco"><p>' . $row['codigo'] . '</p></div>
             </div>
         </div>
         <br>

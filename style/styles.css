@@ -263,6 +263,11 @@ a{
 .paddingFuncionario {
     margin-bottom: 10px;
 }
+.flexFuncionario{
+    display: flex;
+    align-items: center;
+    padding: 5px;
+}
 /*------------------------------------------------------------------*/
 /*Manutenção*/
 .squarewhite {

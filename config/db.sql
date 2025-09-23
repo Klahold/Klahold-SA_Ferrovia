@@ -9,12 +9,18 @@ CREATE TABLE menu(
 
 CREATE TABLE usuarios(
 	id int auto_increment primary key,
-    codigo char(6) not null unique,
-    CPF char(11) not null unique,
     nome varchar(45) not null,
+    data_nascimento varchar(45) not null,
+    naturalidade varchar(45) not null,
+    nacionalidade varchar(45) not null,
+    estado_civil varchar(45) not null,
     tipo ENUM('Administrador','Usuario') not null,
-    senha varchar(45) not null,
-    email varchar(45) not null unique
+    CPF int not null unique,
+    email varchar(45) not null unique,
+    data_admissao varchar(45) not null,
+    genero varchar(45) not null,
+    codigo char(6) not null unique,
+    senha varchar(45) not null
 );
 
     
@@ -51,8 +57,8 @@ CREATE TABLE manutencao(
     local varchar(45) not null
     );
     
-insert into usuarios(codigo, CPF, nome, tipo, senha, email) values
-('MAG', '12345678901', 'Mago', 'Administrador', 'MAG123', 'MAGO@email.com'),
-('GUS', '10987654321', 'Gustavo', 'Administrador', 'GUS123', 'GUS@email.com'),
-('KAU', '11223344556', 'Kaus', 'Administrador', 'KAU123', 'KAU@email.com'),
-('USER', '99887766554', 'User', 'Usuario', 'USER123', 'USER@email.com');
+insert into usuarios (name,data_nascimento,naturalidade,nacionalidade,estado_civil,tipo,CPF,email,data_admissao,genero,codigo,senha) values
+('Mago', '01-11-2001', 'joiville-SC', 'Solteiro', 'Administrador', '12345678901','mago@email.com','23-09-2025','Masculino','MAGO','1234'),
+('GUS', '01-11-2001', 'joiville-SC', 'Solteiro', 'Administrador', '12345678902','gustavo@email.com','23-09-2025','Masculino','GUS','1234'),
+('KAU', '01-11-2001', 'joiville-SC', 'Casado', 'Administrador', '12345678903','kaus@email.com','23-09-2025','Masculino','KAU','1234'),
+('USER', '01-11-2001', 'joiville-SC', 'Solteiro', 'Usuario', '12345678904','user@email.com','23-09-2025','Masculino','USER','1234');
