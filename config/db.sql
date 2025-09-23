@@ -37,10 +37,10 @@ CREATE TABLE alerta(
     tipos varchar(45)
 	);
     
-CREATE TABLE relatorio(
+CREATE TABLE relatorios(
 	id int auto_increment primary key,
     tipo varchar(45) not null,
-    remetente varchar(45) not null,
+    remetente int not null,
     mensagem varchar (220) not null,
     FOREIGN KEY (remetente) REFERENCES usuarios(id)
     );
