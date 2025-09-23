@@ -25,7 +25,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $codigo = $_POST['codigo'];
     $senha = $_POST['senha'];
 
-    $sql = " INSERT INTO usuarios (name,data_nascimento,naturalidade,nacionalidade,estado_civil,tipo,CPF,email,data_admissao,genero,codigo,senha) 
+    $sql = " INSERT INTO usuarios (nome,data_nascimento,naturalidade,nacionalidade,estado_civil,tipo,CPF,email,data_admissao,genero,codigo,senha) 
     VALUE ('$name','$data_nascimento','$naturalidade','$nacionalidade','$estado_civil','$tipo','$CPF','$email','$data_admissao','$genero','$codigo','$senha') ";
 
     if ($conn->query($sql) === true) {
@@ -131,6 +131,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 <br>
 
                 <div class="cinzaCadastro">
+                    <label for="">Data de Adimissão</label>
                     <input type="date" name="dataAdmissão" id="dataAdmissão" placeholder="Data de Adimissão:" class="input" required>
                 </div>
 
@@ -154,9 +155,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
                 <br>
 
-                <div class="minicinzaalign">
-                    <button type="submit" class="minicinza" onclick="validarFormulario()">Cadastrar</button>
-                </div>
+                <!-- <div class="minicinzaalign">
+                    <button type="submit" name="register" class="minicinza" >Cadastrar</button>
+                </div> -->
+                <button type="submit" name="register" class="minicinza" >Cadastrar</button>
 
             </form>
 
