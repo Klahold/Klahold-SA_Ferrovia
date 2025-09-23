@@ -48,118 +48,58 @@ endif
 
       <div class="cinzaCargas">
         <div class="arrumadores">
-          <div class="flex">
-            <h2 class="texto">Vagao 1</h2>
-          </div>
-
-          <br>
-
           <div class="espaco">
-            <h3 class="texto">Conteúdo</h3>
-            <h3 class="texto">Passageiros</h3>
-          </div>
-        </div>
-      </div>
+               <?php
+        $sql = "SELECT * FROM carga";
+        $result = $conn->query($sql);
 
-      <br>
+        if ($result->num_rows > 0){
+            
+            echo "<table>
+                        <thead>
+                                <tr>
+                                    <strong><h3>Vagão</h3></strong>
+                                <tr>
+                        <thead>
+                <tbody>";
+        while ($row = $result->fetch_assoc()){
+            echo "<tr>
+                    <h3>{$row['id']}</h3>
+                    <tr>";
+        }
+        echo"<t/body></table>";
+        }else{
+            echo "<p>Nenhum vagão no momento.</p>";
+        }
 
-      <div class="cinzaCargas">
-        <div class="arrumadores">
-          <div class="flex">
-            <h2 class="texto">Vagao 2</h2>
-          </div>
+        
+        ?>
 
-          <br>
+        
 
-          <div class="espaco">
-            <h3 class="texto">Conteúdo</h3>
-            <h3 class="texto">Ferro</h3>
-          </div>
-        </div>
-      </div>
+        <?php
+        $sql = "SELECT * FROM carga";
+        $result = $conn->query($sql);
 
-      <br>
-
-      <div class="cinzaCargas">
-        <div class="arrumadores">
-          <div class="flex">
-            <h2 class="texto">Vagao 3</h2>
-          </div>
-
-          <br>
-
-          <div class="espaco">
-            <h3 class="texto">Conteúdo</h3>
-            <h3 class="texto">Carvão</h3>
-          </div>
-        </div>
-      </div>
-
-      <br>
-
-      <div class="cinzaCargas">
-        <div class="arrumadores">
-          <div class="flex">
-            <h2 class="texto">Vagao 4</h2>
-          </div>
-
-          <br>
-
-          <div class="espaco">
-            <h3 class="texto">Conteúdo</h3>
-            <h3 class="texto">Gasolina</h3>
-          </div>
-        </div>
-      </div>
-
-      <br>
-
-      <div class="cinzaCargas">
-        <div class="arrumadores">
-          <div class="flex">
-            <h2 class="texto">Vagao 5</h2>
-          </div>
-
-          <br>
-
-          <div class="espaco">
-            <h3 class="texto">Conteúdo</h3>
-            <h3 class="texto">Gasolina</h3>
-          </div>
-        </div>
-      </div>
-
-      <br>
-
-      <div class="cinzaCargas">
-        <div class="arrumadores">
-          <div class="flex">
-            <h2 class="texto">Vagao 6</h2>
-          </div>
-
-          <br>
-
-          <div class="espaco">
-            <h3 class="texto">Conteúdo</h3>
-            <h3 class="texto">Soja</h3>
-          </div>
-        </div>
-      </div>
-
-      <br>
-
-      <div class="cinzaCargas">
-        <div class="arrumadores">
-          <div class="flex">
-            <h2 class="texto">Vagao 7</h2>
-          </div>
-
-          <br>
-
-          <div class="espaco">
-            <h3 class="texto">Conteúdo</h3>
-            <h3 class="texto">Trigo</h3>
-          </div>
+        if ($result->num_rows > 0){
+            
+            echo "<table>
+                        <thead>
+                                <tr>
+                                    <strong><h3>Conteúdo</h3></strong>
+                                <tr>
+                        <thead>
+                <tbody>";
+        while ($row = $result->fetch_assoc()){
+            echo "<tr>
+                    <h3>{$row['conteúdo']}</h3>
+                    <tr>";
+        }
+        echo"<t/body></table>";
+        }
+        
+        ?>
+            </div>
         </div>
       </div>
 
