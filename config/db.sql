@@ -49,6 +49,11 @@ CREATE TABLE manutencao(
     destinatario varchar(45) not null,
     local varchar(45) not null
     );
+
+CREATE TABLE carga(
+    id int auto_increment primary key,
+    conteúdo varchar(45)
+);
     
 insert into usuarios(codigo, CPF, nome, tipo, senha, email) values
 ('MAG', '12345678901', 'Mago', 'Administrador', 'MAG123', 'MAGO@email.com'),
