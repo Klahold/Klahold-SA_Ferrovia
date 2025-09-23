@@ -20,7 +20,7 @@ if($_SERVER["REQUEST_METHOD"] === "POST") {
     $mensagem = $_POST["mensagem"] ?? "";
     
 
-    $stmt = $conn->prepare("INSERT INTO relatorio (tipo,remetente,mensagem) values(?,?,?)");
+    $stmt = $conn->prepare("INSERT INTO relatorios (tipo,remetente,mensagem) values(?,?,?)");
 
     $stmt->bind_param("sis",$tipoRelatorio,$remetente,$mensagem);
     
