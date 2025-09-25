@@ -12,7 +12,7 @@ if (empty($_SESSION["user_id"])):
 
   header("Location: login.php");
 
-endif
+endif;
 
 ?>
 
@@ -54,16 +54,18 @@ endif
           $imagem = "../assets/images/default.png";
 
           echo '
+          <a href="readFuncionário.php?id=' . $row['id'] . '">
         <div class="cinza">
             <div class="flexFuncionario">
                 <img class="imagesFuncionario" src="" . $imagem . "">
-                <div class="espaco"><p>' . $row['nome'] . '</p></div>
+                <div class="espaco">' . $row['nome'] . '</div>
                 <br>
-                <div class="espaco"><p>' . $row['tipo'] . '</p></div>
+                <div class="espaco">' . $row['tipo'] . '</div>
                 <br>
-                <div class="espaco"><p>' . $row['codigo'] . '</p></div>
+                <div class="espaco">' . $row['codigo'] . '</div>
             </div>
         </div>
+        </a>
         <br>
         ';
         }

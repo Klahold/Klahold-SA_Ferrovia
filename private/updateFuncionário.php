@@ -25,8 +25,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $codigo = $_POST['codigo'];
     $senha = $_POST['senha'];
 
-    $sql = " INSERT INTO usuarios (nome,data_nascimento,naturalidade,nacionalidade,estado_civil,tipo,CPF,email,data_admissao,genero,codigo,senha) 
-    VALUE ('$nome','$data_nascimento','$naturalidade','$nacionalidade','$estado_civil','$tipo','$CPF','$email','$data_admissao','$genero','$codigo','$senha') ";
+    $sql = "UPDATE usuarios SET nome='$nome',data_nascimento='$data_nascimento',naturalidade='$naturalidade',nacionalidade='$nacionalidade',estado_civil='$estado_civil',tipo='$tipo',CPF='$CPF',='$email',data_admissao='$data_admissao',genero='$genero',codigo='$codigo',senha='$senha' WHERE id=$id";
+
 
     if ($conn->query($sql) === true) {
         header("Location: funcionário.php");
@@ -35,6 +35,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     }
     $conn->close();
 }
+
+$sql = "SELECT * FROM usuarios WHERE id=$id";
+$result = $conn->query($sql);
+$row = $result->fetch_assoc();
 
 ?>
 
@@ -61,7 +65,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <div class="brancoGeral">
         <div class="arrastarGeral">
 
-            <form method="POST" action="cadastro.php">
+            <form method="POST" action="updateFuncionário.php?id=<?php echo $row['id'];?>">
 
                 <div class="logofuncionario">
                     <img class="img_cadastro" src="..//assets/images/fotoCadastro.png" alt="">
@@ -80,41 +84,41 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 <br>
 
                 <div class="cinzaCadastro">
-                    <input type="text" name="nome" id="nome" placeholder="Nome Completo:" class="input" required>
+                    <input type="text" name="nome" id="nome" placeholder="Nome Completo:" class="input" value="<?php echo $row['nome'];?>" required>
                 </div>
 
                 <br>
 
                 <div class="cinzaCadastro">
                     <input type="text" name="data_nascimento" id="data_nascimento" placeholder="Data De Nascimento:"
-                        onfocus="(this.type='date')" onblur="(this.type='text')" class="input" required>
+                        onfocus="(this.type='date')" onblur="(this.type='text')" class="input" value="<?php echo $row['data_nascimento'];?>" required>
                 </div>
 
                 <br>
 
                 <div class="cinzaCadastro">
                     <input type="text" name="naturalidade" id="naturalidade" placeholder="Naturalidade:" class="input"
-                        required>
+                       value="<?php echo $row['Naturalidade'];?>" required>
                 </div>
 
                 <br>
 
                 <div class="cinzaCadastro">
                     <input type="text" name="nacionalidade" id="nacionalidade" placeholder="Nacionalidade" class="input"
-                        required>
+                       value="<?php echo $row['nacionalidade'];?>" required>
                 </div>
 
                 <br>
 
                 <div class="cinzaCadastro">
                     <input type="text" name="estado_civil" id="estado_civil" placeholder="Estado Civil" class="input"
-                        required>
+                       value="<?php echo $row['estado_civil'];?>" required>
                 </div>
 
                 <br>
 
                 <div class="cinzaCadastro">
-                    <select name="tipo" id="tipo" class="input">
+                    <select name="tipo" id="tipo" class="input" value="<?php echo $row['tipo'];?>" required>
                         <option value="" disabled selected>Tipo</option>
                         <option value="Administrador">Administrador</option>
                         <option value="Usuario">Usuario</option>
@@ -124,44 +128,44 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 <br>
 
                 <div class="cinzaCadastro">
-                    <input type="number" name="CPF" id="CPF" placeholder="CPF:" class="input" required>
+                    <input type="number" name="CPF" id="CPF" placeholder="CPF:" class="input" value="<?php echo $row['CPF'];?>" required>
                 </div>
 
                 <br>
 
                 <div class="cinzaCadastro">
-                    <input type="email" name="email" id="email" placeholder="Email:" class="input" required>
+                    <input type="email" name="email" id="email" placeholder="Email:" class="input" value="<?php echo $row['email'];?>" required>
                 </div>
 
                 <br>
 
                 <div class="cinzaCadastro">
                     <input type="text" name="data_admissao" id="data_admissao" placeholder="Data de Adimissão:"
-                        onfocus="(this.type='date')" onblur="(this.type='text')" class="input" required>
+                        onfocus="(this.type='date')" onblur="(this.type='text')" class="input" value="<?php echo $row['data_admissao'];?>" required>
                 </div>
 
                 <br>
 
                 <div class="cinzaCadastro">
-                    <input type="text" name="genero" id="genero" placeholder="Genero:" class="input" required>
+                    <input type="text" name="genero" id="genero" placeholder="Genero:" class="input" value="<?php echo $row['Genero'];?>" required>
                 </div>
 
                 <br>
 
                 <div class="cinzaCadastro">
-                    <input type="text" name="codigo" id="codigo" placeholder="Codigo:" class="input" required>
+                    <input type="text" name="codigo" id="codigo" placeholder="Codigo:" class="input" value="<?php echo $row['codigo'];?>" required>
                 </div>
 
                 <br>
 
                 <div class="cinzaCadastro">
-                    <input type="text" name="senha" id="senha" placeholder="Senha:" class="input" required>
+                    <input type="text" name="senha" id="senha" placeholder="Senha:" class="input" value="<?php echo $row['senha'];?>" required>
                 </div>
 
                 <br>
 
                 <div class="minicinzaalign">
-                    <button type="submit" name="register" class="minicinza">Cadastrar</button>
+                    <button type="submit" name="register" class="minicinza">Atualizar</button>
                 </div>
 
             </form>
