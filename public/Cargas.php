@@ -69,7 +69,7 @@ endif
         ';
         }
       } else {
-        echo "Nenhum registro encontrado.";
+        echo "Nenhuma carga encontrada.";
       }
       ?>
 

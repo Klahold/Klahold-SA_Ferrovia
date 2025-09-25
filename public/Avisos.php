@@ -2,11 +2,15 @@
 
 include '../config/db.php';
 
+$sql = "SELECT * FROM aviso";
+
+$result = $conn->query($sql);
+
 session_start();
 
 if (empty($_SESSION["user_id"])):
 
-    header("Location: login.php");
+  header("Location: login.php");
 
 endif
 ?>
@@ -29,25 +33,26 @@ endif
         <img class="logoMenu" src="../assets/icons/avisos.png" alt="">
     </header>
 
-    <div class="brancoAlertas">
-        <H2><U>Avisos</U></H2>
+    <div class="arrastar">
 
+      <?php
+      if ($result->num_rows > 0) {
+        while ($row = $result->fetch_assoc()) {
+          $imagem = "../assets/images/default.png";
+
+          echo '
         <div class="cinza">
-            <h3>Linhas 127, 464, 181, 020 atrasaram</h3>
+            <div class="flex">
+                <div class="espaco"><p>' . $row['mensagem'] . '</p></div>
+            </div>
         </div>
-
         <br>
-
-        <div class="cinza">
-            <h3>Trem 47343 com problemas mecanicos</h3>
-        </div>
-
-        <br>
-
-        <div class="cinza">
-            <h3>Atualização de segurança</h3>
-        </div>
-
+        ';
+        }
+      } else {
+        echo '<div class="cinza">nenhum aviso encontrado</div>';
+      }
+      ?>
     </div>
 
 </body>
