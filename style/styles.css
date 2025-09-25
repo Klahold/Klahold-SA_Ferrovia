@@ -494,6 +494,19 @@ a{
     height: 600px;
     scrollbar-width: none;
 }
+
+  .criar{
+        display: flex;
+       justify-content: end;
+        width: 340px;
+}
+  .cinzacriar{
+        background-color: rgb(223, 219, 219);
+        border-radius: 30px;
+        border: 0px;
+        padding: 20px;
+        text-align: center;
+}
 /*------------------------------------------------------------------*/
 /*Rotas*/
 .mapa {

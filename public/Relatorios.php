@@ -13,7 +13,7 @@ endif;
 ?>
 <?php
 
-$stmt = $conn->prepare("SELECT relatorios.id,relatorios.tipo,mensagem,nome FROM relatorios
+$stmt = $conn->prepare("SELECT relatorios.id,titulo,mensagem,criado_em,nome FROM relatorios
 INNER JOIN usuarios
 ON relatorios.remetente=usuarios.id;");
 
@@ -95,9 +95,9 @@ $result = $stmt->get_result();
                     echo "
                         <div class='caixa'>
                         <input class='checkboxRelatorio' type='checkbox'>
-                        <h3 class='text'>{$row['tipo']}</h3> 
-                        <h3 class='text'>{$row['mensagem']}</h3>
+                        <h3 class='text'>{$row['titulo']}</h3> 
                         <h3 class='text'>{$row['nome']}</h3>
+                        <h3 class='text'>{$row['criado_em']}</h3>
                         </div>
                     ";
                     }
