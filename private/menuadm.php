@@ -100,6 +100,19 @@ endif
 
     </div>
 
+     <div class="menu_centro">
+        <a href="../public/sensores.php">
+            <div class="quadrado-branco">
+                <img class="Tamanho_img" src="..//assets/icons/sensor.png" alt="Botão de sensores">
+                <strong>
+                    <p class="texto">Sensores</p>
+                </strong>
+            </div>
+        </a>
+
+    </div>
+    
+
 
 </body>
 
