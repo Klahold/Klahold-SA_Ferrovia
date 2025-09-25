@@ -92,13 +92,17 @@ $result = $stmt->get_result();
 
                     while ($row = $result->fetch_assoc()) {
 
+                        $data_cricacao = date('d/m/Y', strtotime($row['criado_em']));
+
                     echo "
+                        <a href='lerRelatorio.php?id={$row['id']}'>
                         <div class='caixa'>
                         <input class='checkboxRelatorio' type='checkbox'>
                         <h3 class='text'>{$row['titulo']}</h3> 
                         <h3 class='text'>{$row['nome']}</h3>
-                        <h3 class='text'>{$row['criado_em']}</h3>
+                        <h3 class='text'>{$data_cricacao}</h3>
                         </div>
+                        </a>
                     ";
                     }
                     

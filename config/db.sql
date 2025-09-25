@@ -46,7 +46,7 @@ CREATE TABLE relatorios(
     id int auto_increment primary key,
     titulo varchar(45) not null,
     remetente int not null,
-    mensagem varchar(220) not null,
+    mensagem varchar(400) not null,
     criado_em DATETIME DEFAULT CURRENT_TIMESTAMP,
     FOREIGN KEY (remetente) REFERENCES usuarios(id)
 );

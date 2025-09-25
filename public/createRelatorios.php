@@ -20,7 +20,7 @@ if($_SERVER["REQUEST_METHOD"] === "POST") {
     $mensagem = $_POST["mensagem"] ?? "";
     
 
-    $stmt = $conn->prepare("INSERT INTO relatorios (tipo,remetente,mensagem) values(?,?,?)");
+    $stmt = $conn->prepare("INSERT INTO relatorios (titulo,remetente,mensagem) values(?,?,?)");
 
     $stmt->bind_param("sis",$tipoRelatorio,$remetente,$mensagem);
     
@@ -41,8 +41,6 @@ if($_SERVER["REQUEST_METHOD"] === "POST") {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Criar Relatórios</title>
-
-    <script src="../scripts/script.js"></script>
     <link rel="stylesheet" href="../style/styles.css">
     <link rel="icon" href="../assets/icons/logo.png" type="image/png">
 </head>
@@ -56,14 +54,14 @@ if($_SERVER["REQUEST_METHOD"] === "POST") {
 <div class="branco">
 
     <form id="Formularios" method="POST">
-            <input class="relatorioradious" type="text" name="tipoRelatorio" id="tipoRelatorio" placeholder="Tipo do relatorio..."required>
+            <input class="relatorioradious" type="text" name="tipoRelatorio" id="tipoRelatorio" placeholder="titulo do relatorio..."required>
             <br>
             <br>
-            <input class="mensagemradious" type="text" name="mensagem" id="mensagem" placeholder="Mensagem..." required> 
-            <br>
-            <br>
-            <div class="entrar"><button type="submit">Enviar</button></div>
-        </form>
+            <textarea class="mensagemradious" name="mensagem" id="mensagem" placeholder="Mensagem..." required></textarea>
+            <div id="contador">400 caracteres restantes</div>
+    <br><br>
+    <div class="entrar"><button type="submit">Enviar</button></div>
+</form>
 </div>
 <br><br>
 <a  href="relatorios.php">

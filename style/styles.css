@@ -493,23 +493,43 @@ a{
     background-color: #999999;
   }
 
-  .arrastar2 {
+.arrastar2 {
     overflow: scroll;
-    height: 600px;
+    height: 500px;
     scrollbar-width: none;
 }
 
-  .criar{
+.criar{
         display: flex;
        justify-content: end;
         width: 340px;
 }
-  .cinzacriar{
+.cinzacriar{
         background-color: rgb(223, 219, 219);
         border-radius: 30px;
         border: 0px;
         padding: 20px;
         text-align: center;
+}
+
+.mensagemradious{
+    border-radius:5px ;
+    padding: 5px;
+    width: 335px;
+    height: 400px;
+}
+
+.relatorioradious{
+    border-radius:50px ;
+    padding: 5px;
+    width: 335px;
+}
+
+@media (max-width: 400px) {
+    .arrastar2 {
+        max-width: 100vw;
+        word-break: break-word;
+    }
 }
 /*------------------------------------------------------------------*/
 /*Rotas*/
