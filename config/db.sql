@@ -39,16 +39,17 @@ CREATE TABLE rotas(
     
 CREATE TABLE alerta(
 	id int auto_increment primary key,
-    remetente varchar(45) not null
+    mensagem varchar(45) not null
 	);
     
 CREATE TABLE relatorios(
-	id int auto_increment primary key,
-    tipo varchar(45) not null,
+    id int auto_increment primary key,
+    titulo varchar(45) not null,
     remetente int not null,
-    mensagem varchar (220) not null,
+    mensagem varchar(400) not null,
+    criado_em DATETIME DEFAULT CURRENT_TIMESTAMP,
     FOREIGN KEY (remetente) REFERENCES usuarios(id)
-    );
+);
     
 CREATE TABLE manutencao(
 	id int auto_increment primary key,
@@ -59,6 +60,11 @@ CREATE TABLE manutencao(
 CREATE TABLE carga(
     id int auto_increment primary key,
     conteúdo varchar(45)
+);
+
+CREATE TABLE aviso(
+    id int auto_increment primary key,
+    mensagem varchar(45) not null
 );
     
 insert into usuarios (nome,data_nascimento,naturalidade,nacionalidade,estado_civil,tipo,CPF,email,data_admissao,genero,codigo,senha) values
