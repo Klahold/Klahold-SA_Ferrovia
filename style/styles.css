@@ -147,7 +147,6 @@ a{
     border-radius: 30px;
     border: 0px;
     padding: 2px;
-    height: 100px;
     width: 340px;
 }
 
@@ -180,9 +179,14 @@ a{
 
 .setas{
     display: flex;
-    justify-content: space-between ;
+    justify-content: space-between;
 }
 
+.espacoCarga{
+    display: flex;
+    padding: 5px;
+    justify-content: space-between;  
+}
 
 /*------------------------------------------------------------------*/
 /*Dashboard*/

@@ -2,11 +2,15 @@
 
 include '../config/db.php';
 
+$sql = "SELECT * FROM carga";
+
+$result = $conn->query($sql);
+
 session_start();
 
 if (empty($_SESSION["user_id"])):
 
-    header("Location: login.php");
+  header("Location: login.php");
 
 endif
 ?>
@@ -46,62 +50,28 @@ endif
 
     <div class="arrastarCargas">
 
-      <div class="cinzaCargas">
-        <div class="arrumadores">
-          <div class="espaco">
-               <?php
-        $sql = "SELECT * FROM carga";
-        $result = $conn->query($sql);
+      <?php
+      if ($result->num_rows > 0) {
+        while ($row = $result->fetch_assoc()) {
 
-        if ($result->num_rows > 0){
-            
-            echo "<table>
-                        <thead>
-                                <tr>
-                                    <strong><h3>Vagão</h3></strong>
-                                <tr>
-                        <thead>
-                <tbody>";
-        while ($row = $result->fetch_assoc()){
-            echo "<tr>
-                    <h3>{$row['id']}</h3>
-                    <tr>";
-        }
-        echo"<t/body></table>";
-        }else{
-            echo "<p>Nenhum vagão no momento.</p>";
-        }
-
-        
-        ?>
-
-        
-
-        <?php
-        $sql = "SELECT * FROM carga";
-        $result = $conn->query($sql);
-
-        if ($result->num_rows > 0){
-            
-            echo "<table>
-                        <thead>
-                                <tr>
-                                    <strong><h3>Conteúdo</h3></strong>
-                                <tr>
-                        <thead>
-                <tbody>";
-        while ($row = $result->fetch_assoc()){
-            echo "<tr>
-                    <h3>{$row['conteúdo']}</h3>
-                    <tr>";
-        }
-        echo"<t/body></table>";
-        }
-        
-        ?>
+          echo '
+        <div class="cinzaCargas">
+            <div class="espacoCarga">
+                <div class="espacoCarga"><p><strong>Vagão</strong></p></div>
+                <div class="espacoCarga"><p>' . $row['id'] . '</p></div>
+            </div>
+            <div class="espacoCarga">
+                <div class="espacoCarga"><p><strong>Conteúdo</strong></p></div>
+                <div class="espacoCarga"><p>' . $row['conteúdo'] . '</p></div>
             </div>
         </div>
-      </div>
+        <br>
+        ';
+        }
+      } else {
+        echo "Nenhum registro encontrado.";
+      }
+      ?>
 
     </div>
 
