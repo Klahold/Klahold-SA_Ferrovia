@@ -10,6 +10,17 @@ if (empty($_SESSION["user_id"])):
 
 endif
 ?>
+<?php
+$id = 2;
+
+$stmt = $conn->prepare('SELECT * FROM trens where id=?;');
+$stmt->bind_param('i', $id);
+$stmt->execute();
+
+$result = $stmt->get_result();
+
+?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -32,66 +43,40 @@ endif
   <main>
 
     <section class="squarewhite">
-      <h2>TREM M2VF</h2>
+      <?php 
 
-      <div class="selection">
+        while ($row = $result->fetch_assoc()) {
 
-        <h3>Cabine do maquinista</h3>
-        <div class="status">
-          <div>
-            <div class="pontoverde"></div>
-          </div>
-          <h4>Status - sem reportes </h4>
-        </div>
-        <button type="button" class="reporter">
-          reportar problema
-        </button>
-      </div>
+        echo "<a href='createReport.php?id={$row['id']}'>
+              <h1 class='text'> Trem {$row['codigo']} </h1>
+              </a>
+        ";}
 
-      <br>
+        $stmt->close();
+        ?>
 
-      <div class="selection">
-        <h3>Rodas</h3>
-        <div class="status">
-          <div>
-            <div class="pontoamarelo"></div>
-          </div>
-          <h4>Status - 1 reportes </h4>
-        </div>
-        <button type="button" class="reporter">
-          reportar problema
-        </button>
-      </div>
+          <Br><Br>
 
-      <br>
+        <?php
 
-      <div class="selection">
-        <h3>Motor</h3>
-        <div class="status">
-          <div>
-            <div class="pontoverde"></div>
-          </div>
-          <h4>Status - sem reportes </h4>
-        </div>
-        <button type="button" class="reporter">
-          reportar problema
-        </button>
-      </div>
+        $stmt = $conn->prepare('SELECT * FROM trens where id=?;');
+        $stmt->bind_param('i', $id);
+        $stmt->execute();
 
-      <br>
+        $dados2 = $stmt->get_result();
 
-      <div class="selection">
-        <h3>Vagões</h3>
-        <div class="status">
-          <div>
-            <div class="pontoverde"></div>
-          </div>
-          <h4>Status - sem reportes </h4>
-        </div>
-        <button type="button" class="reporter">
-          reportar problema
-        </button>
-      </div>
+        while ($row = $dados2->fetch_assoc()){
+
+        echo"<div class='caixamanuntencao'>
+        
+              <h3 class='text'> Trem {$row['codigo']} </h3>
+
+            </div
+        ";}
+            
+        $stmt->close();
+                    
+        ?>
 
     </section>
 

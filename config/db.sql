@@ -55,6 +55,7 @@ CREATE TABLE relatorios(
 CREATE TABLE manutencao(
 	id int auto_increment primary key,
     tipo enum('RODAS','MOTOR','VAGÕES','FREIOS','SUSPENSÃO','ESTABILIDADE','OUTROS') not null,
+    descricao varchar(60) not null,
     id_trem int not null,
     FOREIGN KEY (id_trem) REFERENCES trens(id)
     );

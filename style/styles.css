@@ -286,6 +286,36 @@ a{
     scrollbar-width: none;
 }
 
+.meiotabranco {
+    background-color: white;
+    padding: 20px;
+    border-radius: 50px;
+    height: 400px;
+}
+
+.caixamanuntencao{
+    border: 1px solid;
+    border-color: #606060;
+    height: 40px;
+    display: flex;
+    
+}
+
+.meiota{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 600px;
+}
+
+
+.descricaoradious{
+    border-radius:5px ;
+    padding: 5px;
+    width: 290px;
+    height: 200px;
+}
+
 .trems {
     display: flex;
 }
