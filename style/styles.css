@@ -362,6 +362,11 @@ a{
     font-weight: bold;
 }
 
+.vermelhoProblema {
+    color: red;
+    text-decoration: underline;
+}
+
 /*------------------------------------------------------------------*/
 /*Menu*/
 #menu_linha {

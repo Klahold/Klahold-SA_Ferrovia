@@ -2,13 +2,18 @@
 
 include '../config/db.php';
 
+$sql = "SELECT * FROM manutencao";
+
+$result = $conn->query($sql);
+
 session_start();
 
 if (empty($_SESSION["user_id"])):
 
-    header("Location: login.php");
+  header("Location: login.php");
 
-endif
+endif;
+
 ?>
 
 <!DOCTYPE html>
@@ -23,7 +28,7 @@ endif
 </head>
 <body>
   <header class="header">
-    <h1>Manutenção</h1>
+    <h1 class>Manutenção</h1>
     <img class="logoMenu" src="../assets/icons/manutenção.png" alt="Icone de manutenção">
 </header>
 
@@ -31,7 +36,32 @@ endif
 
     <section class="squarewhite">
 
-        <a href="manutenção2.php">
+        <?php
+      if ($result->num_rows > 0) {
+        while ($row = $result->fetch_assoc()) {
+          $imagem = "../assets/images/default.png";
+
+          echo '<a href="manutenção2.php">
+        <div class="selection"> 
+        <div class="trems">
+          <img src="../assets/images/tremVermelho.png" alt="Trem KM2D" class="trem">
+          <div class="treminfo">
+            <h2>Trem KM2D</h2>
+            <h3 class="vermelhoProblema"> - PROBLEMA EM '. $row['tipo'] .' -</h3>
+          </div>
+          </div>
+          <div class="pontosmanutencão">
+            <div class="ponto"></div>
+            <div class="ponto"></div>
+            <div class="ponto"></div>
+          </div>
+        </div>
+        </a>
+        <br>
+        ';
+        }
+      } else {
+        echo '<a href="manutenção2.php">
         <div class="selection"> 
         <div class="trems">
           <img src="../assets/images/tremVermelho.png" alt="Trem KM2D" class="trem">
@@ -47,63 +77,11 @@ endif
           </div>
         </div>
         </a>
+        <br>';
+      }
+      ?>
 
-        <br>
-
-        <a href="manutenção_2.php">
-        <div class="selection">
-          <div class="trems">
-            <img src="../assets/images/tremAzul.png" alt="Trem N2VF" class="trem">
-            <div class="treminfo">
-              <h2>Trem N2VF</h2>
-              <h3> - sem adversidades -</h3>
-            </div>
-            </div>
-            <div class="pontosmanutencão">
-              <div class="ponto"></div>
-              <div class="ponto"></div>
-              <div class="ponto"></div>
-            </div>
-          </div>
-          </a>
-
-          <br>
-
-          <a href="manutenção_2.php">
-          <div class="selection">
-            <div class="trems">
-              <img src="../assets/images/tremVermelho.png" alt="Trem N3VF" class="trem">
-              <div class="treminfo">
-                <h2>Trem N3VF</h2>
-                <h3> - sem adversidades -</h3>
-              </div>
-              </div>
-              <div class="pontosmanutencão">
-                <div class="ponto"></div>
-                <div class="ponto"></div>
-                <div class="ponto"></div>
-              </div>
-            </div>
-            </a>
-
-            <br>
-
-            <a href="manutenção_2.php">
-            <div class="selection">
-              <div class="trems">
-                <img src="../assets/images/tremAzul.png" alt="Trem N9NM" class="trem">
-                <div class="treminfo">
-                  <h2 id="">Trem N9NM</h2>
-                  <h3> - sem adversidades -</h3>
-                </div>
-                </div>
-                <div class="pontosmanutencão">
-                  <div class="ponto"></div>
-                  <div class="ponto"></div>
-                  <div class="ponto"></div>
-                </div>
-              </div>
-              </a>
+      
       </section>
 
   </main>
