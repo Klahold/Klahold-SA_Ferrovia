@@ -29,7 +29,8 @@ CREATE TABLE trens(
     velocidade varchar(45) not null,
     localizacao varchar(45),
     direcao varchar(45),
-    horarios int
+    horarios int,
+    codigo varchar(4)
     );
     
 CREATE TABLE rotas(
@@ -53,8 +54,9 @@ CREATE TABLE relatorios(
     
 CREATE TABLE manutencao(
 	id int auto_increment primary key,
-    destinatario varchar(45) not null,
-    local varchar(45) not null
+    tipo enum('RODAS','MOTOR','VAGÕES','FREIOS','SUSPENSÃO','ESTABILIDADE','OUTROS') not null,
+    id_trem int not null,
+    FOREIGN KEY (id_trem) REFERENCES trens(id)
     );
 
 CREATE TABLE carga(
