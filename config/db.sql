@@ -53,8 +53,9 @@ CREATE TABLE relatorios(
     
 CREATE TABLE manutencao(
 	id int auto_increment primary key,
-    destinatario varchar(45) not null,
-    local varchar(45) not null
+    tipo enum('Rodas','Motor','Vagões','Freios','Suspensão','Estabilidad','Outros') not null,
+    id_trem int not null,
+    FOREIGN KEY (id_trem) REFERENCES trens(id)
     );
 
 CREATE TABLE carga(
