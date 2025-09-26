@@ -2,7 +2,7 @@
 
 include '../config/db.php';
 
-$sql = "SELECT * FROM manutencao";
+$sql = "SELECT * FROM manutencao,trens";
 
 $result = $conn->query($sql);
 
@@ -46,7 +46,7 @@ endif;
         <div class="trems">
           <img src="../assets/images/tremVermelho.png" alt="Trem KM2D" class="trem">
           <div class="treminfo">
-            <h2>Trem KM2D</h2>
+            <h2>Trem '. $row['codigo'] .'</h2>
             <h3 class="vermelhoProblema"> - PROBLEMA EM '. $row['tipo'] .' -</h3>
           </div>
           </div>
@@ -61,12 +61,15 @@ endif;
         ';
         }
       } else {
+         $sql = "SELECT * FROM trens";
+        $result = $conn->query($sql);
+        while ($row = $result->fetch_assoc())
         echo '<a href="manutenção2.php">
         <div class="selection"> 
         <div class="trems">
           <img src="../assets/images/tremVermelho.png" alt="Trem KM2D" class="trem">
           <div class="treminfo">
-            <h2>Trem KM2D</h2>
+            <h2>Trem '. $row['codigo'] .'</h2>
             <h3> - sem adversidades -</h3>
           </div>
           </div>
