@@ -10,6 +10,13 @@ if (empty($_SESSION["user_id"])):
 
 endif;
 
+if (!isset($_GET['id'])) {
+    echo "ID não informado.";
+    exit;
+}
+
+$id = $_GET['id'];
+
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     $nome = $_POST['nome'];
@@ -25,7 +32,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $codigo = $_POST['codigo'];
     $senha = $_POST['senha'];
 
-    $sql = "UPDATE usuarios SET nome='$nome',data_nascimento='$data_nascimento',naturalidade='$naturalidade',nacionalidade='$nacionalidade',estado_civil='$estado_civil',tipo='$tipo',CPF='$CPF',='$email',data_admissao='$data_admissao',genero='$genero',codigo='$codigo',senha='$senha' WHERE id=$id";
+    $sql = "UPDATE usuarios SET nome='$nome',data_nascimento='$data_nascimento',naturalidade='$naturalidade',nacionalidade='$nacionalidade',estado_civil='$estado_civil',tipo='$tipo',CPF='$CPF',email='$email',data_admissao='$data_admissao',genero='$genero',codigo='$codigo',senha='$senha' WHERE id=$id";
 
 
     if ($conn->query($sql) === true) {
@@ -34,11 +41,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         echo "Erro " . $sql . '<br>' . $conn->error;
     }
     $conn->close();
+    exit();
 }
 
 $sql = "SELECT * FROM usuarios WHERE id=$id";
-$result = $conn->query($sql);
-$row = $result->fetch_assoc();
+$result = $conn -> query($sql);
+$row = $result -> fetch_assoc();
 
 ?>
 
@@ -58,7 +66,7 @@ $row = $result->fetch_assoc();
 
 <body>
     <header class="header">
-        <h1>Cadastrar</h1>
+        <h1>Update</h1>
         <img class="logoMenu" src="../assets/icons/funcionario.png">
     </header>
 
@@ -98,7 +106,7 @@ $row = $result->fetch_assoc();
 
                 <div class="cinzaCadastro">
                     <input type="text" name="naturalidade" id="naturalidade" placeholder="Naturalidade:" class="input"
-                       value="<?php echo $row['Naturalidade'];?>" required>
+                       value="<?php echo $row['naturalidade'];?>" required>
                 </div>
 
                 <br>
@@ -147,7 +155,7 @@ $row = $result->fetch_assoc();
                 <br>
 
                 <div class="cinzaCadastro">
-                    <input type="text" name="genero" id="genero" placeholder="Genero:" class="input" value="<?php echo $row['Genero'];?>" required>
+                    <input type="text" name="genero" id="genero" placeholder="Genero:" class="input" value="<?php echo $row['genero'];?>" required>
                 </div>
 
                 <br>

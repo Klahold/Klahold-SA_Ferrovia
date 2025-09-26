@@ -2,14 +2,25 @@
 
 include '../config/db.php';
 
+session_start();
+
+if (empty($_SESSION["user_id"])):
+
+    header("Location: login.php");
+
+endif;
+
+if (!isset($_GET['id'])) {
+    echo "ID não informado.";
+    exit;
+}
+
 $id = $_GET['id'];
 
 $sql = " DELETE FROM usuarios WHERE id=$id ";
 
 if ($conn->query($sql) === true) {
-    echo "Registro excluído com sucesso.
-        <a href='funcionário.php'>Ver funcionários.</a>
-        ";
+    header("Location: funcionário.php");
 } else {
     echo "Erro " . $sql . '<br>' . $conn->error;
 }

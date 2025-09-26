@@ -36,6 +36,11 @@ endif;
   </header>
 
   <div class="branco-funcionario">
+    <div class="setas">
+      <a href="menuadm.php">
+        <img class="setaDashboard" src="../assets/icons/seta.png" alt="Botão de voltar">
+      </a>
+    </div>
     <div class="flexFuncionario">
       <div class="cinza_funcionario">🔍 Buscar Funcionários</div>
       <a href="cadastro.php">
