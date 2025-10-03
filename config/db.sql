@@ -9,18 +9,19 @@ CREATE TABLE menu(
 
 CREATE TABLE usuarios(
 	id int auto_increment primary key,
-    nome varchar(45) not null,
+    foto_perfil VARCHAR(255) DEFAULT 'default.jpg',
+    nome varchar(120) not null,
     data_nascimento varchar(45) not null,
     naturalidade varchar(45) not null,
     nacionalidade varchar(45) not null,
     estado_civil varchar(45) not null,
     tipo ENUM('Administrador','Usuario') not null,
     CPF char(11) not null unique,
-    email varchar(45) not null unique,
+    email varchar(120) not null unique,
     data_admissao varchar(45) not null,
     genero varchar(45) not null,
     codigo char(6) not null unique,
-    senha varchar(45) not null
+    senha varchar(255) not null
 );
 
     
@@ -55,7 +56,6 @@ CREATE TABLE relatorios(
 CREATE TABLE manutencao(
 	id int auto_increment primary key,
     tipo enum('RODAS','MOTOR','VAGÕES','FREIOS','SUSPENSÃO','ESTABILIDADE','OUTROS') not null,
-    descricao varchar(60) not null,
     id_trem int not null,
     FOREIGN KEY (id_trem) REFERENCES trens(id)
     );

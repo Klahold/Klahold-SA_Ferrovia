@@ -24,9 +24,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $genero = $_POST['genero'];
     $codigo = $_POST['codigo'];
     $senha = $_POST['senha'];
+    $hash = password_hash($senha, PASSWORD_DEFAULT);
+
 
     $sql = " INSERT INTO usuarios (nome,data_nascimento,naturalidade,nacionalidade,estado_civil,tipo,CPF,email,data_admissao,genero,codigo,senha) 
-    VALUE ('$nome','$data_nascimento','$naturalidade','$nacionalidade','$estado_civil','$tipo','$CPF','$email','$data_admissao','$genero','$codigo','$senha') ";
+    VALUE ('$nome','$data_nascimento','$naturalidade','$nacionalidade','$estado_civil','$tipo','$CPF','$email','$data_admissao','$genero','$codigo','$hash') ";
 
     if ($conn->query($sql) === true) {
         header("Location: funcionário.php");
