@@ -40,6 +40,11 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     } else {
         $msg = "Usuário ou senha incorretos!";
     }
+
+    if($user && password_verify($password, $user['senha'])){
+            return $user;
+        }
+        return false;
 }
 
 
