@@ -32,7 +32,9 @@ endif
         <h1>Avisos</h1>
         <img class="logoMenu" src="../assets/icons/avisos.png" alt="">
     </header>
+  <div class="brancoGeral">
 
+  <h2 class="avisos">Avisos</h2>
     <div class="arrastar">
 
       <?php
@@ -53,6 +55,7 @@ endif
         echo '<div class="cinza">nenhum aviso encontrado</div>';
       }
       ?>
+    </div>
     </div>
 
 </body>

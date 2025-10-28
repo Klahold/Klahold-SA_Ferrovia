@@ -103,6 +103,11 @@ a{
     height: 650px;
 }
 
+.avisos{
+    text-align: center;
+    text-decoration: underline;
+}
+
 /*------------------------------------------------------------------*/
 /*Cadastro*/
 
