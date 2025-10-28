@@ -1,6 +1,7 @@
 <?php
 
 include '../config/db.php';
+include 'validaçãoCadastro.php';
 
 session_start();
 
@@ -25,18 +26,36 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $codigo = $_POST['codigo'];
     $senha = $_POST['senha'];
     $hash = password_hash($senha, PASSWORD_DEFAULT);
+    $foto_perfil = $_POST['profilePic'];
 
+    $sql = "INSERT INTO usuarios (foto_perfil, nome, data_nascimento, naturalidade, nacionalidade, estado_civil, tipo, CPF, email, data_admissao, genero, codigo, senha)
+    VALUES ('$foto_perfil', '$nome', '$data_nascimento', '$naturalidade', '$nacionalidade', '$estado_civil', '$tipo', '$CPF', '$email', '$data_admissao', '$genero', '$codigo', '$hash')";
+    
+    $email_status = validar_email_zerobounce($email);
 
-    $sql = " INSERT INTO usuarios (nome,data_nascimento,naturalidade,nacionalidade,estado_civil,tipo,CPF,email,data_admissao,genero,codigo,senha) 
-    VALUE ('$nome','$data_nascimento','$naturalidade','$nacionalidade','$estado_civil','$tipo','$CPF','$email','$data_admissao','$genero','$codigo','$hash') ";
+    if (isset($_FILES['profilePic']) && $_FILES['profilePic']['error'] == UPLOAD_ERR_OK) {
+        $ext = pathinfo($_FILES['profilePic']['name'], PATHINFO_EXTENSION);
+        $novo_nome = uniqid() . '.' . $ext;
+        $destino = '../assets/images/' . $novo_nome;
+        if (move_uploaded_file($_FILES['profilePic']['tmp_name'], $destino)) {
+            $foto_perfil = $novo_nome;
+        }
+    }
 
-    if ($conn->query($sql) === true) {
-        header("Location: funcionário.php");
+    if ($email_status === 'valid') {
+        if ($conn->query($sql) === true) {
+            $conn->close();
+            header("Location: funcionário.php");
+            exit;
+        } else {
+            $errorMsg = "Erro ao salvar: " . $conn->error;
+        }
     } else {
-        echo "Erro " . $sql . '<br>' . $conn->error;
+        $errorMsg = "E-mail inválido: " . $email_status;
     }
     $conn->close();
 }
+
 
 ?>
 
@@ -57,13 +76,17 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 <body>
     <header class="header">
         <h1>Cadastrar</h1>
-        <img class="logoMenu" src="../assets/icons/funcionario.png">
+        <img class="logoMenu" src="../assets/icons/funcionario.png" enctype="multipart/form-data">
     </header>
 
     <div class="brancoGeral">
         <div class="arrastarGeral">
 
             <form method="POST" action="cadastro.php">
+
+                <?php if (!empty($errorMsg)) {
+                    echo "<script>'<div class=error style=color:red;margin:10px 0;>' . htmlspecialchars($errorMsg) . '</div>' </script>";
+                } ?>
 
                 <div class="logofuncionario">
                     <img class="img_cadastro" src="..//assets/images/fotoCadastro.png" alt="">

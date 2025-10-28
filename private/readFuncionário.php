@@ -42,7 +42,7 @@ if (isset($_GET['id'])) {
                 <div class="arrastarGeral">
 
                     <div class="logofuncionario">
-                        <img class="img_cadastro" src="../assets/images/fotoCadastro.png" alt="">
+                        <img class="img_cadastro" src="../assets/images/<?php echo htmlspecialchars($row['foto_perfil']); ?>" alt="Foto de perfil">
                     </div>
 
                     <br>

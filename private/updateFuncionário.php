@@ -45,8 +45,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 }
 
 $sql = "SELECT * FROM usuarios WHERE id=$id";
-$result = $conn -> query($sql);
-$row = $result -> fetch_assoc();
+$result = $conn->query($sql);
+$row = $result->fetch_assoc();
 
 ?>
 
@@ -71,12 +71,17 @@ $row = $result -> fetch_assoc();
     </header>
 
     <div class="brancoGeral">
+        <div class="setas">
+            <a href="funcionário.php">
+                <img class="setaDashboard" src="../assets/icons/seta.png" alt="Botão de voltar">
+            </a>
+        </div>
         <div class="arrastarGeral">
 
-            <form method="POST" action="updateFuncionário.php?id=<?php echo $row['id'];?>">
+            <form method="POST" action="updateFuncionário.php?id=<?php echo $row['id']; ?>" enctype="multipart/form-data">
 
                 <div class="logofuncionario">
-                    <img class="img_cadastro" src="..//assets/images/fotoCadastro.png" alt="">
+                    <img class="img_cadastro" src="../assets/images/<?php echo htmlspecialchars($row['foto_perfil']); ?>" alt="Foto de perfil">
                 </div>
 
                 <br>
@@ -92,41 +97,41 @@ $row = $result -> fetch_assoc();
                 <br>
 
                 <div class="cinzaCadastro">
-                    <input type="text" name="nome" id="nome" placeholder="Nome Completo:" class="input" value="<?php echo $row['nome'];?>" required>
+                    <input type="text" name="nome" id="nome" placeholder="Nome Completo:" class="input" value="<?php echo $row['nome']; ?>" required>
                 </div>
 
                 <br>
 
                 <div class="cinzaCadastro">
                     <input type="text" name="data_nascimento" id="data_nascimento" placeholder="Data De Nascimento:"
-                        onfocus="(this.type='date')" onblur="(this.type='text')" class="input" value="<?php echo $row['data_nascimento'];?>" required>
+                        onfocus="(this.type='date')" onblur="(this.type='text')" class="input" value="<?php echo $row['data_nascimento']; ?>" required>
                 </div>
 
                 <br>
 
                 <div class="cinzaCadastro">
                     <input type="text" name="naturalidade" id="naturalidade" placeholder="Naturalidade:" class="input"
-                       value="<?php echo $row['naturalidade'];?>" required>
+                        value="<?php echo $row['naturalidade']; ?>" required>
                 </div>
 
                 <br>
 
                 <div class="cinzaCadastro">
                     <input type="text" name="nacionalidade" id="nacionalidade" placeholder="Nacionalidade" class="input"
-                       value="<?php echo $row['nacionalidade'];?>" required>
+                        value="<?php echo $row['nacionalidade']; ?>" required>
                 </div>
 
                 <br>
 
                 <div class="cinzaCadastro">
                     <input type="text" name="estado_civil" id="estado_civil" placeholder="Estado Civil" class="input"
-                       value="<?php echo $row['estado_civil'];?>" required>
+                        value="<?php echo $row['estado_civil']; ?>" required>
                 </div>
 
                 <br>
 
                 <div class="cinzaCadastro">
-                    <select name="tipo" id="tipo" class="input" value="<?php echo $row['tipo'];?>" required>
+                    <select name="tipo" id="tipo" class="input" value="<?php echo $row['tipo']; ?>" required>
                         <option value="" disabled selected>Tipo</option>
                         <option value="Administrador">Administrador</option>
                         <option value="Usuario">Usuario</option>
@@ -136,38 +141,38 @@ $row = $result -> fetch_assoc();
                 <br>
 
                 <div class="cinzaCadastro">
-                    <input type="number" name="CPF" id="CPF" placeholder="CPF:" class="input" value="<?php echo $row['CPF'];?>" required>
+                    <input type="number" name="CPF" id="CPF" placeholder="CPF:" class="input" value="<?php echo $row['CPF']; ?>" required>
                 </div>
 
                 <br>
 
                 <div class="cinzaCadastro">
-                    <input type="email" name="email" id="email" placeholder="Email:" class="input" value="<?php echo $row['email'];?>" required>
+                    <input type="email" name="email" id="email" placeholder="Email:" class="input" value="<?php echo $row['email']; ?>" required>
                 </div>
 
                 <br>
 
                 <div class="cinzaCadastro">
                     <input type="text" name="data_admissao" id="data_admissao" placeholder="Data de Adimissão:"
-                        onfocus="(this.type='date')" onblur="(this.type='text')" class="input" value="<?php echo $row['data_admissao'];?>" required>
+                        onfocus="(this.type='date')" onblur="(this.type='text')" class="input" value="<?php echo $row['data_admissao']; ?>" required>
                 </div>
 
                 <br>
 
                 <div class="cinzaCadastro">
-                    <input type="text" name="genero" id="genero" placeholder="Genero:" class="input" value="<?php echo $row['genero'];?>" required>
+                    <input type="text" name="genero" id="genero" placeholder="Genero:" class="input" value="<?php echo $row['genero']; ?>" required>
                 </div>
 
                 <br>
 
                 <div class="cinzaCadastro">
-                    <input type="text" name="codigo" id="codigo" placeholder="Codigo:" class="input" value="<?php echo $row['codigo'];?>" required>
+                    <input type="text" name="codigo" id="codigo" placeholder="Codigo:" class="input" value="<?php echo $row['codigo']; ?>" required>
                 </div>
 
                 <br>
 
                 <div class="cinzaCadastro">
-                    <input type="text" name="senha" id="senha" placeholder="Senha:" class="input" value="<?php echo $row['senha'];?>" required>
+                    <input type="text" name="senha" id="senha" placeholder="Senha:" class="input" value="<?php echo $row['senha']; ?>" required>
                 </div>
 
                 <br>
