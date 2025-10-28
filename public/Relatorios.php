@@ -95,7 +95,7 @@ $result = $stmt->get_result();
                         $data_cricacao = date('d/m/Y', strtotime($row['criado_em']));
 
                     echo "
-                        <a href='lerRelatorio.php?id={$row['id']}'>
+                        <a href='lerRelatorio.php?id={$row['id']}'>'
                         <div class='caixa'>
                         <input class='checkboxRelatorio' type='checkbox'>
                         <h3 class='text'>{$row['titulo']}</h3> 

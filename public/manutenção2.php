@@ -11,7 +11,7 @@ if (empty($_SESSION["user_id"])):
 endif
 ?>
 <?php
-$id = 2;
+$id = $_GET['id'];
 
 $stmt = $conn->prepare('SELECT * FROM trens where id=?;');
 $stmt->bind_param('i', $id);

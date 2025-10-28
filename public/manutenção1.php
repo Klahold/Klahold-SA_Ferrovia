@@ -2,7 +2,9 @@
 
 include '../config/db.php';
 
-$sql = "SELECT * FROM manutencao,trens";
+$sql = "select trens.id,tipo,codigo from manutencao
+inner join trens
+on id_trem=trens.id;";
 
 $result = $conn->query($sql);
 
@@ -39,49 +41,50 @@ endif;
         <?php
       if ($result->num_rows > 0) {
         while ($row = $result->fetch_assoc()) {
-          $imagem = "../assets/images/default.png";
+        if ($row['tipo'] != 'sem adversidades'){
 
-          echo '<a href="manutenção2.php">
-        <div class="selection"> 
-        <div class="trems">
-          <img src="../assets/images/tremVermelho.png" alt="Trem KM2D" class="trem">
-          <div class="treminfo">
-            <h2>Trem '. $row['codigo'] .'</h2>
-            <h3 class="vermelhoProblema"> - PROBLEMA EM '. $row['tipo'] .' -</h3>
+          echo "<a href='manutenção2.php?id={$row['id']}'>
+        <div class='selection'> 
+        <div class='trems'>
+          <img src='../assets/images/tremVermelho.png' alt=". $row['codigo'] ." class='trem'>
+          <div class='treminfo'>
+            <h2>Trem ". $row['codigo'] ."</h2>
+            <h3 class='vermelhoProblema'> - PROBLEMA EM ". $row['tipo'] ." -</h3>
           </div>
           </div>
-          <div class="pontosmanutencão">
-            <div class="ponto"></div>
-            <div class="ponto"></div>
-            <div class="ponto"></div>
+          <div class='pontosmanutencão'>
+            <div class='ponto'></div>
+            <div class='ponto'></div>
+            <div class='ponto'></div>
           </div>
         </div>
         </a>
         <br>
-        ';
-        }
-      } else {
-         $sql = "SELECT * FROM trens";
-        $result = $conn->query($sql);
-        while ($row = $result->fetch_assoc())
-        echo '<a href="manutenção2.php">
-        <div class="selection"> 
-        <div class="trems">
-          <img src="../assets/images/tremVermelho.png" alt="Trem KM2D" class="trem">
-          <div class="treminfo">
-            <h2>Trem '. $row['codigo'] .'</h2>
+        ";
+        } else {
+        echo "<a href='manutenção2.php?id={$row['id']}'>
+        <div class='selection'> 
+        
+        <div class='trems'>
+          <img src='../assets/images/tremAzul.png' alt=". $row['codigo'] ." class='trem'>
+          <div class='treminfo'>
+            <h2>Trem ". $row['codigo'] ."</h2>
             <h3> - sem adversidades -</h3>
           </div>
           </div>
-          <div class="pontosmanutencão">
-            <div class="ponto"></div>
-            <div class="ponto"></div>
-            <div class="ponto"></div>
+          <div class='pontosmanutencão'>
+            <div class='ponto'></div>
+            <div class='ponto'></div>
+            <div class='ponto'></div>
           </div>
         </div>
         </a>
-        <br>';
+        <br>";
+        }
+      }}else {
+        echo "<h2>Nenhum trem cadastrado no momento.</h2>";
       }
+      
       ?>
 
       
