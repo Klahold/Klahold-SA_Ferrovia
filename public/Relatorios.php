@@ -78,7 +78,7 @@ $result = $stmt->get_result();
 
                 <div class="criar">
                 
-                <a href="createRelatorios.php"><div class="cinzacriar"></div></a>
+                <a href="createRelatorios.php"><div class="cinzacriar"><p class="textoRelatorio">+</p></div></a>
 
                 </div>
                 
