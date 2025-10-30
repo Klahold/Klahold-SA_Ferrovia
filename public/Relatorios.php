@@ -45,7 +45,14 @@ $result = $stmt->get_result();
 
 
     <div class="branco">
-        <div class="cinza">🔍 Buscar Relatório</div>
+        <div class="cinza">
+            <form action="">
+                <input type="text" name="palavra" placeholder="🔍 Buscar Relatórios">
+                <button type="submit">Buscar</button>
+
+            </form>
+
+        </div>
             <div class="flex">
                 <input class="checkboxRelatorio" type="checkbox">
                 <select class="little" name="selecao" id="relatory">
