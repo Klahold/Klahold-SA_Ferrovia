@@ -47,8 +47,9 @@ $result = $stmt->get_result();
 
         while ($row = $result->fetch_assoc()) {
 
-        echo "<a href='createReport.php?id={$row['id']}'>
-              <h1 class='text'> Trem {$row['codigo']} </h1>
+        echo "<h1 class='text'> Trem {$row['codigo']} </h1>
+              <a href='createReport.php?id={$row['id']}'>
+              reportar problema
               </a>
         ";}
 
@@ -59,7 +60,7 @@ $result = $stmt->get_result();
 
         <?php
 
-        $stmt = $conn->prepare('SELECT * FROM trens where id=?;');
+        $stmt = $conn->prepare('SELECT * FROM manutencao where id_trem=?;');
         $stmt->bind_param('i', $id);
         $stmt->execute();
 
@@ -69,7 +70,7 @@ $result = $stmt->get_result();
 
         echo"<div class='caixamanuntencao'>
         
-              <h3 class='text'> Trem {$row['codigo']} </h3>
+              <h3 class='text'> Trem {$row['tipo']} </h3>
 
             </div
         ";}

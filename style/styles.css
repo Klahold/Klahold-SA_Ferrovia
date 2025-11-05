@@ -282,6 +282,29 @@ a{
 }
 /*------------------------------------------------------------------*/
 /*Manutenção*/
+
+.meiotabrancotrem{
+    background-color: white;
+    padding: 20px;
+    border-radius: 50px;
+    height: 400px;
+    width: 300px;
+}
+
+.formstrem{
+    justify-content: center;
+    padding: 10px;
+}
+
+.cadastrartrem{
+    background-color: #f3f3f3;
+    border-radius:5px ;
+    margin: 7px;
+    padding: 2px;
+    border-color: #cccccc;
+    text-align: center;
+}
+
 .squarewhite {
     background-color: white;
     padding: 20px;
