@@ -6,8 +6,7 @@ session_start();
 
 if (empty($_SESSION["user_id"])):
 
-    header("Location: login.php");
-
+  header(header: "Location: ../public/login.php");
 endif;
 
 if (!isset($_GET['id'])) {

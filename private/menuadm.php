@@ -6,8 +6,8 @@ session_start();
 
 if (empty($_SESSION["user_id"])):
 
-    header("Location: login.php");
-
+    header(header: "Location: ../public/login.php");
+    
 endif
 ?>
 
@@ -59,11 +59,11 @@ endif
 
     <div id="menu_linha">
 
-        <a href="../public/manutenção1.php">
+        <a href="../public/readtrem.php">
             <div class="quadrado-branco">
-                <img class="Tamanho_img" src="../assets/icons/manutenção.png" alt="Botão de manutencão">
+                <img class="Tamanho_img" src="../assets/icons/manutenção.png" alt="Botão de trem">
                 <strong>
-                    <p class="texto">Manutencão</p>
+                    <p class="texto">trem</p>
                 </strong>
             </div>
         </a>

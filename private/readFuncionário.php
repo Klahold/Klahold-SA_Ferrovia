@@ -5,8 +5,8 @@ include '../config/db.php';
 session_start();
 
 if (empty($_SESSION["user_id"])) {
-    header("Location: login.php");
-    exit;
+  header(header: "Location: ../public/login.php");
+      exit;
 }
 
 if (isset($_GET['id'])) {
