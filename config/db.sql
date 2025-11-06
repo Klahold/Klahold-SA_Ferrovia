@@ -53,6 +53,7 @@ CREATE TABLE manutencao(
     tipo enum('sem adversidades','RODAS','MOTOR','VAGÕES','FREIOS','SUSPENSÃO','ESTABILIDADE','OUTROS') not null,
     descricao text not null,
     id_trem int not null,
+    criado_em DATETIME DEFAULT CURRENT_TIMESTAMP,
     FOREIGN KEY (id_trem) REFERENCES trens(id)
     );
 

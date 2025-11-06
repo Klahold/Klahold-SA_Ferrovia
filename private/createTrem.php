@@ -22,10 +22,21 @@ if($_SERVER["REQUEST_METHOD"] === "POST") {
 
     $stmt = $conn->prepare("INSERT INTO trens (velocidade,localizacao,direcao,horarios,codigo) values(?,?,?,?,?)");
 
-    $stmt->bind_param("issis",$velocidade,$localizacao,$direcao,$horaios,$codigo);
+    $stmt->bind_param("issis",$velocidade,$localizacao,$direcao,$horarios,$codigo);
     
     if ($stmt->execute()) {
-        header("../public/readtrem.php");
+
+        $trem_id = $conn->insert_id; 
+        $status="sem adversidades";
+        $descricao="sem adversidades";
+
+        $stmt2 = $conn->prepare("INSERT INTO manutencao (trem_id, status,descricao) VALUES (?,?,?)");
+        $status = "Sem advertência";
+        $stmt2->bind_param("iss", $trem_id,$status,$descricao);
+        $stmt2->execute();
+        $stmt2->close();
+
+        header("location:../public/readtrem.php");
         exit();
     } else {
         echo "Erro " . $stmt->error;
