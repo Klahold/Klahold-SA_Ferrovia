@@ -2,14 +2,9 @@ CREATE DATABASE hermes_enterprise;
 
 USE hermes_enterprise;
 
-
-CREATE TABLE menu(
-	id int auto_increment primary key
-);
-
 CREATE TABLE usuarios(
 	id int auto_increment primary key,
-    foto_perfil VARCHAR(255) DEFAULT 'default.jpg',
+    foto MEDIUMBLOB,
     nome varchar(120) not null,
     data_nascimento varchar(45) not null,
     naturalidade varchar(45) not null,
@@ -56,6 +51,7 @@ CREATE TABLE relatorios(
 CREATE TABLE manutencao(
 	id int auto_increment primary key,
     tipo enum('sem adversidades','RODAS','MOTOR','VAGÕES','FREIOS','SUSPENSÃO','ESTABILIDADE','OUTROS') not null,
+    descricao text not null,
     id_trem int not null,
     FOREIGN KEY (id_trem) REFERENCES trens(id)
     );

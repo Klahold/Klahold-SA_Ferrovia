@@ -9,8 +9,8 @@ $result = $conn->query($sql);
 session_start();
 
 if (empty($_SESSION["user_id"])):
-
-  header("Location: login.php");
+  
+  header(header: "Location: ../public/login.php");
 
 endif;
 

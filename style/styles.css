@@ -6,7 +6,7 @@ body {
 
 }
 
-a{
+a {
     text-decoration: none;
     color: black;
 }
@@ -54,16 +54,16 @@ a{
     text-align: center;
 }
 
-.brancoGeral{
+.brancoGeral {
     background-color: white;
     border-radius: 30px;
     border: 0px;
     padding: 15px;
     margin: 15px;
-    height: 630px ;
+    height: 630px;
 }
 
-.arrastarGeral{
+.arrastarGeral {
     overflow: scroll;
     scrollbar-width: none;
     height: 629px;
@@ -73,23 +73,24 @@ a{
 /*------------------------------------------------------------------*/
 /*Loading*/
 
-.loadingTela{
+.loadingTela {
     display: flex;
     justify-content: center;
 }
 
-#rotacao{
-    width:200px;
-    animation:girar 5s linear infinite
+#rotacao {
+    width: 200px;
+    animation: girar 5s linear infinite
 }
 
 @keyframes girar {
-  from {
-    transform: rotate(0deg); 
-  }
-  to {
-    transform: rotate(360deg); 
-  }
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
 }
 
 /*------------------------------------------------------------------*/
@@ -103,14 +104,13 @@ a{
     height: 650px;
 }
 
-.avisos{
+.avisos {
     text-align: center;
     text-decoration: underline;
 }
 
 /*------------------------------------------------------------------*/
 /*Cadastro*/
-
 .minicinza {
     border-radius: 50px;
     background-color: rgb(223, 219, 219);
@@ -126,7 +126,7 @@ a{
     text-align: center;
 }
 
-.input{
+.input {
     border: 0px;
     border-radius: 30px;
     background-color: rgb(223, 219, 219);
@@ -145,6 +145,11 @@ a{
     width: 200px;
     padding-left: 9px;
 }
+
+.invisivel {
+    visibility: hidden;
+    display: none;
+}
 /*------------------------------------------------------------------*/
 /*Cargas*/
 .cinzaCargas {
@@ -155,7 +160,7 @@ a{
     width: 340px;
 }
 
-.arrumadores{
+.arrumadores {
     margin: 5px;
     height: 100px;
     width: 340px;
@@ -182,15 +187,15 @@ a{
     width: 20px;
 }
 
-.setas{
+.setas {
     display: flex;
     justify-content: space-between;
 }
 
-.espacoCarga{
+.espacoCarga {
     display: flex;
     padding: 5px;
-    justify-content: space-between;  
+    justify-content: space-between;
 }
 
 /*------------------------------------------------------------------*/
@@ -222,7 +227,7 @@ a{
 }
 
 .radious {
-    border-radius:50px ;
+    border-radius: 50px;
     border: 0px;
     width: 240px;
 }
@@ -239,7 +244,7 @@ a{
     border: 0px;
 }
 
-.erro{
+.erro {
     color: red;
 }
 
@@ -275,13 +280,38 @@ a{
 .paddingFuncionario {
     margin-bottom: 10px;
 }
-.flexFuncionario{
+
+.flexFuncionario {
     display: flex;
     align-items: center;
     padding: 5px;
 }
+
 /*------------------------------------------------------------------*/
 /*Manutenção*/
+
+.meiotabrancotrem{
+    background-color: white;
+    padding: 20px;
+    border-radius: 50px;
+    height: 400px;
+    width: 300px;
+}
+
+.formstrem{
+    justify-content: center;
+    padding: 10px;
+}
+
+.cadastrartrem{
+    background-color: #f3f3f3;
+    border-radius:5px ;
+    margin: 7px;
+    padding: 2px;
+    border-color: #cccccc;
+    text-align: center;
+}
+
 .squarewhite {
     background-color: white;
     padding: 20px;
@@ -298,15 +328,15 @@ a{
     height: 400px;
 }
 
-.caixamanuntencao{
+.caixamanuntencao {
     border: 1px solid;
     border-color: #606060;
     height: 40px;
     display: flex;
-    
+
 }
 
-.meiota{
+.meiota {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -314,8 +344,8 @@ a{
 }
 
 
-.descricaoradious{
-    border-radius:5px ;
+.descricaoradious {
+    border-radius: 5px;
     padding: 5px;
     width: 290px;
     height: 200px;
@@ -348,7 +378,7 @@ a{
 .pontosmanutencão {
     display: flex;
     justify-content: end;
-    
+
 }
 
 .ponto {
@@ -410,7 +440,7 @@ a{
     margin: 40px;
 }
 
-.menu_centro{
+.menu_centro {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -433,7 +463,7 @@ a{
     margin: 1px;
 }
 
-.logomenu2{
+.logomenu2 {
     width: 285px;
     padding: 10px;
     display: flex;
@@ -451,21 +481,21 @@ a{
     padding: 15px;
 }
 
-.checkboxRelatorio{
+.checkboxRelatorio {
     height: 20px;
     width: 20px;
     margin: 10px;
 }
 
-.caixa{
+.caixa {
     border: 1px solid;
     border-color: #606060;
     height: 40px;
     display: flex;
-    
+
 }
 
-.little{
+.little {
     width: 20px;
     outline: none;
     border: none;
@@ -475,39 +505,40 @@ a{
 .line {
     width: 100%;
     border-bottom: 1px solid #606060;
-  }
+}
 
-  .text{
+.text {
     margin: 8px;
     font-size: 16px;
-  }
+}
 
-  .pontos{
+.pontos {
     outline: none;
     border: none;
     font-size: 25px;
     background-color: white;
-  }
+}
 
-  .container{
+.container {
     display: grid;
     place-items: center;
-  }
-  .dot{
+}
+
+.dot {
     width: 8px;
     height: 8px;
     border-radius: 50%;
     background-color: #3d3d3d;
     margin-top: 4px;
     margin: 2px;
-  }
+}
 
-  .groupMenu{
+.groupMenu {
     cursor: pointer;
     display: flex;
-  }
+}
 
-  .style{
+.style {
     width: 200px;
     height: 300px;
     background-color: #cccccc;
@@ -515,23 +546,23 @@ a{
     margin-left: 185px;
     border-radius: 10px;
     position: absolute;
-  }
+}
 
-  .frame1{
+.frame1 {
     visibility: hidden;
     position: absolute;
-  }
-  
-  .frame1 .info{
+}
+
+.frame1 .info {
     font-size: 16px;
     color: black;
     padding: 13px;
     cursor: pointer;
-  }
+}
 
-  .frame1 .info:hover{
+.frame1 .info:hover {
     background-color: #999999;
-  }
+}
 
 .arrastar2 {
     overflow: scroll;
@@ -539,31 +570,32 @@ a{
     scrollbar-width: none;
 }
 
-.criar{
-        display: flex;
-       justify-content: end;
-        width: 340px;
-}
-.cinzacriar{
-        background-color: rgb(223, 219, 219);
-        border-radius: 30px;
-        border: 0px;
-        padding: 10px;
-        padding-top: 5px;
-        padding-bottom: 5px;
-        border: 1px solid;
-        border-color: rgb(117, 117, 117);
+.criar {
+    display: flex;
+    justify-content: end;
+    width: 340px;
 }
 
-.mensagemradious{
-    border-radius:5px ;
+.cinzacriar {
+    background-color: rgb(223, 219, 219);
+    border-radius: 30px;
+    border: 0px;
+    padding: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border: 1px solid;
+    border-color: rgb(117, 117, 117);
+}
+
+.mensagemradious {
+    border-radius: 5px;
     padding: 5px;
     width: 335px;
     height: 400px;
 }
 
-.relatorioradious{
-    border-radius:50px ;
+.relatorioradious {
+    border-radius: 50px;
     padding: 5px;
     width: 335px;
 }
@@ -575,9 +607,10 @@ a{
     }
 }
 
-.textoRelatorio{
+.textoRelatorio {
     margin: 0px;
 }
+
 /*------------------------------------------------------------------*/
 /*Rotas*/
 .mapa {

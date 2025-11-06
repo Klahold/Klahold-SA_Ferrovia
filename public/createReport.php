@@ -78,11 +78,14 @@ if($_SERVER["REQUEST_METHOD"] === "POST") {
                 <br>
                 <button class="entrar" type="submit">Enviar</button>
             </form>
-
+            <?php
+            echo"
             <br>
-            <a  href="manutenção2.php">
-            <div class="cinza"> <div class="voltar"><strong > Voltar</strong></div>
-            </div>
+            <a  href='manutenção2.php?id=$id'>
+            <div class='cinza'> <div class='voltar'><strong > Voltar</strong></div>
+            </div>";
+
+            ?>
     
         </div>
 
