@@ -23,6 +23,9 @@ $result = $stmt->get_result();
 
 ?>
 
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -46,10 +49,9 @@ $result = $stmt->get_result();
 
     <div class="branco">
         <div class="cinza">
-            <form action="">
-                <input type="text" name="palavra" placeholder="🔍 Buscar Relatórios">
+            <form action="Relatorios.php" method="post">
+                <input type="text" name="pesquisar" placeholder="🔍 Buscar Relatórios">
                 <button type="submit">Buscar</button>
-
             </form>
 
         </div>
@@ -95,8 +97,11 @@ $result = $stmt->get_result();
             <div>
                 <div class="arrastar2">
 
-                <?php 
+                <?php
+                $pesquisar = $_POST['pesquisar'];
+                $query = "SELECT * FROM relatorios WHERE titulo LIKE '%".$pesquisar."%'";
 
+                if ($row['titulo'] = $pesquisar){
                     while ($row = $result->fetch_assoc()) {
 
                         $data_cricacao = date('d/m/Y', strtotime($row['criado_em']));
@@ -112,10 +117,16 @@ $result = $stmt->get_result();
                         </a>
                     ";
                     }
-                    
-                    $stmt->close();
-
+                } else {
+                    echo "nenhum resultado encontrado.";
+                }
                 ?>
+
+                
+
+
+
+                
 
                 </div>
             </div>
