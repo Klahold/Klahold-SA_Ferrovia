@@ -9,6 +9,8 @@ if (empty($_SESSION["user_id"])) {
       exit;
 }
 
+$imagem = "SELECT foto FROM usuarios WHERE id = ?";
+
 if (isset($_GET['id'])) {
     $id = $_GET['id'];
     $sql = "SELECT * FROM usuarios WHERE id = $id";
@@ -42,7 +44,7 @@ if (isset($_GET['id'])) {
                 <div class="arrastarGeral">
 
                     <div class="logofuncionario">
-                        <img class="img_cadastro" src="../assets/images/<?php echo htmlspecialchars($row['foto_perfil']); ?>" alt="Foto de perfil">
+                        <img class="img_cadastro" src="$imagem" alt="Foto de perfil">
                     </div>
 
                     <br>

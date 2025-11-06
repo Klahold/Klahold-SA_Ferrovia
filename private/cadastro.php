@@ -60,8 +60,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <title>Cadastro</title>
     <link rel="stylesheet" href="../style/styles.css">
     <link rel="icon" href="../assets/icons/logo.png" type="image/png">
-    <script src="../scripts/previewImg.js"></script>
-    <script src="script.js"></script>
 
 </head>
 
