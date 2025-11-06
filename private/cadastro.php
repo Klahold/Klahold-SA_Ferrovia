@@ -26,21 +26,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $codigo = $_POST['codigo'];
     $senha = $_POST['senha'];
     $hash = password_hash($senha, PASSWORD_DEFAULT);
-    $foto_perfil = $_POST['profilePic'];
+    $foto = $_POST['foto'];
 
-    $sql = "INSERT INTO usuarios (foto_perfil, nome, data_nascimento, naturalidade, nacionalidade, estado_civil, tipo, CPF, email, data_admissao, genero, codigo, senha)
-    VALUES ('$foto_perfil', '$nome', '$data_nascimento', '$naturalidade', '$nacionalidade', '$estado_civil', '$tipo', '$CPF', '$email', '$data_admissao', '$genero', '$codigo', '$hash')";
+    $sql = "INSERT INTO usuarios (foto, nome, data_nascimento, naturalidade, nacionalidade, estado_civil, tipo, CPF, email, data_admissao, genero, codigo, senha)
+    VALUES ('$foto', '$nome', '$data_nascimento', '$naturalidade', '$nacionalidade', '$estado_civil', '$tipo', '$CPF', '$email', '$data_admissao', '$genero', '$codigo', '$hash')";
     
     $email_status = validar_email_zerobounce($email);
-
-    if (isset($_FILES['profilePic']) && $_FILES['profilePic']['error'] == UPLOAD_ERR_OK) {
-        $ext = pathinfo($_FILES['profilePic']['name'], PATHINFO_EXTENSION);
-        $novo_nome = uniqid() . '.' . $ext;
-        $destino = '../assets/images/' . $novo_nome;
-        if (move_uploaded_file($_FILES['profilePic']['tmp_name'], $destino)) {
-            $foto_perfil = $novo_nome;
-        }
-    }
 
     if ($email_status === 'valid') {
         if ($conn->query($sql) === true) {
@@ -69,6 +60,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <title>Cadastro</title>
     <link rel="stylesheet" href="../style/styles.css">
     <link rel="icon" href="../assets/icons/logo.png" type="image/png">
+    <script src="../scripts/previewImg.js"></script>
     <script src="script.js"></script>
 
 </head>
@@ -89,17 +81,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 } ?>
 
                 <div class="logofuncionario">
-                    <img class="img_cadastro" src="..//assets/images/fotoCadastro.png" alt="">
+                    <img class="img_cadastro" id="previewImg" src="" alt="">
                 </div>
 
                 <br>
 
                 <div class="minicinzaalign">
-                    <input type="file" id="profilePic" name="profilePic" accept="image/*" style="display: none;">
-
-                    <button class="minicinza" type="button"
-                        onclick="document.getElementById('profilePic').click()">+Foto</button>
-
+                    <label for="foto" class="minicinza">+Foto</label> 
+                    <input type="file" accept="image/*,.jpg, .jpeg, .png" name="foto" id="foto" class="invisivel">
                 </div>
 
                 <br>

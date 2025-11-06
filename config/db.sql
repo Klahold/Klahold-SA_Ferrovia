@@ -9,7 +9,7 @@ CREATE TABLE menu(
 
 CREATE TABLE usuarios(
 	id int auto_increment primary key,
-    foto_perfil VARCHAR(255) DEFAULT 'default.jpg',
+    foto MEDIUMBLOB,
     nome varchar(120) not null,
     data_nascimento varchar(45) not null,
     naturalidade varchar(45) not null,
