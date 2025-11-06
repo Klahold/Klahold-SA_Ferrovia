@@ -38,6 +38,12 @@ endif;
 
     <section class="squarewhite">
 
+    <div class="setas">
+    <a href="readtrem.php">
+        <img class="setaDashboard" src="../assets/icons/seta.png" alt="Botão de voltar">
+    </a>
+
+
         <?php
       if ($result->num_rows > 0) {
         while ($row = $result->fetch_assoc()) {

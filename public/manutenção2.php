@@ -43,13 +43,31 @@ $result = $stmt->get_result();
   <main>
 
     <section class="squarewhite">
+    <?php 
+
+    if (isset($_GET['trem'])) {
+    echo"
+      <div class='setas'>
+      <a href='readtrem.php'>
+        <img class='setaDashboard' src='../assets/icons/seta.png' alt='Botão de voltar'>
+      </a></div>";
+    }else{
+      echo"
+      <div class='setas'>
+      <a href='manutenção1.php'>
+        <img class='setaDashboard' src='../assets/icons/seta.png' alt='Botão de voltar'>
+      </a></div>"
+    ;}
+    
+    ?>
       <?php 
 
         while ($row = $result->fetch_assoc()) {
 
         echo "<h1 class='text'> Trem {$row['codigo']} </h1>
-              <a href='createReport.php?id={$row['id']}'>
-              reportar problema
+              <br>
+              <a href='createReport.php?id={$row['id']}'> <div class='cinzacriar'>
+              reportar problema</div>
               </a>
         ";}
 
@@ -68,10 +86,12 @@ $result = $stmt->get_result();
 
         while ($row = $dados2->fetch_assoc()){
 
+        $data_cricacao = date('d/m/Y', strtotime($row['criado_em']));
+
         echo"<div class='caixamanuntencao'>
         
               <h3 class='text'> Trem {$row['tipo']} </h3>
-
+              <h3 class='text'>{$data_cricacao}</h3></div>
             </div
         ";}
             
