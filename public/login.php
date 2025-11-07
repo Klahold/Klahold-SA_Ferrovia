@@ -17,10 +17,10 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
     $pattern = "/\W/";
 
-    if((preg_match_all($pattern,$email))>= 1){
+    if ((preg_match_all($pattern, $email)) >= 1) {
         $stmt = $conn->prepare("SELECT id, email, senha, tipo FROM usuarios WHERE email = ?  AND senha=?");
 
-    }else{
+    } else {
         $stmt = $conn->prepare("SELECT id, email, senha, tipo FROM usuarios WHERE codigo = ? AND senha=?");
 
     }
@@ -35,16 +35,22 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         $_SESSION["user_id"] = $dados["id"];
         $_SESSION["username"] = $dados["nome"];
         $_SESSION["tipo"] = $dados["tipo"];
-        header("Location: login.php");
+        
+        if ($_SESSION["tipo"] == "Administrador") {
+            header("location:../private/menuadm.php");
+        } else {
+            header("Location: menu.php");
+        }
         exit;
     } else {
         $msg = "Usuário ou senha incorretos!";
+        header("Location: login.php");
     }
 
-    if($user && password_verify($password, $user['senha'])){
-            return $user;
-        }
-        return false;
+    if ($dados && password_verify($pass, $dados['senha'])) {
+        return $dados;
+    }
+    return false;
 }
 
 
@@ -69,11 +75,11 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         <H2><u> Login </u></H2>
     </header>
 
-    <?php if (!empty($_SESSION["user_id"])): 
+    <?php if (!empty($_SESSION["user_id"])):
 
-        if($_SESSION["tipo"]=="Administrador"){
+        if ($_SESSION["tipo"] == "Administrador") {
             header("location:../private/menuadm.php");
-        }else{
+        } else {
             header("Location: menu.php");
         }
 
@@ -81,18 +87,20 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
     <?php else: ?>
 
-    <div class="LoGin">
-        <form id="Formularios" method="POST">
-            <div class="campo"><input class="radious" type="text" name="emailoucodigo" id="Codigo_maquinista" placeholder="Email ou Codigo"required></div>
-            <br>
-            <div class="campo"> <input class="radious" type="password" name="password" id="senha_maquinista" placeholder="Senha" required> </div>
-            <br>
-            <button class="esqueci" type="button" onclick=""> <u> Esqueci minha senha </u></button>
-            <br>
-            <div class="entrar"><button type="submit">Entrar</button></div>
-        </form>
+        <div class="LoGin">
+            <form id="Formularios" method="POST">
+                <div class="campo"><input class="radious" type="text" name="emailoucodigo" id="Codigo_maquinista"
+                        placeholder="Email ou Codigo" required></div>
+                <br>
+                <div class="campo"> <input class="radious" type="password" name="password" id="senha_maquinista"
+                        placeholder="Senha" required> </div>
+                <br>
+                <button class="esqueci" type="button" onclick=""> <u> Esqueci minha senha </u></button>
+                <br>
+                <div class="entrar"><button type="submit">Entrar</button></div>
+            </form>
 
-    <?php endif; ?>
+        <?php endif; ?>
 
 </body>
 

@@ -13,11 +13,11 @@ endif;
 $busca = isset($_POST['busca']) ? trim($_POST['busca']) : '';
 
 if ($busca === '') {
-    $sql = "SELECT id,foto_perfil,nome,data_nascimento,naturalidade,nacionalidade,estado_civil,tipo,CPF,email,data_admissao,genero,codigo,senha FROM usuarios
+    $sql = "SELECT id,foto,nome,data_nascimento,naturalidade,nacionalidade,estado_civil,tipo,CPF,email,data_admissao,genero,codigo,senha FROM usuarios
             ORDER BY nome DESC";
     $stmt = $conn->prepare($sql);
 } else {
-    $sql = "SELECT id,foto_perfil,nome,data_nascimento,naturalidade,nacionalidade,estado_civil,tipo,CPF,email,data_admissao,genero,codigo,senha FROM usuarios
+    $sql = "SELECT id,foto,nome,data_nascimento,naturalidade,nacionalidade,estado_civil,tipo,CPF,email,data_admissao,genero,codigo,senha FROM usuarios
             WHERE nome LIKE ?
             ORDER BY nome DESC";
     $stmt = $conn->prepare($sql);

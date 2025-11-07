@@ -12,20 +12,10 @@ if (empty($_SESSION["user_id"])) {
 if (isset($_GET['id'])) {
     $id = $_GET['id'];
     $sql = "SELECT * FROM usuarios WHERE id = $id";
-    $imagem = "SELECT foto FROM usuarios WHERE id = ?";
     $result = $conn->query($sql);
-    $resultImagem = $conn->query($imagem);
 
     if ($result && $result->num_rows > 0) {
         $row = $result->fetch_assoc();
-        $rowImagem = $resultImagem->fetch_assoc();
-
-        if ($rowImagem) {
-            header("Content-Type: image/jpeg");
-            echo $rowImagem['foto'];
-        } else {
-            echo "Imagem não encontrada.";
-        }
 
         ?>
         <!DOCTYPE html>
@@ -47,10 +37,8 @@ if (isset($_GET['id'])) {
                 <div class="arrastarGeral">
 
                     <div class="logofuncionario">
-                        <img class="img_cadastro" src="$imagem" alt="Foto de perfil">
-                    </div>
-
-                    <br>
+                        <img class="img_cadastro" src="<?php echo $row['foto'] ?>">
+                    </div><br>
 
                     <div class="cinzaCadastro"><strong>Nome:</strong> <?php echo $row['nome']; ?></div><br>
 
