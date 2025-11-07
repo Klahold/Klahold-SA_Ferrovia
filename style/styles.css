@@ -611,6 +611,16 @@ a {
     margin: 0px;
 }
 
+.buscarRelatorio{
+    background-color: rgb(223, 219, 219);
+    border-radius: 30px;
+    border: 0px;
+    padding: 10px;
+    text-align: left;
+    padding-right: 45%;
+}
+
+
 /*------------------------------------------------------------------*/
 /*Rotas*/
 .mapa {

@@ -61,10 +61,9 @@ $result = $stmt->get_result();
 
 
     <div class="branco">
-        <div class="cinza">
+        <div>
             <form action="Relatorios.php" method="post">
-                <input type="text" name="pesquisar" placeholder="🔍 Buscar Relatórios" value="<?php echo htmlspecialchars($pesquisar); ?>">
-                <button type="submit">Buscar</button>
+                <input type="text" name="pesquisar" class="buscarRelatorio" placeholder=" Buscar Relatórios" value="<?php echo htmlspecialchars($pesquisar); ?>">
             </form>
 
         </div>
