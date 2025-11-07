@@ -2,10 +2,6 @@
 
 include '../config/db.php';
 
-$sql = "SELECT * FROM usuarios";
-
-$result = $conn->query($sql);
-
 session_start();
 
 if (empty($_SESSION["user_id"])):
@@ -13,6 +9,25 @@ if (empty($_SESSION["user_id"])):
   header(header: "Location: ../public/login.php");
 
 endif;
+
+$busca = isset($_POST['busca']) ? trim($_POST['busca']) : '';
+
+if ($busca === '') {
+    $sql = "SELECT id,foto_perfil,nome,data_nascimento,naturalidade,nacionalidade,estado_civil,tipo,CPF,email,data_admissao,genero,codigo,senha FROM usuarios
+            ORDER BY nome DESC";
+    $stmt = $conn->prepare($sql);
+} else {
+    $sql = "SELECT id,foto_perfil,nome,data_nascimento,naturalidade,nacionalidade,estado_civil,tipo,CPF,email,data_admissao,genero,codigo,senha FROM usuarios
+            WHERE nome LIKE ?
+            ORDER BY nome DESC";
+    $stmt = $conn->prepare($sql);
+    $like = "%{$busca}%";
+    $stmt->bind_param("s", $like);
+}
+
+$stmt->execute();
+
+$result = $stmt->get_result();
 
 ?>
 
@@ -41,10 +56,14 @@ endif;
         <img class="setaDashboard" src="../assets/icons/seta.png" alt="Botão de voltar">
       </a>
     </div>
-    <div class="flexFuncionario">
-      <div class="cinza_funcionario">🔍 Buscar Funcionários</div>
+    <div class="barraFuncionario">
+
+      <form action="funcionário.php" method="post">
+        <input type="text" name="busca" class="buscarFuncionario" placeholder="Buscar Funcionário" value="<?php echo htmlspecialchars($busca); ?>">
+      </form>
+
       <a href="cadastro.php">
-        <button id="minicinza" type="button">Cadastrar</button>
+        <button class="cadastroFuncionario" type="button">Cadastrar</button>
       </a>
 
     </div>
@@ -54,7 +73,7 @@ endif;
     <div class="arrastar">
 
       <?php
-      if ($result->num_rows > 0) {
+      if ($result && $result->num_rows > 0) {
         while ($row = $result->fetch_assoc()) {
           $imagem = "../assets/images/default.png";
 
