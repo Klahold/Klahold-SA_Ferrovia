@@ -68,40 +68,9 @@ $result = $stmt->get_result();
 
         </div>
             <div class="flex">
-                <input class="checkboxRelatorio" type="checkbox">
-                <select class="little" name="selecao" id="relatory">
-                    <option value="1">Nenhum</option>
-                    <option value="2">Não lidos</option>
-                    <option value="3">Lidos</option>
-                    <option value="4">Todos</option>
-                </select>
-
-
-                <div class="container">
-                    <div class="groupMenu" onclick="fun()">
-                        <div class="dot"></div>
-                        <div class="dot"></div>
-                        <div class="dot"></div>
-                    </div>
-
-
-
-                    <div class="frame1" id="frame1">
-                        <div class="info"><span>Marcar com lida</span></div>
-                        <div class="info"><span>Marcar como importante</span></div>
-                        <div class="info"><span>Marcar com estrela</span></div>
-                        <div class="info"><span>Filtrar mensagens assim</span></div>
-                        <div class="info"><span>Ignorar</span></div>
-                        <div class="info"><span>Encaminhar como anexo</span></div>
-                    </div>
-
-                </div>
-
                 <div class="criar">
                 
-                <a href="createRelatorios.php"><div class="cinzacriar"><p class="textoRelatorio">+</p></div></a>
-
-                </div>
+                <a href="createRelatorios.php"><div class="cinzacriar"><p class="textoRelatorio">+</p></div></a></div>
                 
 
             </div>
@@ -127,7 +96,7 @@ $result = $stmt->get_result();
                         ";
                     }
                 } else {
-                    echo "<p>Nenhum resultado encontrado.</p>";
+                    echo "<p class='text'>Nenhum resultado encontrado.</p>";
                 }
                 ?>
 
