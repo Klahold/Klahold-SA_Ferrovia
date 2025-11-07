@@ -10,12 +10,25 @@ if (empty($_SESSION["user_id"])):
     exit;
 
 endif;
-?>
-<?php
 
-$stmt = $conn->prepare("SELECT relatorios.id,titulo,mensagem,criado_em,nome FROM relatorios
-INNER JOIN usuarios
-ON relatorios.remetente=usuarios.id;");
+$pesquisar = isset($_POST['pesquisar']) ? trim($_POST['pesquisar']) : '';
+
+if ($pesquisar === '') {
+    $sql = "SELECT relatorios.id,titulo,mensagem,criado_em,nome FROM relatorios
+            INNER JOIN usuarios
+            ON relatorios.remetente=usuarios.id
+            ORDER BY criado_em DESC";
+    $stmt = $conn->prepare($sql);
+} else {
+    $sql = "SELECT relatorios.id,titulo,mensagem,criado_em,nome FROM relatorios
+            INNER JOIN usuarios
+            ON relatorios.remetente=usuarios.id
+            WHERE titulo LIKE ?
+            ORDER BY criado_em DESC";
+    $stmt = $conn->prepare($sql);
+    $like = "%{$pesquisar}%";
+    $stmt->bind_param("s", $like);
+}
 
 $stmt->execute();
 
@@ -48,10 +61,9 @@ $result = $stmt->get_result();
 
 
     <div class="branco">
-        <div class="cinza">
+        <div>
             <form action="Relatorios.php" method="post">
-                <input type="text" name="pesquisar" placeholder="🔍 Buscar Relatórios">
-                <button type="submit">Buscar</button>
+                <input type="text" name="pesquisar" class="buscarRelatorio" placeholder=" Buscar Relatórios" value="<?php echo htmlspecialchars($pesquisar); ?>">
             </form>
 
         </div>
@@ -98,27 +110,24 @@ $result = $stmt->get_result();
                 <div class="arrastar2">
 
                 <?php
-                $pesquisar = $_POST['pesquisar'];
-                $query = "SELECT * FROM relatorios WHERE titulo LIKE '%".$pesquisar."%'";
-
-                if ($row['titulo'] = $pesquisar){
+                if ($result && $result->num_rows > 0) {
                     while ($row = $result->fetch_assoc()) {
 
-                        $data_cricacao = date('d/m/Y', strtotime($row['criado_em']));
+                        $data_criacao = date('d/m/Y', strtotime($row['criado_em']));
 
-                    echo "
-                        <a href='lerRelatorio.php?id={$row['id']}'>'
-                        <div class='caixa'>
-                        <input class='checkboxRelatorio' type='checkbox'>
-                        <h3 class='text'>{$row['titulo']}</h3> 
-                        <h3 class='text'>{$row['nome']}</h3>
-                        <h3 class='text'>{$data_cricacao}</h3>
-                        </div>
-                        </a>
-                    ";
+                        echo "
+                            <a href='lerRelatorio.php?id={$row['id']}'>
+                            <div class='caixa'>
+                            <input class='checkboxRelatorio' type='checkbox'>
+                            <h3 class='text'>{$row['titulo']}</h3> 
+                            <h3 class='text'>{$row['nome']}</h3>
+                            <h3 class='text'>{$data_criacao}</h3>
+                            </div>
+                            </a>
+                        ";
                     }
                 } else {
-                    echo "nenhum resultado encontrado.";
+                    echo "<p>Nenhum resultado encontrado.</p>";
                 }
                 ?>
 
