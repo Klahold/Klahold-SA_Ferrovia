@@ -5,19 +5,27 @@ include '../config/db.php';
 session_start();
 
 if (empty($_SESSION["user_id"])) {
-  header(header: "Location: ../public/login.php");
-      exit;
+    header(header: "Location: ../public/login.php");
+    exit;
 }
-
-$imagem = "SELECT foto FROM usuarios WHERE id = ?";
 
 if (isset($_GET['id'])) {
     $id = $_GET['id'];
     $sql = "SELECT * FROM usuarios WHERE id = $id";
+    $imagem = "SELECT foto FROM usuarios WHERE id = ?";
     $result = $conn->query($sql);
+    $resultImagem = $conn->query($imagem);
 
     if ($result && $result->num_rows > 0) {
         $row = $result->fetch_assoc();
+        $rowImagem = $resultImagem->fetch_assoc();
+
+        if ($rowImagem) {
+            header("Content-Type: image/jpeg");
+            echo $rowImagem['foto'];
+        } else {
+            echo "Imagem não encontrada.";
+        }
 
         ?>
         <!DOCTYPE html>
@@ -36,11 +44,6 @@ if (isset($_GET['id'])) {
                 <img class="logoMenu" src="../assets/icons/funcionario.png">
             </header>
             <div class="brancoGeral">
-                <div class="setas">
-                    <a href="funcionário.php">
-                        <img class="setaDashboard" src="../assets/icons/seta.png" alt="Botão de voltar">
-                    </a>
-                </div>
                 <div class="arrastarGeral">
 
                     <div class="logofuncionario">
