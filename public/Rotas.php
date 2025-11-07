@@ -29,7 +29,7 @@ endif
         <img class="logoMenu" src="..//assets/icons/rotas.png" alt="Rotas">
     </header>
 
-    <img class="mapa" src="..//assets/icons/mapa.png" alt="mapa">
+    <img class="mapa" src="..//assets/icons/mapaFeio.png" alt="mapa">
 
     <div class="brancoRotas">
 
