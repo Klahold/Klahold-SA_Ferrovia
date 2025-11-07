@@ -61,12 +61,11 @@ $result = $stmt->get_result();
 
 
     <div class="branco">
-        <div>
+        <div class="arrumarBarra">
             <form action="Relatorios.php" method="post">
                 <input type="text" name="pesquisar" class="buscarRelatorio" placeholder=" Buscar Relatórios" value="<?php echo htmlspecialchars($pesquisar); ?>">
             </form>
 
-        </div>
             <div class="flex">
                 <div class="criar">
                 
@@ -74,6 +73,8 @@ $result = $stmt->get_result();
                 
 
             </div>
+        </div>
+            
 
             <div>
                 <div class="arrastar2">
@@ -87,7 +88,7 @@ $result = $stmt->get_result();
                         echo "
                             <a href='lerRelatorio.php?id={$row['id']}'>
                             <div class='caixa'>
-                            <input class='checkboxRelatorio' type='checkbox'>
+
                             <h3 class='text'>{$row['titulo']}</h3> 
                             <h3 class='text'>{$row['nome']}</h3>
                             <h3 class='text'>{$data_criacao}</h3>

@@ -496,19 +496,18 @@ a {
     border-radius: 20px;
     border: 0px;
     padding: 15px;
+    padding-left: 0%;
+    padding-right: 0%;
 }
 
-.checkboxRelatorio {
-    height: 20px;
-    width: 20px;
-    margin: 10px;
-}
+
 
 .caixa {
     border: 1px solid;
     border-color: #606060;
     height: 40px;
     display: flex;
+
 
 }
 
@@ -602,6 +601,8 @@ a {
     padding-bottom: 5px;
     border: 1px solid;
     border-color: rgb(117, 117, 117);
+    margin: 5px;
+    margin-right: 0px;
 }
 
 .mensagemradious {
@@ -631,10 +632,15 @@ a {
 .buscarRelatorio{
     background-color: rgb(223, 219, 219);
     border-radius: 30px;
-    border: 0px;
+    border: 1px solid;
     padding: 10px;
     text-align: left;
     padding-right: 45%;
+}
+
+.arrumarBarra{
+    padding: 15px;
+    padding-top: 0px;
 }
 
 
