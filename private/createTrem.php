@@ -30,8 +30,7 @@ if($_SERVER["REQUEST_METHOD"] === "POST") {
         $status="sem adversidades";
         $descricao="sem adversidades";
 
-        $stmt2 = $conn->prepare("INSERT INTO manutencao (trem_id, status,descricao) VALUES (?,?,?)");
-        $status = "Sem advertência";
+        $stmt2 = $conn->prepare("INSERT INTO manutencao (id_trem, tipo,descricao) VALUES (?,?,?)");
         $stmt2->bind_param("iss", $trem_id,$status,$descricao);
         $stmt2->execute();
         $stmt2->close();

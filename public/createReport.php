@@ -20,9 +20,15 @@ if($_SERVER["REQUEST_METHOD"] === "POST") {
     $descricao = $_POST["descricao"] ?? "";
     
 
-    $stmt = $conn->prepare("INSERT INTO manutencao (tipo,descricao,id_trem) values(?,?,?)");
+    $delete = $conn->prepare("DELETE FROM manutencao WHERE id_trem = ? AND (descricao = 'sem adversidades' OR descricao = 'Sem advertência');");
+    $delete->bind_param("i", $id);
+    $delete->execute();
+    $delete->close();
+
+    $stmt = $conn->prepare("INSERT INTO manutencao (tipo,descricao,id_trem) values(?,?,?);");
 
     $stmt->bind_param("ssi",$tipoProblema,$descricao,$id);
+    
     
     if ($stmt->execute()) {
         header("location: manutenção1.php");
@@ -79,6 +85,8 @@ if($_SERVER["REQUEST_METHOD"] === "POST") {
                 <button class="entrar" type="submit">Enviar</button>
             </form>
             <?php
+
+
             echo"
             <br>
             <a  href='manutenção2.php?id=$id'>

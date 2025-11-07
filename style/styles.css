@@ -372,6 +372,15 @@ a {
     display: flex;
 }
 
+.fixado{
+  position: fixed;    
+  left: 0;       
+  width: 100%;    
+  color: #fff;
+  text-align: center;
+  padding: 15px 0;
+}
+
 .selection {
     background-color: rgb(226, 226, 226);
     padding: 20px;
