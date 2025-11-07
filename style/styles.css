@@ -111,10 +111,12 @@ a {
 
 /*------------------------------------------------------------------*/
 /*Cadastro*/
-.minicinza {
+.cadastroFuncionario {
     border-radius: 50px;
     background-color: rgb(223, 219, 219);
-    font-size: 15px;
+    font-size: 12px;
+    border: 1px solid;
+    padding: 8px;
 }
 
 .minicinzaalign {
@@ -284,7 +286,22 @@ a {
 .flexFuncionario {
     display: flex;
     align-items: center;
+    justify-content: spa;
     padding: 5px;
+}
+
+.barraFuncionario{
+    justify-content: space-between;
+    display: flex;
+}
+
+.buscarFuncionario{
+    background-color: rgb(223, 219, 219);
+    padding: 5px;
+    border-radius: 30px;
+    font-size: 15px;
+    text-align: center;
+    border: 1px solid;
 }
 
 /*------------------------------------------------------------------*/
@@ -619,6 +636,16 @@ a {
 .textoRelatorio {
     margin: 0px;
 }
+
+.buscarRelatorio{
+    background-color: rgb(223, 219, 219);
+    border-radius: 30px;
+    border: 0px;
+    padding: 10px;
+    text-align: left;
+    padding-right: 45%;
+}
+
 
 /*------------------------------------------------------------------*/
 /*Rotas*/
