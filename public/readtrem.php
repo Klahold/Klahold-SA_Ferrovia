@@ -50,9 +50,11 @@ endif;
 
             
         }
+        
 
         ?>
 
+        <div class="arrastar">
 
         <?php
       if ($result->num_rows > 0) {
@@ -60,7 +62,7 @@ endif;
         
         if ($row['tipo'] != 'sem adversidades'){
 
-          echo "<a href='manutenção2.php?id={$row['id']}'>
+          echo "<a href='manutenção2.php?id={$row['id']}&trem=1'>
         <div class='selection'> 
         <div class='trems'>
           <img src='../assets/images/tremVermelho.png' alt=". $row['codigo'] ." class='trem'>
@@ -79,7 +81,7 @@ endif;
         <br>
         ";
         } else {
-        echo "<a href='manutenção2.php?id={$row['id']}'>
+        echo "<a href='manutenção2.php?id={$row['id']}&trem=1'>
         <div class='selection'> 
         
         <div class='trems'>
@@ -103,7 +105,16 @@ endif;
       }
       
       ?>
+      
+    </div>
 
+      
+
+      <br><br>
+        <a href="manutenção1.php">
+        <div class="cinza">
+          <h4>ver todas as manutencao registradas</h4>
+        </div></a>
       
       </section>
 

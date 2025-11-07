@@ -2,11 +2,11 @@
 
 include '../config/db.php';
 
-$sql = "select trens.id,tipo,codigo from manutencao
-inner join trens
-on id_trem=trens.id;";
 
-$result = $conn->query($sql);
+$stmt = $conn->prepare('SELECT * FROM manutencao inner join trens on trens.id=id_trem;');
+$stmt->execute();
+
+$result = $stmt->get_result();
 
 session_start();
 
@@ -38,63 +38,43 @@ endif;
 
     <section class="squarewhite">
 
-    <div class="setas">
-    <a href="readtrem.php">
-        <img class="setaDashboard" src="../assets/icons/seta.png" alt="Botão de voltar">
-    </a>
-
-
-        <?php
+    <div class="setas" style="margin-bottom: 20px;">
+      <a href="readtrem.php">
+          <img class="setaDashboard" src="../assets/icons/seta.png" alt="Botão de voltar">
+      </a>
+    </div>
+    <div class="cinza">
+    <h3>Todos as manutenções registradas</h3>
+    </div>
+    <br>
+    <?php
       if ($result->num_rows > 0) {
-        while ($row = $result->fetch_assoc()) {
-        if ($row['tipo'] != 'sem adversidades'){
+        echo "<ul style='list-style: none; padding: 0;'>";
+        while ($row = $result->fetch_assoc())
+        if($row['tipo'] === "sem adversidades"){
+          
+        }else{
+          $data_criacao = date('d/m/Y', strtotime($row['criado_em']));
+          $tipo = !empty($row['tipo']) ? $row['tipo'] : 'sem tipo';
+          $trem = "Trem : {$row['codigo']}";
 
-          echo "<a href='manutenção2.php?id={$row['id']}'>
-        <div class='selection'> 
-        <div class='trems'>
-          <img src='../assets/images/tremVermelho.png' alt=". $row['codigo'] ." class='trem'>
-          <div class='treminfo'>
-            <h2>Trem ". $row['codigo'] ."</h2>
-            <h3 class='vermelhoProblema'> - PROBLEMA EM ". $row['tipo'] ." -</h3>
-          </div>
-          </div>
-          <div class='pontosmanutencão'>
-            <div class='ponto'></div>
-            <div class='ponto'></div>
-            <div class='ponto'></div>
-          </div>
-        </div>
-        </a>
-        <br>
-        ";
-        } else {
-        echo "<a href='manutenção2.php?id={$row['id']}'>
-        <div class='selection'> 
-        
-        <div class='trems'>
-          <img src='../assets/images/tremAzul.png' alt=". $row['codigo'] ." class='trem'>
-          <div class='treminfo'>
-            <h2>Trem ". $row['codigo'] ."</h2>
-            <h3> - sem adversidades -</h3>
-          </div>
-          </div>
-          <div class='pontosmanutencão'>
-            <div class='ponto'></div>
-            <div class='ponto'></div>
-            <div class='ponto'></div>
-          </div>
-        </div>
-        </a>
-        <br>";
+          echo "
+          <li style='margin-bottom: 15px;'>
+            <div class='caixamanuntencao'>
+              <h3 class='text'>{$trem}</h3>
+              <h3 class='text'>{$tipo}</h3>
+              <h3 class='text'>{$data_criacao}</h3>
+            </div>
+          </li>
+          ";
         }
-      }}else {
-        echo "<h2>Nenhum trem cadastrado no momento.</h2>";
+        echo "</ul>";
+      } else {
+        echo "<h2>Nenhuma manutenção requisitada no momento.</h2>";
       }
+    ?>
       
-      ?>
-
-      
-      </section>
+    </section>
 
   </main>
 

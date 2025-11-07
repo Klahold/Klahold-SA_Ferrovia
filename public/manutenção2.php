@@ -88,16 +88,20 @@ $result = $stmt->get_result();
 
         $data_cricacao = date('d/m/Y', strtotime($row['criado_em']));
 
-        echo"<div class='caixamanuntencao'>
+        echo"
+        <br>
+        <div class='caixamanuntencao'>
         
               <h3 class='text'> Trem {$row['tipo']} </h3>
               <h3 class='text'>{$data_cricacao}</h3></div>
-            </div
+            </div>
         ";}
             
         $stmt->close();
                     
         ?>
+
+  
 
     </section>
 
