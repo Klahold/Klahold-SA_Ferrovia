@@ -2,9 +2,13 @@
 
 include '../config/db.php';
 
-$sql = "select trens.id,tipo,codigo from manutencao
-inner join trens
-on id_trem=trens.id;";
+$sql = "SELECT 
+            trens.id, 
+            trens.codigo, 
+            GROUP_CONCAT(manutencao.tipo SEPARATOR ', ') AS problemas
+        FROM trens
+        LEFT JOIN manutencao ON trens.id = manutencao.id_trem
+        GROUP BY trens.id, trens.codigo;";
 
 $result = $conn->query($sql);
 
@@ -57,54 +61,52 @@ endif;
         <div class="arrastar">
 
         <?php
-      if ($result->num_rows > 0) {
-        while ($row = $result->fetch_assoc()) {
-        
-        if ($row['tipo'] != 'sem adversidades'){
+        if ($result->num_rows > 0) {
+            while ($row = $result->fetch_assoc()) {
+                $problemas = $row['problemas'] ? $row['problemas'] : 'sem adversidades';
 
-          echo "<a href='manutenção2.php?id={$row['id']}&trem=1'>
-        <div class='selection'> 
-        <div class='trems'>
-          <img src='../assets/images/tremVermelho.png' alt=". $row['codigo'] ." class='trem'>
-          <div class='treminfo'>
-            <h2>Trem ". $row['codigo'] ."</h2>
-            <h3 class='vermelhoProblema'> - PROBLEMA EM ". $row['tipo'] ." -</h3>
-          </div>
-          </div>
-          <div class='pontosmanutencão'>
-            <div class='ponto'></div>
-            <div class='ponto'></div>
-            <div class='ponto'></div>
-          </div>
-        </div>
-        </a>
-        <br>
-        ";
+                if ($problemas != 'sem adversidades') {
+                    echo "<a href='manutenção2.php?id={$row['id']}&trem=1'>
+                    <div class='selection'> 
+                    <div class='trems'>
+                      <img src='../assets/images/tremVermelho.png' alt=". $row['codigo'] ." class='trem'>
+                      <div class='treminfo'>
+                        <h2>Trem ". $row['codigo'] ."</h2>
+                        <h3 class='vermelhoProblema'> - PROBLEMA EM ". $problemas ." -</h3>
+                      </div>
+                      </div>
+                      <div class='pontosmanutencão'>
+                        <div class='ponto'></div>
+                        <div class='ponto'></div>
+                        <div class='ponto'></div>
+                      </div>
+                    </div>
+                    </a>
+                    <br>";
+                } else {
+                    echo "<a href='manutenção2.php?id={$row['id']}&trem=1'>
+                    <div class='selection'> 
+                    <div class='trems'>
+                      <img src='../assets/images/tremAzul.png' alt=". $row['codigo'] ." class='trem'>
+                      <div class='treminfo'>
+                        <h2>Trem ". $row['codigo'] ."</h2>
+                        <h3> - sem adversidades -</h3>
+                      </div>
+                      </div>
+                      <div class='pontosmanutencão'>
+                        <div class='ponto'></div>
+                        <div class='ponto'></div>
+                        <div class='ponto'></div>
+                      </div>
+                    </div>
+                    </a>
+                    <br>";
+                }
+            }
         } else {
-        echo "<a href='manutenção2.php?id={$row['id']}&trem=1'>
-        <div class='selection'> 
-        
-        <div class='trems'>
-          <img src='../assets/images/tremAzul.png' alt=". $row['codigo'] ." class='trem'>
-          <div class='treminfo'>
-            <h2>Trem ". $row['codigo'] ."</h2>
-            <h3> - sem adversidades -</h3>
-          </div>
-          </div>
-          <div class='pontosmanutencão'>
-            <div class='ponto'></div>
-            <div class='ponto'></div>
-            <div class='ponto'></div>
-          </div>
-        </div>
-        </a>
-        <br>";
-        }}
-         }else {
-        echo "<h2>Nenhum trem cadastrado no momento.</h2>";
-      }
-      
-      ?>
+            echo "<h2>Nenhum trem cadastrado no momento.</h2>";
+        }
+        ?>
       
     </div>
 
