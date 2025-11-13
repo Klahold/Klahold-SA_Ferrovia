@@ -30,9 +30,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $genero = $_POST['genero'];
     $codigo = $_POST['codigo'];
     $senha = $_POST['senha'];
-    $foto = $_POST['foto'];
 
-    $sql = "UPDATE usuarios SET nome='$nome',data_nascimento='$data_nascimento',naturalidade='$naturalidade',nacionalidade='$nacionalidade',estado_civil='$estado_civil',tipo='$tipo',CPF='$CPF',email='$email',data_admissao='$data_admissao',genero='$genero',codigo='$codigo',senha='$senha',foto='$foto' WHERE id=$id";
+    $sql = "UPDATE usuarios SET nome='$nome',data_nascimento='$data_nascimento',naturalidade='$naturalidade',nacionalidade='$nacionalidade',estado_civil='$estado_civil',tipo='$tipo',CPF='$CPF',email='$email',data_admissao='$data_admissao',genero='$genero',codigo='$codigo',senha='$senha' WHERE id=$id";
 
 
     if ($conn->query($sql) === true) {
@@ -80,19 +79,6 @@ $row = $result->fetch_assoc();
 
             <form method="POST" action="updateFuncionário.php?id=<?php echo $row['id']; ?>"
                 enctype="multipart/form-data">
-
-                <div class="logofuncionario">
-                    <img class="img_cadastro" src="$imagem" alt="Foto de perfil">
-                </div>
-
-                <br>
-
-                <div class="minicinzaalign">
-                    <label for="foto" class="minicinza" value="<?php echo $row['foto']; ?>">+Foto</label> 
-                    <input type="file" accept="image/*,.jpg, .jpeg, .png" name="foto" id="foto" class="invisivel">
-                </div>
-
-                <br>
 
                 <div class="cinzaCadastro">
                     <input type="text" name="nome" id="nome" placeholder="Nome Completo:" class="input"

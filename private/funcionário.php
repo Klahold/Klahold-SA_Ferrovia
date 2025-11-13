@@ -13,11 +13,11 @@ endif;
 $busca = isset($_POST['busca']) ? trim($_POST['busca']) : '';
 
 if ($busca === '') {
-    $sql = "SELECT id,foto,nome,data_nascimento,naturalidade,nacionalidade,estado_civil,tipo,CPF,email,data_admissao,genero,codigo,senha FROM usuarios
+    $sql = "SELECT id,nome,data_nascimento,naturalidade,nacionalidade,estado_civil,tipo,CPF,email,data_admissao,genero,codigo,senha FROM usuarios
             ORDER BY nome DESC";
     $stmt = $conn->prepare($sql);
 } else {
-    $sql = "SELECT id,foto,nome,data_nascimento,naturalidade,nacionalidade,estado_civil,tipo,CPF,email,data_admissao,genero,codigo,senha FROM usuarios
+    $sql = "SELECT id,nome,data_nascimento,naturalidade,nacionalidade,estado_civil,tipo,CPF,email,data_admissao,genero,codigo,senha FROM usuarios
             WHERE nome LIKE ?
             ORDER BY nome DESC";
     $stmt = $conn->prepare($sql);
@@ -81,7 +81,6 @@ $result = $stmt->get_result();
           <a href="readFuncionário.php?id=' . $row['id'] . '">
         <div class="cinza">
             <div class="flexFuncionario">
-                <img class="imagesFuncionario" src="" . $imagem . "">
                 <div class="espaco">' . $row['nome'] . '</div>
                 <br>
                 <div class="espaco">' . $row['tipo'] . '</div>

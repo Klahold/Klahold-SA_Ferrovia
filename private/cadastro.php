@@ -26,10 +26,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $codigo = $_POST['codigo'];
     $senha = $_POST['senha'];
     $hash = password_hash($senha, PASSWORD_DEFAULT);
-    $foto = $_POST['foto'];
 
-    $sql = "INSERT INTO usuarios (foto, nome, data_nascimento, naturalidade, nacionalidade, estado_civil, tipo, CPF, email, data_admissao, genero, codigo, senha)
-    VALUES ('$foto', '$nome', '$data_nascimento', '$naturalidade', '$nacionalidade', '$estado_civil', '$tipo', '$CPF', '$email', '$data_admissao', '$genero', '$codigo', '$hash')";
+    $sql = "INSERT INTO usuarios (nome, data_nascimento, naturalidade, nacionalidade, estado_civil, tipo, CPF, email, data_admissao, genero, codigo, senha)
+    VALUES ('$nome', '$data_nascimento', '$naturalidade', '$nacionalidade', '$estado_civil', '$tipo', '$CPF', '$email', '$data_admissao', '$genero', '$codigo', '$hash')";
     
     $email_status = validar_email_zerobounce($email);
 
@@ -77,19 +76,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 <?php if (!empty($errorMsg)) {
                     echo "<script>'<div class=error style=color:red;margin:10px 0;>' . htmlspecialchars($errorMsg) . '</div>' </script>";
                 } ?>
-
-                <div class="logofuncionario">
-                    <img class="img_cadastro" id="previewImg" src="" alt="">
-                </div>
-
-                <br>
-
-                <div class="minicinzaalign">
-                    <label for="foto" class="minicinza">+Foto</label> 
-                    <input type="file" accept="image/*,.jpg, .jpeg, .png" name="foto" id="foto" class="invisivel">
-                </div>
-
-                <br>
 
                 <div class="cinzaCadastro">
                     <input type="text" name="nome" id="nome" placeholder="Nome Completo:" class="input" required>
