@@ -4,7 +4,6 @@ USE hermes_enterprise;
 
 CREATE TABLE usuarios(
 	id int auto_increment primary key,
-    foto MEDIUMBLOB,
     nome varchar(120) not null,
     data_nascimento varchar(45) not null,
     naturalidade varchar(45) not null,
