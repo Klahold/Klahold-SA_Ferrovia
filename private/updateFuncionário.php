@@ -80,6 +80,8 @@ $row = $result->fetch_assoc();
             <form method="POST" action="updateFuncionário.php?id=<?php echo $row['id']; ?>"
                 enctype="multipart/form-data">
 
+                <br>
+
                 <div class="cinzaCadastro">
                     <input type="text" name="nome" id="nome" placeholder="Nome Completo:" class="input"
                         value="<?php echo $row['nome']; ?>" required>

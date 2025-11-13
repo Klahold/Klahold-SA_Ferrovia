@@ -36,6 +36,8 @@ if (isset($_GET['id'])) {
             <div class="brancoGeral">
                 <div class="arrastarGeral">
 
+                    <br>
+
                     <div class="cinzaCadastro"><strong>Nome:</strong> <?php echo $row['nome']; ?></div><br>
 
                     <div class="cinzaCadastro"><strong>Data de Nascimento:</strong>

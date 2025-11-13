@@ -77,6 +77,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     echo "<script>'<div class=error style=color:red;margin:10px 0;>' . htmlspecialchars($errorMsg) . '</div>' </script>";
                 } ?>
 
+                <br>
+                
                 <div class="cinzaCadastro">
                     <input type="text" name="nome" id="nome" placeholder="Nome Completo:" class="input" required>
                 </div>
