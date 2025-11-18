@@ -95,7 +95,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                 <div class="campo"> <input class="radious" type="password" name="password" id="senha_maquinista"
                         placeholder="Senha" required> </div>
                 <br>
-                <button class="esqueci" type="button" onclick=""> <u> Esqueci minha senha </u></button>
+                <a href="Esqueci.php" class="esqueci">Esqueci minha senha</a>
                 <br>
                 <div class="entrar"><button type="submit">Entrar</button></div>
             </form>

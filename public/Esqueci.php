@@ -4,11 +4,27 @@ include '../config/db.php';
 
 session_start();
 
-if (empty($_SESSION["user_id"])):
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
-    header("Location: login.php");
+    $email = $_POST['email'];
+    $senha = $_POST['senha'];
 
-endif
+    if ((preg_match_all($pattern, $email)) >= 1) {
+        $stmt = $conn->prepare("SELECT id, email, senha, tipo FROM usuarios WHERE email = ?  AND senha=?");
+
+    } else {
+        $stmt = $conn->prepare("SELECT id, email, senha, tipo FROM usuarios WHERE codigo = ? AND senha=?");
+
+    }
+
+    $sql = "INSERT INTO usuarios (senha)
+    VALUES ('$senha')";
+
+    $conn->close();
+}
+    
+
+
 ?>
 
 <html lang="en">
@@ -33,13 +49,13 @@ endif
 
     <div class="LoGin">
         <div class="campo">
-            <input class="radious" type="text" name="Codigo" id="Codigo_maquinista" placeholder="Email" required>
+            <input class="radious" type="text" name="email" id="email" placeholder="Email" required>
         </div>
 
         <br>
 
         <div class="campo">
-            <input class="radious" type="password" name="Senha" id="senha_maquinista" placeholder="Nova Senha" required>
+            <input class="radious" type="password" name="senha" id="senha" placeholder="Nova Senha" required>
         </div>
 
         <br>
