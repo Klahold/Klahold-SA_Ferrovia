@@ -215,6 +215,18 @@ a {
     border: 0px;
     padding: 5px;
     text-align: center;
+    justify-content: center;
+}
+
+.brancoDashboard{
+    background-color: white;
+    border-radius: 20px;
+    border: 0px;
+    padding: 15px;
+    padding-left: 0%;
+    padding-right: 0%;
+    justify-content: center;
+    text-align: center;
 }
 
 /*------------------------------------------------------------------*/
