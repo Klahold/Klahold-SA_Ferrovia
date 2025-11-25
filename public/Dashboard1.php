@@ -2,6 +2,16 @@
 
 include '../config/db.php';
 
+$sql = "SELECT 
+            trens.id, 
+            trens.codigo, 
+            GROUP_CONCAT(manutencao.tipo SEPARATOR ', ') AS problemas
+        FROM trens
+        LEFT JOIN manutencao ON trens.id = manutencao.id_trem
+        GROUP BY trens.id, trens.codigo;";
+
+  $result = $conn->query($sql);
+
 session_start();
 
 if (empty($_SESSION["user_id"])):
@@ -32,79 +42,57 @@ endif
     <section class="squarewhite">
       
 
-        <a href="Dashbord2.php">
-        <div class="selection"> 
-        <div class="trems">
-          <img src="../assets/images/tremVermelho.png" alt="Trem KM2D" class="trem">
-          <div class="treminfo">
-            <h2>Trem KM2D</h2>
-            <h3> - status</h3>
-          </div>
-          </div>
-          <div class="pontosmanutencão">
-            <div class="ponto"></div>
-            <div class="ponto"></div>
-            <div class="ponto"></div>
-          </div>
-        </div>
-        </a>
+        <div class="arrastar">
 
-        <br>
+        <?php
+        if ($result->num_rows > 0) {
+            while ($row = $result->fetch_assoc()) {
+                $problemas = $row['problemas'] ? $row['problemas'] : 'sem adversidades';
 
-        <a href="Dashbord2.php">
-        <div class="selection">
-          <div class="trems">
-            <img src="../assets/images/tremAzul.png" alt="Trem N2VF" class="trem">
-            <div class="treminfo">
-              <h2>Trem N2VF</h2>
-              <h3> - status</h3>
-            </div>
-            </div>
-            <div class="pontosmanutencão">
-              <div class="ponto"></div>
-              <div class="ponto"></div>
-              <div class="ponto"></div>
-            </div>
-          </div>
-          </a>
-
-          <br>
-
-          <a href="Dashbord2.php">
-          <div class="selection">
-            <div class="trems">
-              <img src="../assets/images/tremVermelho.png" alt="Trem N3VF" class="trem">
-              <div class="treminfo">
-                <h2>Trem N3VF</h2>
-                <h3> - status</h3>
-              </div>
-              </div>
-              <div class="pontosmanutencão">
-                <div class="ponto"></div>
-                <div class="ponto"></div>
-                <div class="ponto"></div>
-              </div>
-            </div>
-            </a>
-
-            <br>
-
-            <a href="Dashbord2.php">
-            <div class="selection">
-              <div class="trems">
-                <img src="../assets/images/tremAzul.png" alt="Trem N9NM" class="trem">
-                <div class="treminfo">
-                  <h2 id="">Trem N9NM</h2>
-                  <h3> - status</h3>
-                </div>
-                </div>
-                <div class="pontosmanutencão">
-                  <div class="ponto"></div>
-                  <div class="ponto"></div>
-                  <div class="ponto"></div>
-                </div>
-              </div>
-              </a>
+                if ($problemas != 'sem adversidades') {
+                    echo "<a href='Dashbord2.php?id={$row['id']}&trem=1'>
+                    <div class='selection'> 
+                    <div class='trems'>
+                      <img src='../assets/images/tremVermelho.png' alt=". $row['codigo'] ." class='trem'>
+                      <div class='treminfo'>
+                        <h2>Trem ". $row['codigo'] ."</h2>
+                        <h3 class='vermelhoProblema'> - PROBLEMA EM ". $problemas ." -</h3>
+                      </div>
+                      </div>
+                      <div class='pontosmanutencão'>
+                        <div class='ponto'></div>
+                        <div class='ponto'></div>
+                        <div class='ponto'></div>
+                      </div>
+                    </div>
+                    </a>
+                    <br>";
+                } else {
+                    echo "<a href='Dashbord2.php?id={$row['id']}&trem=1'>
+                    <div class='selection'> 
+                    <div class='trems'>
+                      <img src='../assets/images/tremAzul.png' alt=". $row['codigo'] ." class='trem'>
+                      <div class='treminfo'>
+                        <h2>Trem ". $row['codigo'] ."</h2>
+                        <h3> - sem adversidades -</h3>
+                      </div>
+                      </div>
+                      <div class='pontosmanutencão'>
+                        <div class='ponto'></div>
+                        <div class='ponto'></div>
+                        <div class='ponto'></div>
+                      </div>
+                    </div>
+                    </a>
+                    <br>";
+                }
+            }
+        } else {
+            echo "<h2>Nenhum trem cadastrado no momento.</h2>";
+        }
+        ?>
+      
+    </div>
       </section>
 
   </main>

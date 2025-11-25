@@ -1,4 +1,5 @@
 <?php
+
 include '../config/db.php';
 
 session_start();
@@ -8,6 +9,16 @@ if (empty($_SESSION["user_id"])):
     header("Location: login.php");
 
 endif
+?>
+<?php
+$id = $_GET['id'];
+
+$stmt = $conn->prepare('SELECT * FROM trens where id=?;');
+$stmt->bind_param('i', $id);
+$stmt->execute();
+
+$result = $stmt->get_result();
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -28,7 +39,7 @@ endif
         <img class="logoMenu" src="../assets/icons/dashbord.png" alt="Rotas">
     </header>
 
-    <div class="branco">
+    <div class="brancoDashboard">
         <div class="setas">
     <a href="Dashboard1.php">
                 <img class="setaDashboard" src="../assets/icons/seta.png" alt="Botão de voltar">
@@ -38,122 +49,47 @@ endif
                 <img class="setaDashboard2" src="../assets/icons/seta2.png" alt="Botão de continuar">
         </a>
   </div>
-        <div class="cinza">
-        <?php
-        $sql = "SELECT * FROM trens";
-        $result = $conn->query($sql);
+        <div class="cinzaDashboard">
 
-        if ($result->num_rows > 0){
-            
-            echo "<table>
-                        <thead>
-                                <tr>
-                                    <strong><p>velocidade</p></strong>
-                                <tr>
-                        <thead>
-                <tbody>";
-        while ($row = $result->fetch_assoc()){
-            echo "<tr>
-                    <p>{$row['velocidade']}</p>
-                    <tr>";
-        }
-        echo"<t/body></table>";
-        }else{
-            echo "<p>Nenhum trem em movimento.</p>";
-        }
 
         
-        ?>
-    </div>
-
-    <br>
-
-    <div class="cinza">
         <?php
-        $sql = "SELECT * FROM trens";
-        $result = $conn->query($sql);
 
         if ($result->num_rows > 0){
-            
-            echo "<table>
-                        <thead>
-                                <tr>
-                                    <strong><p>horarios</p></strong>
-                                <tr>
-                        <thead>
-                <tbody>";
-        while ($row = $result->fetch_assoc()){
-            echo "<tr>
-                    <p>{$row['horarios']}</p>
-                    <tr>";
-        }
-        echo"<t/body></table>";
-        }else{
-            echo "<p>Nenhum horario encontrado.</p>";
-        }
+            while ($row = $result->fetch_assoc()) {
+        echo "<h1 class='text'> Trem {$row['codigo']} </h1>
+              <br>
+        ";}
 
         
-        ?>
-    </div>
+           $stmt = $conn->prepare('SELECT * FROM trens where id=?;');
+        $stmt->bind_param('i', $id);
+        $stmt->execute();
 
-    <br>
-<div class="espaco">
-    <div class="flex">
-        <div class="cinza">
-        <?php
-        $sql = "SELECT * FROM trens";
-        $result = $conn->query($sql);
+        $dados2 = $stmt->get_result();
 
-        if ($result->num_rows > 0){
-            
+        while ($row = $dados2->fetch_assoc()){
             echo "<table>
                         <thead>
                                 <tr>
+                                <strong><p>velocidade</p></strong>
+                                <p>{$row['velocidade']}</p>
                                 <strong><p>direcao</p></strong>
-                                <tr>
-                        <thead>
-                <tbody>";
-        while ($row = $result->fetch_assoc()){
-            echo "<tr>
-                    <p>{$row['direcao']}</p>
-                    <tr>";
-        }
-        echo"<t/body></table>";
-        }else{
-            echo "<p>Nenhuma direção encontrada.</p>";
-        }
-        ?>
-    </div>
-</div>
-    <div class="cinzaDashboard">
-        
-        <?php
-        $sql = "SELECT * FROM trens";
-        $result = $conn->query($sql);
-
-        if ($result->num_rows > 0){
-            
-            echo "<table>
-                        <thead>
-                                <tr>
+                                <p>{$row['direcao']}</p>
                                 <strong><p>localizacao</p></strong>
+                                <p>{$row['localizacao']}</p>
                                 <tr>
                         <thead>
-                <tbody>";
-        while ($row = $result->fetch_assoc()){
-            echo "<tr>
-                    <p>{$row['localizacao']}</p>
-                    <tr>";
-        }
-        echo"<t/body></table>";
-        }else{
-            echo "<p>Nenhum trem em localizado.</p>";
+                <tbody>";}
+            
+        $stmt->close();
         }
 
-        
         ?>
+        
     </div>
-    </div>
+ 
+
     
 
     </div>
