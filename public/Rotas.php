@@ -29,27 +29,22 @@ endif
         <img class="logoMenu" src="..//assets/icons/rotas.png" alt="Rotas">
     </header>
 
-    <img class="mapa" src="..//assets/icons/mapaFeio.png" alt="mapa">
+    <div class="azul">
+    <img class="mapa" src="..//assets/icons/ferrovia.png" alt="mapa">
+
+    <a href="rotas.php?sensor=1"><div class="sensor1"></div></a>
+    <a href="rotas.php?sensor=2"><div class="sensor2"></div></a>
+    <a href="rotas.php?sensor=3"><div class="sensor3"></div></a>
+
+    </div>
+
+    
+
+
+
+    <br><br>
 
     <div class="brancoRotas">
-
-        <h2><strong><u>Linha 4</u></strong></h2>
-
-        <div class="cinzaRotas">
-            <h3>Notificação</h3>
-        </div>
-
-        <div class="espaco">
-
-            <div class="cinzaRotas">
-                <h3>Interromper</h3>
-            </div>
-
-            <div class="cinzaRotas">
-                <h3>Alterar rota</h3>
-            </div>
-
-        </div>
 
 
 
