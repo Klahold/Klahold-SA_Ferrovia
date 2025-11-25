@@ -4,26 +4,28 @@ include '../config/db.php';
 
 session_start();
 
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
-    $email = $_POST['email'];
-    $senha = $_POST['senha'];
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $email = trim($_POST['email'] ?? '');
+    $senha = $_POST['senha'] ?? '';
 
-    if ((preg_match_all($pattern, $email)) >= 1) {
-        $stmt = $conn->prepare("SELECT id, email, senha, tipo FROM usuarios WHERE email = ?  AND senha=?");
-
-    } else {
-        $stmt = $conn->prepare("SELECT id, email, senha, tipo FROM usuarios WHERE codigo = ? AND senha=?");
-
-    }
-
-    $sql = "INSERT INTO usuarios (senha)
-    VALUES ('$senha')";
-
-    $conn->close();
+    if (!empty($email) && !empty($senha)) {
+        $sql = "UPDATE usuarios SET senha='$senha' WHERE email='$email'";
+        if ($conn->query($sql) === TRUE) {
+            if ($conn->affected_rows > 0) {
+                ?>
+                <h2 class="textoEsqueci">Senha atualizada!</h2>;
+                <?php
+            } else {
+                ?>
+                <h2 class="textoEsqueci">Email não encontrado!</h2>;
+                <?php
+            }
+        } else {
+            echo "<h2>Erro ao atualizar:</h2>" . $conn->error;
+        }
+    } 
 }
-    
-
 
 ?>
 
@@ -47,7 +49,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         <H2><u> Esqueci minha senha </u></H2>
     </header>
 
+
+    
     <div class="LoGin">
+        <form action="" method="POST">
+        <?php if (!empty($message)) : ?>
+            <p class="message"><?php echo htmlspecialchars($message); ?></p>
+        <?php endif; ?>
         <div class="campo">
             <input class="radious" type="text" name="email" id="email" placeholder="Email" required>
         </div>
@@ -62,10 +70,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 
     </div>
-    <div class="entrar">
+    <div class="esqueciVoltar">
         <br>
-        <button class="entrar" type="button" onclick="validarFormulario()">Entrar</button>
+        <button type="submit">Alterar senha</button> <button><a href="login.php">logar</a></button>
     </div>
+    </form>
 
 </body>
 
