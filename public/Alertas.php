@@ -28,7 +28,7 @@ endif
     <header class="header">
         
         <h1>Alertas</h1>
-        <img class="logoMenu" src="../assets/icons/dashbord.png" alt="">
+        <a href="login.php"><img class="logoMenu" src="../assets/icons/dashbord.png" alt=""></a>
     </header>
 
     <div class="brancoAlertas">

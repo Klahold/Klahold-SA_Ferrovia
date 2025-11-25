@@ -47,7 +47,7 @@ $result = $stmt->get_result();
 <body>
   <header class="header">
     <h1>Funcionários</h1>
-    <img class="logoMenu" src="../assets/icons/funcionario.png" alt="Rotas">
+    <a href="../public/login.php"><img class="logoMenu" src="../assets/icons/funcionario.png" alt="Rotas"></a>
   </header>
 
   <div class="branco-funcionario">

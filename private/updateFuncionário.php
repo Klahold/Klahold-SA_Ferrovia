@@ -58,7 +58,7 @@ $row = $result->fetch_assoc();
 
     <title>Update</title>
     <link rel="stylesheet" href="../style/styles.css">
-    <link rel="icon" href="../assets/icons/logo.png" type="image/png">
+    <a href="../public/login.php"><link rel="icon" href="../assets/icons/logo.png" type="image/png"></a>
     <script src="script.js"></script>
 
 </head>

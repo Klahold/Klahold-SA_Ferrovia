@@ -55,7 +55,7 @@ $result = $stmt->get_result();
 <body>
     <header class="header">
         <h1>Relatórios</h1>
-        <img class="logoMenu" src="..//assets/icons/relatorio.png" alt="Relatórios">
+        <a href="login.php"><img class="logoMenu" src="..//assets/icons/relatorio.png" alt="Relatórios"></a>
     </header>
 
 

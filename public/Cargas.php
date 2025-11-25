@@ -31,7 +31,7 @@ endif
 <body>
   <header class="header">
     <h1>Dashboard</h1>
-    <img class="logoMenu" src="../assets/icons/dashbord.png" alt="Rotas">
+    <a href="login.php"><img class="logoMenu" src="../assets/icons/dashbord.png" alt="Rotas"></a>
   </header>
 
   <div class="brancoAlertas">

@@ -31,7 +31,7 @@ if (isset($_GET['id'])) {
         <body>
             <header class="header">
                 <h1>Funcionário</h1>
-                <img class="logoMenu" src="../assets/icons/funcionario.png">
+                <a href="../public/login.php"><img class="logoMenu" src="../assets/icons/funcionario.png"></a>
             </header>
             <div class="brancoGeral">
                 <div class="arrastarGeral">

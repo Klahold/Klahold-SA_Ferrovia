@@ -65,13 +65,16 @@ CREATE TABLE aviso(
     id int auto_increment primary key,
     mensagem varchar(45) not null
 );
+CREATE TABLE ambiente(
+    id int auto_increment primary key,
+    temperatura int not null,
+    umidade int not null
+);
 
 CREATE TABLE sensores(
     id int auto_increment primary key,
-    temperatura int not null,
     presenca DATETIME DEFAULT CURRENT_TIMESTAMP,
-    local enum("estação","rotatoria_começo","rotatoria_final","curva_final"),
-    umidade int not null
+    local enum("estação","rotatoria_começo","rotatoria_final","curva_final")
 );
     
 insert into usuarios (nome,data_nascimento,naturalidade,nacionalidade,estado_civil,tipo,CPF,email,data_admissao,genero,codigo,senha) values
@@ -79,3 +82,9 @@ insert into usuarios (nome,data_nascimento,naturalidade,nacionalidade,estado_civ
 ('Gustavo', '01-11-2001', 'joiville-SC','Brasileiro', 'Solteiro', 'Administrador', '12345678902','gustavo@email.com','23-09-2025','Masculino','GUS','1234'),
 ('Kaua', '01-11-2001', 'joiville-SC','Brasileiro', 'Casado', 'Administrador', '12345678903','kaus@email.com','23-09-2025','Masculino','KAU','1234'),
 ('USER', '01-11-2001', 'joiville-SC','Brasileiro', 'Solteiro', 'Usuario', '12345678904','user@email.com','23-09-2025','Masculino','USER','1234');
+
+insert into sensores (local) values
+('estação'),
+('rotatoria_começo'),
+('rotatoria_final'),
+('curva_final');

@@ -671,6 +671,12 @@ a {
     width: 375px;
 }
 
+.arrastarrotas{
+    overflow: scroll;
+    scrollbar-width: none;
+    background-color: white;
+}
+
 .sensor1{
     background-color: black;
     position: absolute;
@@ -689,6 +695,15 @@ a {
     bottom: 576px;
 }
 
+.sensor4{
+    background-color: black;
+    position: absolute;
+    padding: 18px;
+    border-radius: 15px;
+    left: 225px;
+    bottom: 576px;
+}
+
 .sensor3{
     background-color: black;
     position: absolute;
@@ -696,6 +711,15 @@ a {
     border-radius: 15px;
     right: 355px;
     bottom: 576px;
+}
+
+.sensor1:active, .sensor2:active, .sensor3:active, .sensor4:active{
+    padding: 19px;
+}
+
+.sensor-ativo {
+    background-color: #05294d;
+    border: 2px solid #000000;
 }
 
 

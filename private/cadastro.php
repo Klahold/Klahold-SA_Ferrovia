@@ -65,7 +65,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 <body>
     <header class="header">
         <h1>Cadastrar</h1>
-        <img class="logoMenu" src="../assets/icons/funcionario.png" enctype="multipart/form-data">
+        <a href="../public/login.php"><img class="logoMenu" src="../assets/icons/funcionario.png" enctype="multipart/form-data"></a>
     </header>
 
     <div class="brancoGeral">

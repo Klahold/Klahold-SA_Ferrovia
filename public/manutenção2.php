@@ -37,7 +37,7 @@ $result = $stmt->get_result();
 <body>
   <header class="header">
     <h1>Manutenção</h1>
-    <img class="logoMenu" src="../assets/icons/manutenção.png" alt="Icone de manutenção">
+    <a href="login.php"><img class="logoMenu" src="../assets/icons/manutenção.png" alt="Icone de manutenção"></a>
   </header>
 
   <main>

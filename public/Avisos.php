@@ -30,7 +30,7 @@ endif
 <body>
     <header class="header">
         <h1>Avisos</h1>
-        <img class="logoMenu" src="../assets/icons/avisos.png" alt="">
+        <a href="login.php"><img class="logoMenu" src="../assets/icons/avisos.png" alt=""></a>
     </header>
   <div class="brancoGeral">
 
