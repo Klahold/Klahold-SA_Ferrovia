@@ -659,6 +659,47 @@ a {
     width: 375px;
 }
 
+.sensor1{
+    background-color: black;
+    position: absolute;
+    padding: 18px;
+    border-radius: 15px;
+    left: 120px;
+    bottom: 508px;
+}
+
+.sensor2{
+    background-color: black;
+    position: absolute;
+    padding: 18px;
+    border-radius: 15px;
+    left: 355px;
+    bottom: 576px;
+}
+
+.sensor3{
+    background-color: black;
+    position: absolute;
+    padding: 18px;
+    border-radius: 15px;
+    right: 355px;
+    bottom: 576px;
+}
+
+
+.azul {
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    height: 250px;
+    padding:2px;
+    border: solid;
+    border-radius: 20px;
+    background-color: rgba(48, 29, 216, 0.411);
+    border-color: #150379a4;
+}
+
 .brancoRotas {
     background-color: white;
     border-radius: 20px;
