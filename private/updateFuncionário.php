@@ -30,8 +30,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $genero = $_POST['genero'];
     $codigo = $_POST['codigo'];
     $senha = $_POST['senha'];
+    $hash = password_hash($senha, PASSWORD_DEFAULT);
 
-    $sql = "UPDATE usuarios SET nome='$nome',data_nascimento='$data_nascimento',naturalidade='$naturalidade',nacionalidade='$nacionalidade',estado_civil='$estado_civil',tipo='$tipo',CPF='$CPF',email='$email',data_admissao='$data_admissao',genero='$genero',codigo='$codigo',senha='$senha' WHERE id=$id";
+    $sql = "UPDATE usuarios SET nome='$nome',data_nascimento='$data_nascimento',naturalidade='$naturalidade',nacionalidade='$nacionalidade',estado_civil='$estado_civil',tipo='$tipo',CPF='$CPF',email='$email',data_admissao='$data_admissao',genero='$genero',codigo='$codigo',senha='$hash' WHERE id=$id";
 
 
     if ($conn->query($sql) === true) {
