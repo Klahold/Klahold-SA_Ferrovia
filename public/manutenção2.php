@@ -68,7 +68,7 @@ $result = $stmt->get_result();
               <br>
               <a href='createReport.php?id={$row['id']}'> <div class='cinzacriar'>
               reportar problema</div>
-              </a>
+              </a> 
         ";}
 
         $stmt->close();
@@ -83,9 +83,24 @@ $result = $stmt->get_result();
         $stmt->execute();
 
         $dados2 = $stmt->get_result();
-
+        
         while ($row = $dados2->fetch_assoc()){
 
+
+        if($row['tipo']=="sem adversidades"){
+
+          $data_cricacao = date('d/m/Y', strtotime($row['criado_em']));
+
+        echo"
+        <br>
+        <a href='lerReport.php?id={$row['id']}&id_Trem={$id}'
+        <div class='flex'>
+        
+              <h2> Trem {$row['tipo']} </h3>
+             <br>
+              </div></a>
+            
+        ";} else{
         $data_cricacao = date('d/m/Y', strtotime($row['criado_em']));
 
         echo"
@@ -95,8 +110,13 @@ $result = $stmt->get_result();
         
               <h3 class='text'> Trem {$row['tipo']} </h3>
               <h3 class='text'>{$data_cricacao}</h3></div>
-            </div></a>
-        ";}
+             <br>
+              <a href='deleteReport.php?id={$row['id']}&id_Trem={$id}'> <div class='cinzadeletar'>
+              <strong>deletar report</strong></div>
+              </a>
+              </div></a>
+            
+        ";}}
             
         $stmt->close();
                     

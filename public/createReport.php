@@ -31,7 +31,7 @@ if($_SERVER["REQUEST_METHOD"] === "POST") {
     
     
     if ($stmt->execute()) {
-        header("location: manutenção1.php");
+        header("location: manutenção2.php?id={$id}");
         exit();
     } else {
         echo "Erro " . $stmt->error;

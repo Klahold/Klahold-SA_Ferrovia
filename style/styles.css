@@ -555,6 +555,19 @@ a {
     text-decoration: underline;
 }
 
+.cinzadeletar{
+    background-color: rgb(204, 152, 152);
+    border-radius: 5px;
+    border: 0px;
+    padding: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border: 1px solid;
+    border-color: rgb(80, 45, 45);
+    margin: 5px;
+    margin-right: 0px;
+}
+
 /*------------------------------------------------------------------*/
 /*Menu*/
 #menu_linha {
