@@ -69,7 +69,7 @@ endif
             </div>
         </a>
 
-        <a href="dashbord.php">
+        <a href="dashboard1.php">
             <div class="quadrado-branco">
                 <img class="Tamanho_img" src="..//assets/icons/dashbord.png" alt="Botão de dashboard">
                 <strong>
