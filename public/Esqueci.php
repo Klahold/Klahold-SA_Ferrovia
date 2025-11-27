@@ -8,9 +8,10 @@ session_start();
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $email = trim($_POST['email'] ?? '');
     $senha = $_POST['senha'] ?? '';
+    $hash = password_hash($senha, PASSWORD_DEFAULT);
 
     if (!empty($email) && !empty($senha)) {
-        $sql = "UPDATE usuarios SET senha='$senha' WHERE email='$email'";
+        $sql = "UPDATE usuarios SET senha='$hash' WHERE email='$email'";
         if ($conn->query($sql) === TRUE) {
             if ($conn->affected_rows > 0) {
                 ?>
