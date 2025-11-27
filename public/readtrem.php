@@ -20,6 +20,7 @@ if (empty($_SESSION["user_id"])):
 
 endif;
 
+
 ?>
 
 <!DOCTYPE html>
@@ -45,37 +46,16 @@ endif;
 
       <Br></Br>
 
-      <div class="displaymobile">
-
         <?php
-        if($_SESSION["tipo"]=="Administrador"){
-            echo"
-            
-            <a href='../private/createTrem.php'><div class='criartrem'>
-            <strong class='textoRelatorio'>Cadastrar Trem</strong>
-            <br><br><br><img src='../assets/icons/iconetrem.png' alt='' width='80px'></div></a><br>";
 
-            echo"
-            
-            <a href='../private/updateTrem.php'><div class='editartrem'>
-            <strong class='textoRelatorio'>Editar Trem</strong>
-            <br><br><br><br><img src='../assets/icons/manutenção.png' alt='' width='90px'></div></a>";
-            
-            echo"
-            </div><br>
-      
-            <a href='../private/deleteTrem.php'><div class='deletartrem'>
-            <strong class='textoRelatorio'>Deletar Trem</strong><br><img src='../assets/icons/lixeiraicone.png' alt='' width='90px'>
-            </div></a><br>";
-        }else{
-          echo"</div>";
-          
-           if ($result->num_rows > 0) {
+      if (isset($_GET['trem'])) {
+
+      if ($result->num_rows > 0) {
             while ($row = $result->fetch_assoc()) {
                 $problemas = $row['problemas'] ? $row['problemas'] : 'sem adversidades';
 
                 if ($problemas != 'sem adversidades') {
-                    echo "<a href='Dashbord2.php?id={$row['id']}&trem=1'>
+                    echo "<a href='manutenção2.php?id={$row['id']}&trem=1'>
                     <div class='selection'> 
                     <div class='trems'>
                       <img src='../assets/images/tremVermelho.png' alt=". $row['codigo'] ." class='trem'>
@@ -93,7 +73,77 @@ endif;
                     </a>
                     <br>";
                 } else {
-                    echo "<a href='Dashbord2.php?id={$row['id']}&trem=1'>
+                    echo "<a href='manutenção2.php?id={$row['id']}&trem=1'>
+                    <div class='selection'> 
+                    <div class='trems'>
+                      <img src='../assets/images/tremAzul.png' alt=". $row['codigo'] ." class='trem'>
+                      <div class='treminfo'>
+                        <h2>Trem ". $row['codigo'] ."</h2>
+                        <h3> - sem adversidades -</h3>
+                      </div>
+                      </div>
+                      <div class='pontosmanutencão'>
+                        <div class='ponto'></div>
+                        <div class='ponto'></div>
+                        <div class='ponto'></div>
+                      </div>
+                    </div>
+                    </a>
+                    <br>";
+                }
+            }
+        } else {
+            echo "<h2>Nenhum trem cadastrado no momento.</h2>";
+        }
+}else{
+
+        if($_SESSION["tipo"]=="Administrador"){
+
+
+            echo"<div class='displaymobile'>
+            
+            <a href='../private/createTrem.php'><div class='criartrem'>
+            <strong class='textoRelatorio'>Cadastrar Trem</strong>
+            <br><br><br><img src='../assets/icons/iconetrem.png' alt='' width='80px'></div></a><br>";
+
+            echo"
+            
+            <a href='../private/updateTrem.php'><div class='editartrem'>
+            <strong class='textoRelatorio'>Editar Trem</strong>
+            <br><br><br><br><img src='../assets/icons/manutenção.png' alt='' width='90px'></div></a>";
+            
+            echo"
+            </div><br>
+      
+            <a href='../private/deleteTrem.php'><div class='deletartrem'>
+            <strong class='textoRelatorio'>Deletar Trem</strong><br><img src='../assets/icons/lixeiraicone.png' alt='' width='90px'>
+            </div></a><br> </div>";
+        }else{
+          
+           if ($result->num_rows > 0) {
+            while ($row = $result->fetch_assoc()) {
+                $problemas = $row['problemas'] ? $row['problemas'] : 'sem adversidades';
+
+                if ($problemas != 'sem adversidades') {
+                    echo "<a href='manutenção2.php?id={$row['id']}&trem=1'>
+                    <div class='selection'> 
+                    <div class='trems'>
+                      <img src='../assets/images/tremVermelho.png' alt=". $row['codigo'] ." class='trem'>
+                      <div class='treminfo'>
+                        <h2>Trem ". $row['codigo'] ."</h2>
+                        <h3 class='vermelhoProblema'> - PROBLEMA EM ". $problemas ." -</h3>
+                      </div>
+                      </div>
+                      <div class='pontosmanutencão'>
+                        <div class='ponto'></div>
+                        <div class='ponto'></div>
+                        <div class='ponto'></div>
+                      </div>
+                    </div>
+                    </a>
+                    <br>";
+                } else {
+                    echo "<a href='manutenção2.php?id={$row['id']}&trem=1'>
                     <div class='selection'> 
                     <div class='trems'>
                       <img src='../assets/images/tremAzul.png' alt=". $row['codigo'] ." class='trem'>
@@ -116,7 +166,7 @@ endif;
             echo "<h2>Nenhum trem cadastrado no momento.</h2>";
         }
 
-        }
+        }}
 
         
         ?>
@@ -125,18 +175,39 @@ endif;
 
         <?php
         
-        ?>
-        <br>
-        <a href="manutenção1.php">
-        <div class="cinza">
-          <h4>ver todas as manutencao registradas</h4>
-        </div></a>
+        if($_SESSION["tipo"]=="Administrador"){
 
-      <br>
-        <a href="manutenção1.php">
-        <div class="cinza">
+          if (isset($_GET['trem'])) {
+            echo"<a href='readtrem.php'>
+        <div class='cinza'>
+          <h4>Voltar</h4>
+        </div></a>";
+
+         echo"
+          <br>
+        <a href='manutenção1.php'>
+        <div class='cinza'>
           <h4>ver todas as manutencao registradas</h4>
+        </div></a>";
+
+            
+          }else{
+            echo"<a href='readtrem.php?trem='1''>
+        <div class='cinza'>
+          <h4>VER TRENS</h4>
         </div></a>
+            ";}
+
+        }else{
+          echo"
+          <br>
+        <a href='manutenção1.php'>
+        <div class='cinza'>
+          <h4>ver todas as manutencao registradas</h4>
+        </div></a>";
+        }
+        ?>
+        
       
       </section>
 
