@@ -78,10 +78,10 @@ CREATE TABLE sensores(
 );
     
 insert into usuarios (nome,data_nascimento,naturalidade,nacionalidade,estado_civil,tipo,CPF,email,data_admissao,genero,codigo,senha) values
-('Mago', '01-11-2001', 'joiville-SC','Brasileiro', 'Solteiro', 'Administrador', '12345678901','mago@email.com','23-09-2025','Masculino','MAGO','1234'),
-('Gustavo', '01-11-2001', 'joiville-SC','Brasileiro', 'Solteiro', 'Administrador', '12345678902','gustavo@email.com','23-09-2025','Masculino','GUS','1234'),
-('Kaua', '01-11-2001', 'joiville-SC','Brasileiro', 'Casado', 'Administrador', '12345678903','kaus@email.com','23-09-2025','Masculino','KAU','1234'),
-('USER', '01-11-2001', 'joiville-SC','Brasileiro', 'Solteiro', 'Usuario', '12345678904','user@email.com','23-09-2025','Masculino','USER','1234');
+('Mago', '01-11-2001', 'joiville-SC','Brasileiro', 'Solteiro', 'Administrador', '12345678901','mago@email.com','23-09-2025','Masculino','MAGO','$2y$10$gvfQKL9eD3Xi5K8VyWw0..LnWPtyfaAdaes9rs/mmB/6/FH680nHy'),
+('Gustavo', '01-11-2001', 'joiville-SC','Brasileiro', 'Solteiro', 'Administrador', '12345678902','gustavo@email.com','23-09-2025','Masculino','GUS','$2y$10$aRM38Rq9IQ34mmO5gfobMea9PBQt.LlTh52h9jmy223.Yu7HGlXIa'),
+('Kaua', '01-11-2001', 'joiville-SC','Brasileiro', 'Casado', 'Administrador', '12345678903','kaus@email.com','23-09-2025','Masculino','KAU','$2y$10$sRCCttFJsLYRQbhldcAOiORLPhA4QvdD6f7kXrHOaRuPa8Jkb20ru'),
+('USER', '01-11-2001', 'joiville-SC','Brasileiro', 'Solteiro', 'Usuario', '12345678904','user@email.com','23-09-2025','Masculino','USER','$2y$10$lQ.0CrsqNDR93Z6ZPQP8reJA9t39Nd6IkyD9FkvS8UhRkkEzjvQhq');
 
 insert into sensores (local) values
 ('estação'),

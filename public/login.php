@@ -15,44 +15,37 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $email = $_POST["emailoucodigo"] ?? "";
     $pass = $_POST["password"] ?? "";
 
-    $pattern = "/\W/";
-
-    if ((preg_match_all($pattern, $email)) >= 1) {
-        $stmt = $conn->prepare("SELECT id, email, senha, tipo FROM usuarios WHERE email = ?  AND senha=?");
-
+    if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        $stmt = $conn->prepare("SELECT id, nome, email, senha, tipo FROM usuarios WHERE email = ? ");
     } else {
-        $stmt = $conn->prepare("SELECT id, email, senha, tipo FROM usuarios WHERE codigo = ? AND senha=?");
-
+        $stmt = $conn->prepare("SELECT id, nome, email, senha, tipo FROM usuarios WHERE codigo = ? ");
     }
 
-    $stmt->bind_param("ss", $email, $pass);
-    $stmt->execute();
-    $result = $stmt->get_result();
-    $dados = $result->fetch_assoc();
-    $stmt->close();
+    if ($stmt === false) {
+        $msg = "Erro no servidor. Tente novamente mais tarde.";
+    } else {
+        $stmt->bind_param("s", $email);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        $dados = $result->fetch_assoc();
+        $stmt->close();
 
-    if ($dados) {
-        $_SESSION["user_id"] = $dados["id"];
-        $_SESSION["username"] = $dados["nome"];
-        $_SESSION["tipo"] = $dados["tipo"];
-        
-        if ($_SESSION["tipo"] == "Administrador") {
-            header("location:../private/menuadm.php");
+        if ($dados && password_verify($pass, $dados['senha'])) {
+            $_SESSION["user_id"] = $dados["id"];
+            $_SESSION["username"] = $dados["nome"];
+            $_SESSION["tipo"] = $dados["tipo"];
+
+            if ($_SESSION["tipo"] === "Administrador") {
+                header("Location: ../private/menuadm.php");
+            } else {
+                header("Location: menu.php");
+            }
+            exit;
         } else {
-            header("Location: menu.php");
+            $msg = "Usuário ou senha incorretos!";
         }
-        exit;
-    } else {
-        $msg = "Usuário ou senha incorretos!";
-        header("Location: login.php");
     }
-
-    if ($dados && password_verify($pass, $dados['senha'])) {
-        return $dados;
-    }
-    return false;
 }
-
 
 ?>
 
