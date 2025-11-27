@@ -84,7 +84,6 @@ if($_SERVER["REQUEST_METHOD"] === "POST") {
                 <input class="cadastrartrem" type="text" name="codigo" id="codigo" maxlength="4" placeholder="Código:"required>
                 </div>
                 <br>
-                <br>
                 <div class="cinza"><button class="cinza" type="submit"><strong>Enviar</strong></button></div>
             </form>
             <?php

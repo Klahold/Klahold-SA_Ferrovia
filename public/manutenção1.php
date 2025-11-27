@@ -46,6 +46,7 @@ endif;
     <div class="cinza">
     <h3>Todos as manutenções registradas</h3>
     </div>
+    
     <br>
     <?php
       if ($result->num_rows > 0) {

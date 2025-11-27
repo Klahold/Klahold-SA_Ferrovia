@@ -43,30 +43,39 @@ endif;
 
     <section class="squarewhite">
 
-    
+      <Br></Br>
+
+      <div class="displaymobile">
+
         <?php
         if($_SESSION["tipo"]=="Administrador"){
             echo"
             
-            <div class='criar'>
-            <a href='../private/createTrem.php'><div class='cinzacriar'><strong class='textoRelatorio'>Cadastrar Trem</strong></div></a>
-            </div><br>";
+            <a href='../private/createTrem.php'><div class='criartrem'>
+            <strong class='textoRelatorio'>Cadastrar Trem</strong>
+            <br><br><br><img src='../assets/icons/iconetrem.png' alt='' width='80px'></div></a><br>";
 
+            echo"
             
-        }
-        
-
-        ?>
-
-        <div class="arrastar">
-
-        <?php
-        if ($result->num_rows > 0) {
+            <a href='../private/updateTrem.php'><div class='editartrem'>
+            <strong class='textoRelatorio'>Editar Trem</strong>
+            <br><br><br><br><img src='../assets/icons/manutenção.png' alt='' width='90px'></div></a>";
+            
+            echo"
+            </div><br>
+      
+            <a href='../private/deleteTrem.php'><div class='deletartrem'>
+            <strong class='textoRelatorio'>Deletar Trem</strong><br><img src='../assets/icons/lixeiraicone.png' alt='' width='90px'>
+            </div></a><br>";
+        }else{
+          echo"</div>";
+          
+           if ($result->num_rows > 0) {
             while ($row = $result->fetch_assoc()) {
                 $problemas = $row['problemas'] ? $row['problemas'] : 'sem adversidades';
 
                 if ($problemas != 'sem adversidades') {
-                    echo "<a href='manutenção2.php?id={$row['id']}&trem=1'>
+                    echo "<a href='Dashbord2.php?id={$row['id']}&trem=1'>
                     <div class='selection'> 
                     <div class='trems'>
                       <img src='../assets/images/tremVermelho.png' alt=". $row['codigo'] ." class='trem'>
@@ -84,7 +93,7 @@ endif;
                     </a>
                     <br>";
                 } else {
-                    echo "<a href='manutenção2.php?id={$row['id']}&trem=1'>
+                    echo "<a href='Dashbord2.php?id={$row['id']}&trem=1'>
                     <div class='selection'> 
                     <div class='trems'>
                       <img src='../assets/images/tremAzul.png' alt=". $row['codigo'] ." class='trem'>
@@ -106,13 +115,24 @@ endif;
         } else {
             echo "<h2>Nenhum trem cadastrado no momento.</h2>";
         }
+
+        }
+
+        
         ?>
-      
-    </div>
 
       
 
-      <br><br>
+        <?php
+        
+        ?>
+        <br>
+        <a href="manutenção1.php">
+        <div class="cinza">
+          <h4>ver todas as manutencao registradas</h4>
+        </div></a>
+
+      <br>
         <a href="manutenção1.php">
         <div class="cinza">
           <h4>ver todas as manutencao registradas</h4>

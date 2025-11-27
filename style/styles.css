@@ -3,7 +3,6 @@ body {
     background-image: url('..//assets/icons/BlueBackground.jpg');
     background-size: 600px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-
 }
 
 a {
@@ -344,13 +343,36 @@ a {
     padding: 10px;
 }
 
+.labelsmanutencao{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: large;
+    background-color: rgb(182, 182, 182);
+    border-radius: 20px;
+    border: none;
+    width: 200px;
+    padding: 9px;
+    font-weight: bold;
+    margin: 2px;
+}
+
 .cadastrartrem{
     background-color: #f3f3f3;
     border-radius:5px ;
     margin: 7px;
-    padding: 2px;
-    border-color: #cccccc;
+    padding: 3px;
+    border-color: #ececec;
     text-align: center;
+    width: 250px;
+}
+
+.updateTrem{
+    background-color: #f3f3f3;
+    border-radius:5px ;
+    margin: 7px;
+    padding: 20px;
+    border-color: #ececec;
+    text-align: center;
+    width: 250px;
 }
 
 .squarewhite {
@@ -360,6 +382,50 @@ a {
     height: 650px;
     overflow: scroll;
     scrollbar-width: none;
+}
+
+.displaymobile{
+    display:flex;
+    justify-content: space-between;
+
+}
+
+.criartrem{
+    width: 100px;
+    height: 240px;
+    background-color: #cccccc;
+    color:black;
+    border-radius: 20px;
+    padding: 20px;
+    align-items: center;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+}
+
+.editartrem{
+    width: 100px;
+    height: 240px;
+    background-color: #cccccc;
+    color:black;
+    border-radius: 20px;
+    padding: 20px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.deletartrem{
+    height: 100px;
+    width: 290px;
+    background-color: #cccccc;
+    color:black;
+    border-radius: 20px;
+    padding: 20px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
 }
 
 .meiotabranco {
