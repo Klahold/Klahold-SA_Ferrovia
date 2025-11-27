@@ -41,9 +41,13 @@ $result = $stmt->get_result();
 
     <div class="brancoDashboard">
         <div class="setas">
-            <a href="Dashboard1.php"><img class="setaDashboard" src="../assets/icons/seta.png" alt="Botão de voltar"></a>
+            <?php while ($row = $result->fetch_assoc()){
+            echo "
+            <a href='Dashboard1.php'><img class='setaDashboard' src='../assets/icons/seta.png' alt='Botão de voltar'></a>
         
-            <a href="Cargas.php"><img class="setaDashboard2" src="../assets/icons/seta2.png" alt="Botão de continuar"></a>
+            <a href='Cargas.php?id={$row['id']}&trem=1'><img class='setaDashboard2' src='../assets/icons/seta2.png' alt='Botão de continuar'></a>
+            ";}
+            ?>
         </div>
         
         <div class="arrumarDashboard">

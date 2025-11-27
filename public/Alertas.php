@@ -10,6 +10,16 @@ if (empty($_SESSION["user_id"])):
 
 endif
 ?>
+<?php
+$id = $_GET['id'];
+
+$stmt = $conn->prepare('SELECT * FROM trens where id=?;');
+$stmt->bind_param('i', $id);
+$stmt->execute();
+
+$result = $stmt->get_result();
+
+?>
 
 <!DOCTYPE html>
 <html lang="en">

@@ -2,19 +2,24 @@
 
 include '../config/db.php';
 
-$sql = "SELECT * FROM carga";
-
-$result = $conn->query($sql);
-
 session_start();
 
 if (empty($_SESSION["user_id"])):
 
-  header("Location: login.php");
+    header("Location: login.php");
 
 endif
 ?>
+<?php
+$id = $_GET['id'];
 
+$stmt = $conn->prepare('SELECT * FROM trens where id=?;');
+$stmt->bind_param('i', $id);
+$stmt->execute();
+
+$result = $stmt->get_result();
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -35,15 +40,18 @@ endif
   </header>
 
   <div class="brancoAlertas">
-    
+   
   <div class="setas">
-    <a href="Dashbord2.php">
-                <img class="setaDashboard" src="../assets/icons/seta.png" alt="Botão de voltar">
-        </a>
+
+  <?php
+  while ($row = $result->fetch_assoc()){
+  echo "
+    <a href='Dashbord2.php?id={$row['id']}&trem=1'><img class='setaDashboard' src='../assets/icons/seta.png' alt='Botão de voltar'></a>
         <H2><U>Carga</U></H2>
-  <a href="Alertas.php">
-                <img class="setaDashboard2" src="../assets/icons/seta2.png" alt="Botão de continuar">
-        </a>
+  <a href='Alertas.php?id={$row['id']}&trem=1'><img class='setaDashboard2' src='../assets/icons/seta2.png' alt='Botão de continuar'></a>
+      ";}
+  ?>
+
   </div>
 
     
@@ -53,6 +61,14 @@ endif
       <?php
       if ($result->num_rows > 0) {
         while ($row = $result->fetch_assoc()) {
+
+          $stmt = $conn->prepare('SELECT * FROM carga where id_trem=?;');
+        $stmt->bind_param('i', $id_trem);
+        $stmt->execute();
+
+        $dados2 = $stmt->get_result();
+
+        while ($row = $dados2->fetch_assoc()){
 
           echo '
         <div class="cinzaCargas">
@@ -66,7 +82,8 @@ endif
             </div>
         </div>
         <br>
-        ';
+        ';}
+        $stmt->close();
         }
       } else {
         echo "Nenhuma carga encontrada.";

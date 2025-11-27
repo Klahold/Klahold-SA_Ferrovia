@@ -58,7 +58,9 @@ CREATE TABLE manutencao(
 
 CREATE TABLE carga(
     id int auto_increment primary key,
-    conteúdo varchar(45)
+    conteúdo varchar(45),
+    id_trem int not null,
+    FOREIGN KEY (id_trem) REFERENCES trens(id)
 );
 
 CREATE TABLE aviso(
