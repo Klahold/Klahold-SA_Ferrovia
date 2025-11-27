@@ -14,6 +14,8 @@ endif;
 
 <?php
 
+
+$id_trem = $_GET['id_Trem'];
 $id = $_GET['id'];
 
 $stmt = $conn->prepare('SELECT * FROM manutencao WHERE id=?');
@@ -53,7 +55,7 @@ $result = $stmt->get_result();
 
         <div class='cinza'>
         <div class='arrastar2'>
-            <h3 class='text'>{$row['mensagem']}</h3>
+            <h3 class='text'>{$row['descricao']}</h3>
         </div>
         </div>";
         }
@@ -65,8 +67,8 @@ $result = $stmt->get_result();
 
     <br><br>
     <?PHP
-    ECHO"
-    <a  href='manuteção2.php?id=$id'>";
+    echo"
+    <a  href='manutenção2.php?id={$id_trem}&trem=1'>";
 
     ?>
 <div class="branco"> <div class="voltar"><strong > Voltar</strong></div>

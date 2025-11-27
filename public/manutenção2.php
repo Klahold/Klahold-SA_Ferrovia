@@ -90,11 +90,12 @@ $result = $stmt->get_result();
 
         echo"
         <br>
+        <a href='lerReport.php?id={$row['id']}&id_Trem={$id}'
         <div class='caixamanuntencao'>
         
               <h3 class='text'> Trem {$row['tipo']} </h3>
               <h3 class='text'>{$data_cricacao}</h3></div>
-            </div>
+            </div></a>
         ";}
             
         $stmt->close();
