@@ -41,14 +41,12 @@ $result = $stmt->get_result();
 
     <div class="brancoDashboard">
         <div class="setas">
-    <a href="Dashboard1.php">
-                <img class="setaDashboard" src="../assets/icons/seta.png" alt="Botão de voltar">
-        </a>
+            <a href="Dashboard1.php"><img class="setaDashboard" src="../assets/icons/seta.png" alt="Botão de voltar"></a>
         
-  <a href="Cargas.php">
-                <img class="setaDashboard2" src="../assets/icons/seta2.png" alt="Botão de continuar">
-        </a>
-  </div>
+            <a href="Cargas.php"><img class="setaDashboard2" src="../assets/icons/seta2.png" alt="Botão de continuar"></a>
+        </div>
+        
+        <div class="arrumarDashboard">
         <div class="cinzaDashboard">
 
 
@@ -69,25 +67,22 @@ $result = $stmt->get_result();
         $dados2 = $stmt->get_result();
 
         while ($row = $dados2->fetch_assoc()){
-            echo "<table>
-                        <thead>
-                                <tr>
-                                <strong><p>velocidade</p></strong>
-                                <p>{$row['velocidade']}</p>
-                                <strong><p>direcao</p></strong>
-                                <p>{$row['direcao']}</p>
-                                <strong><p>localizacao</p></strong>
-                                <p>{$row['localizacao']}</p>
-                                <tr>
-                        <thead>
-                <tbody>";}
+            echo "
+                    <strong><p>velocidade</p></strong>
+                    <p>{$row['velocidade']}</p>
+                    <strong><p>direcao</p></strong>
+                    <p>{$row['direcao']}</p>
+                    <strong><p>localizacao</p></strong>
+                    <p>{$row['localizacao']}</p>
+
+                        ";}
             
         $stmt->close();
         }
 
         ?>
-        
-    </div>
+        </div>
+        </div>
  
 
     

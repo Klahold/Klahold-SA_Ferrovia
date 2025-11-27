@@ -69,6 +69,8 @@ a {
     border-radius: 30px;
 }
 
+
+
 /*------------------------------------------------------------------*/
 /*Loading*/
 
@@ -191,6 +193,7 @@ a {
 .setas {
     display: flex;
     justify-content: space-between;
+    
 }
 
 .espacoCarga {
@@ -224,10 +227,14 @@ a {
     padding: 15px;
     padding-left: 0%;
     padding-right: 0%;
+    
+}
+
+.arrumarDashboard{
+    display: flex;
     justify-content: center;
     text-align: center;
 }
-
 /*------------------------------------------------------------------*/
 /*Esqueci Login*/
 .loGin {
