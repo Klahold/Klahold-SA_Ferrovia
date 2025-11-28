@@ -36,49 +36,46 @@ $result = $stmt->get_result();
 
 <body>
     <header class="header">
-        
+
         <h1>Alertas</h1>
         <a href="login.php"><img class="logoMenu" src="../assets/icons/dashbord.png" alt=""></a>
     </header>
 
     <div class="brancoAlertas">
         <div class="setas">
-            <?php
-            while ($row = $result->fetch_assoc()){
-            echo "
-            <a href='Cargas.php?id={$row['id']}&trem=1'><img class='setaDashboard' src='../assets/icons/seta.png' alt='Botão de voltar'></a>
-            ";}
-            ?>
+            <a href="Cargas.php">
+                <img class="setaDashboard" src="../assets/icons/seta.png" alt="Botão de voltar">
+        </a>
         </div>
         <H2><U>Alertas</U></H2>
 
         <div class="cinza">
-        <?php
-        $sql = "SELECT * FROM alerta";
-        $result = $conn->query($sql);
+            <?php
+            $sql = "SELECT * FROM alerta";
+            $result = $conn->query($sql);
 
-        if ($result->num_rows > 0){
-            
-            echo "<table>
+            if ($result->num_rows > 0) {
+
+                echo "<table>
                         <thead>
                                 <tr>
                                     <strong><p></p></strong>
                                 <tr>
                         <thead>
                 <tbody>";
-        while ($row = $result->fetch_assoc()){
-            echo "<tr>
+                while ($row = $result->fetch_assoc()) {
+                    echo "<tr>
                     <p>{$row['mensagem']}</p>
                     <tr>";
-        }
-        echo"<t/body></table>";
-        }else{
-            echo "<p>Nenhum alerta no momento.</p>";
-        }
+                }
+                echo "<t/body></table>";
+            } else {
+                echo "<p>Nenhum alerta no momento.</p>";
+            }
 
-        
-        ?>
-    </div>
+
+            ?>
+        </div>
 
 
     </div>
