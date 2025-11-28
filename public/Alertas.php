@@ -43,9 +43,12 @@ $result = $stmt->get_result();
 
     <div class="brancoAlertas">
         <div class="setas">
-            <a href="Cargas.php">
-                <img class="setaDashboard" src="../assets/icons/seta.png" alt="Botão de voltar">
-        </a>
+            <?php
+            while ($row = $result->fetch_assoc()){
+            echo "
+            <a href='Cargas.php?id={$row['id']}&trem=1'><img class='setaDashboard' src='../assets/icons/seta.png' alt='Botão de voltar'></a>
+            ";}
+            ?>
         </div>
         <H2><U>Alertas</U></H2>
 

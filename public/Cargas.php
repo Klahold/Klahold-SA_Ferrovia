@@ -13,7 +13,7 @@ endif
 <?php
 $id = $_GET['id'];
 
-$stmt = $conn->prepare('SELECT * FROM trens where id=?;');
+$stmt = $conn->prepare('SELECT * FROM carga where id=?;');
 $stmt->bind_param('i', $id);
 $stmt->execute();
 
@@ -59,32 +59,29 @@ $result = $stmt->get_result();
     <div class="arrastarCargas">
 
       <?php
-      if ($result->num_rows > 0) {
-        while ($row = $result->fetch_assoc()) {
 
-          $stmt = $conn->prepare('SELECT * FROM carga where id_trem=?;');
-        $stmt->bind_param('i', $id_trem);
-        $stmt->execute();
+      $stmt = $conn->prepare('SELECT * FROM carga WHERE id_trem=?;');
+      $stmt->bind_param('i', $id);
+      $stmt->execute();
+      $dados2 = $stmt->get_result();
 
-        $dados2 = $stmt->get_result();
-
-        while ($row = $dados2->fetch_assoc()){
-
+      if ($dados2->num_rows > 0) {
+        while ($row2 = $dados2->fetch_assoc()) {
           echo '
         <div class="cinzaCargas">
             <div class="espacoCarga">
                 <div class="espacoCarga"><p><strong>Vagão</strong></p></div>
-                <div class="espacoCarga"><p>' . $row['id'] . '</p></div>
+                <div class="espacoCarga"><p>' . $row2['id'] . '</p></div>
             </div>
             <div class="espacoCarga">
                 <div class="espacoCarga"><p><strong>Conteúdo</strong></p></div>
-                <div class="espacoCarga"><p>' . $row['conteúdo'] . '</p></div>
+                <div class="espacoCarga"><p>' . $row2['conteúdo'] . '</p></div>
             </div>
         </div>
         <br>
-        ';}
-        $stmt->close();
+        ';
         }
+        $stmt->close();
       } else {
         echo "Nenhuma carga encontrada.";
       }
